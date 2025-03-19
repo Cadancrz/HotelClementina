@@ -73,10 +73,78 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bitacora.Designer.vb">
+      <DependentUpon>Bitacora.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Bitacora.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CancelarReservacion.Designer.vb">
+      <DependentUpon>CancelarReservacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CancelarReservacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ClsConexion.vb" />
+    <Compile Include="ControlHabitaciones.Designer.vb">
+      <DependentUpon>ControlHabitaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ControlHabitaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DetalleHabitacion.Designer.vb">
+      <DependentUpon>DetalleHabitacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DetalleHabitacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Empleados.Designer.vb">
+      <DependentUpon>Empleados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturacion.Designer.vb">
+      <DependentUpon>Facturacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistorialReservas.Designer.vb">
+      <DependentUpon>HistorialReservas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="HistorialReservas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Home.Designer.vb">
+      <DependentUpon>Home.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Home.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Impuesto.Designer.vb">
+      <DependentUpon>Impuesto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Impuesto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Migracion.Designer.vb">
+      <DependentUpon>Migracion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Migracion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -88,13 +156,119 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PanelPrincipalMenu.Designer.vb">
+      <DependentUpon>PanelPrincipalMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PanelPrincipalMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroEmpresas.Designer.vb">
+      <DependentUpon>RegistroEmpresas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroEmpresas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistroHuespedes.Designer.vb">
+      <DependentUpon>RegistroHuespedes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RegistroHuespedes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservaciones.Designer.vb">
+      <DependentUpon>Reservaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Reservaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Salon.Designer.vb">
+      <DependentUpon>Salon.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Salon.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TipoHabitaciones.Designer.vb">
+      <DependentUpon>TipoHabitaciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TipoHabitaciones.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Usuarios.Designer.vb">
+      <DependentUpon>Usuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Usuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Variables.vb" />
+    <Compile Include="VistaMigracion.Designer.vb">
+      <DependentUpon>VistaMigracion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="VistaMigracion.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Bitacora.resx">
+      <DependentUpon>Bitacora.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CancelarReservacion.resx">
+      <DependentUpon>CancelarReservacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlHabitaciones.resx">
+      <DependentUpon>ControlHabitaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DetalleHabitacion.resx">
+      <DependentUpon>DetalleHabitacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Empleados.resx">
+      <DependentUpon>Empleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion.resx">
+      <DependentUpon>Facturacion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistorialReservas.resx">
+      <DependentUpon>HistorialReservas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Home.resx">
+      <DependentUpon>Home.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Impuesto.resx">
+      <DependentUpon>Impuesto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migracion.resx">
+      <DependentUpon>Migracion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PanelPrincipalMenu.resx">
+      <DependentUpon>PanelPrincipalMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroEmpresas.resx">
+      <DependentUpon>RegistroEmpresas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistroHuespedes.resx">
+      <DependentUpon>RegistroHuespedes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservaciones.resx">
+      <DependentUpon>Reservaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Salon.resx">
+      <DependentUpon>Salon.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TipoHabitaciones.resx">
+      <DependentUpon>TipoHabitaciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios.resx">
+      <DependentUpon>Usuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VistaMigracion.resx">
+      <DependentUpon>VistaMigracion.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -108,6 +282,48 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logoSinfondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ojo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ojo_blanco.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ojo_blanco1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrarsesionIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HC F1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HC F11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HC F2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HC F4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrarsesionIcon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\puerta1Sinfondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CamaSinfondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CamaSinfondo1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\puerta1Sinfondo1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

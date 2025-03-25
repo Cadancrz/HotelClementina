@@ -49,6 +49,7 @@ Partial Class PanelPrincipalMenu
         Me.PnLogo = New System.Windows.Forms.Panel()
         Me.TxtCodEmp = New System.Windows.Forms.TextBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.BtnImpuesto = New System.Windows.Forms.Button()
         Me.PnPrincipal.SuspendLayout()
         Me.PnMenu.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -365,6 +366,7 @@ Partial Class PanelPrincipalMenu
         '
         'PnLogo
         '
+        Me.PnLogo.Controls.Add(Me.BtnImpuesto)
         Me.PnLogo.Controls.Add(Me.TxtCodEmp)
         Me.PnLogo.Controls.Add(Me.PictureBox1)
         Me.PnLogo.Dock = System.Windows.Forms.DockStyle.Top
@@ -390,6 +392,15 @@ Partial Class PanelPrincipalMenu
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
+        '
+        'BtnImpuesto
+        '
+        Me.BtnImpuesto.Location = New System.Drawing.Point(0, 103)
+        Me.BtnImpuesto.Name = "BtnImpuesto"
+        Me.BtnImpuesto.Size = New System.Drawing.Size(75, 23)
+        Me.BtnImpuesto.TabIndex = 0
+        Me.BtnImpuesto.Text = "Impuesto"
+        Me.BtnImpuesto.UseVisualStyleBackColor = True
         '
         'PanelPrincipalMenu
         '
@@ -439,4 +450,5 @@ Partial Class PanelPrincipalMenu
     Friend WithEvents BtnFacturacion As Button
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents TxtCodEmp As TextBox
+    Friend WithEvents BtnImpuesto As Button
 End Class

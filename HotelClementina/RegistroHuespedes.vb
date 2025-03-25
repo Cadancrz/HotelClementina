@@ -1,5 +1,4 @@
 ﻿Imports System.Data.SqlClient
-Imports HotelClementina.Variables
 Public Class RegistroHuespedes
     Dim query As String 'variable para las consultas
     Dim con As New ClsConexion 'variable para las conexion
@@ -7,7 +6,7 @@ Public Class RegistroHuespedes
     Dim dvfechas As New DataView 'variable dataview
     Dim entrar As String = "si" 'variable para entrar a las funciones
     Dim export As SqlDataReader 'variable datareader
-    Dim Id, tel1, tel2, tel3, emp, dir, correo, obs, nacion, proced As String 'variables para los datos del huesped
+    Dim Id, tel1, tel2, emp, dir, correo, obs, nacion, proced As String 'variables para los datos del huesped
     Dim fecha1, fecha2 As Date 'variables para guardar fechas
     Dim dias As Integer 'variables para guardar los dias
     Dim resultado As Integer 'variable para mensajes de confirmacion
@@ -197,6 +196,48 @@ Public Class RegistroHuespedes
         ElseIf e.KeyChar <> ControlChars.Back AndAlso e.KeyChar <> " " Then
             ' Si no es una letra, retroceso o espacio, ignora la tecla.
             e.Handled = True
+        End If
+    End Sub
+
+    Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
+        If TxtIdentidad.Text = "" Or TxtNombres.Text = "" Or TxtTel1.Text = "" Or CmbNacion.SelectedIndex = -1 Or TxtProcedencia.Text = "" Then
+            MsgBox("No se puede ingresar, campo vacío!", MsgBoxStyle.Information, "Información")
+        Else
+            ' Verificar si el huésped ya está registrado
+            query = "SELECT * FROM Clientes WHERE Cod_Cli='" & TxtIdentidad.Text & "'"
+            If con.val(query) = False Then
+                ' Obtener el código del país seleccionado
+                Dim codPais As Integer = CInt(CmbNacion.SelectedValue)
+
+                ' Escapar comillas simples en los nombres para evitar errores
+                Dim nomHuespedEscapado As String = TxtNombres.Text.Replace("'", "''")
+                Dim procedenciaEscapada As String = TxtProcedencia.Text.Replace("'", "''")
+                Dim observacionesEscapadas As String = TxtObservaciones.Text.Replace("'", "''")
+                Dim empresaEscapada As String = TxtEmpresa.Text.Replace("'", "''")
+
+                ' Determinar si el cliente es de crédito o contado
+                Dim tipoCliente As Integer = If(CmbTipoCliente.SelectedItem.ToString() = "Credito", 0, 1)
+
+                ' Insertar el huésped en la base de datos
+                StrInsert = "INSERT INTO Clientes (Cod_Cli, Nom_Cli, Tel1_Huesped, Tel2_Huesped, Empresa_Huesped, Cod_Pais, Procedencia, Observaciones, Tipo_Cliente) " &
+                        "VALUES ('" & TxtIdentidad.Text & "', '" & nomHuespedEscapado & "', '" & TxtTel1.Text & "', '" & TxtTel2.Text & "', '" & empresaEscapada & "', '" & codPais & "', '" & procedenciaEscapada & "', '" & observacionesEscapadas & "', '" & tipoCliente & "')"
+                con.insertar(StrInsert)
+
+                '' Registrar en la Bitácora
+                'Dim fecha As String = DateTime.Now.ToString("yyyy-MM-dd")
+                'Dim hora As String = DateTime.Now.ToString("HH:mm:ss")
+                'Dim descripcion As String = Login.NombreEmpleado & " registró un nuevo huésped con Identidad: " & TxtIdentidad.Text & " y nombre: " & TxtNombres.Text
+
+                'query = "INSERT INTO Bitacora (Cod_Usu, Fch_Bita, Hrs_Bita, Obs_Bita) VALUES (" & Login.codUsu & ", '" & fecha & "', '" & hora & "', '" & descripcion & "')"
+                'con.insertar(query)
+
+                limpiar()
+                Carga()
+                MsgBox("Registro Guardado", MsgBoxStyle.Information, "Información")
+                TxtIdentidad.Focus()
+            Else
+                MsgBox("Este código de cliente ya está registrado", MsgBoxStyle.Information, "Información")
+            End If
         End If
     End Sub
 

@@ -22,14 +22,13 @@ Partial Class RegistroHuespedes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RegistroHuespedes))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.CmbTipoCliente = New System.Windows.Forms.ComboBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TxtCorreo = New System.Windows.Forms.TextBox()
         Me.TxtTel2 = New System.Windows.Forms.TextBox()
         Me.TxtTel1 = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -51,16 +50,15 @@ Partial Class RegistroHuespedes
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnAgregar = New System.Windows.Forms.Button()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.TxtBusqueda = New System.Windows.Forms.TextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.DgvHuespedes = New System.Windows.Forms.DataGridView()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BtnAnterior = New System.Windows.Forms.Button()
+        Me.BtnSiguiente = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.LblContador = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -92,7 +90,7 @@ Partial Class RegistroHuespedes
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(7, 98)
+        Me.Label2.Location = New System.Drawing.Point(10, 275)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(116, 27)
         Me.Label2.TabIndex = 130
@@ -105,38 +103,17 @@ Partial Class RegistroHuespedes
         Me.CmbTipoCliente.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
         Me.CmbTipoCliente.FormattingEnabled = True
         Me.CmbTipoCliente.Items.AddRange(New Object() {"Credito", "Contado"})
-        Me.CmbTipoCliente.Location = New System.Drawing.Point(140, 102)
+        Me.CmbTipoCliente.Location = New System.Drawing.Point(129, 275)
         Me.CmbTipoCliente.Name = "CmbTipoCliente"
         Me.CmbTipoCliente.Size = New System.Drawing.Size(295, 27)
         Me.CmbTipoCliente.TabIndex = 129
         Me.CmbTipoCliente.Visible = False
         '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(503, 100)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(50, 27)
-        Me.Label7.TabIndex = 128
-        Me.Label7.Text = "Email"
-        '
-        'TxtCorreo
-        '
-        Me.TxtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtCorreo.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TxtCorreo.Location = New System.Drawing.Point(606, 102)
-        Me.TxtCorreo.MaxLength = 50
-        Me.TxtCorreo.Name = "TxtCorreo"
-        Me.TxtCorreo.Size = New System.Drawing.Size(295, 25)
-        Me.TxtCorreo.TabIndex = 124
-        '
         'TxtTel2
         '
         Me.TxtTel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtTel2.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TxtTel2.Location = New System.Drawing.Point(140, 283)
+        Me.TxtTel2.Location = New System.Drawing.Point(129, 228)
         Me.TxtTel2.MaxLength = 20
         Me.TxtTel2.Name = "TxtTel2"
         Me.TxtTel2.ShortcutsEnabled = False
@@ -147,7 +124,7 @@ Partial Class RegistroHuespedes
         '
         Me.TxtTel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtTel1.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TxtTel1.Location = New System.Drawing.Point(140, 240)
+        Me.TxtTel1.Location = New System.Drawing.Point(129, 186)
         Me.TxtTel1.MaxLength = 20
         Me.TxtTel1.Name = "TxtTel1"
         Me.TxtTel1.ShortcutsEnabled = False
@@ -159,18 +136,18 @@ Partial Class RegistroHuespedes
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(8, 240)
+        Me.Label6.Location = New System.Drawing.Point(8, 186)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(80, 27)
+        Me.Label6.Size = New System.Drawing.Size(86, 27)
         Me.Label6.TabIndex = 127
-        Me.Label6.Text = "Teléfonos"
+        Me.Label6.Text = "Teléfono 1"
         '
         'TxtNombres
         '
         Me.TxtNombres.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtNombres.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtNombres.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TxtNombres.Location = New System.Drawing.Point(140, 196)
+        Me.TxtNombres.Location = New System.Drawing.Point(129, 142)
         Me.TxtNombres.MaxLength = 50
         Me.TxtNombres.Name = "TxtNombres"
         Me.TxtNombres.ShortcutsEnabled = False
@@ -182,7 +159,7 @@ Partial Class RegistroHuespedes
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(7, 196)
+        Me.Label4.Location = New System.Drawing.Point(8, 140)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(68, 27)
         Me.Label4.TabIndex = 126
@@ -193,7 +170,7 @@ Partial Class RegistroHuespedes
         Me.TxtIdentidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtIdentidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         Me.TxtIdentidad.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TxtIdentidad.Location = New System.Drawing.Point(140, 150)
+        Me.TxtIdentidad.Location = New System.Drawing.Point(129, 96)
         Me.TxtIdentidad.MaxLength = 25
         Me.TxtIdentidad.Name = "TxtIdentidad"
         Me.TxtIdentidad.ShortcutsEnabled = False
@@ -205,7 +182,7 @@ Partial Class RegistroHuespedes
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(7, 146)
+        Me.Label3.Location = New System.Drawing.Point(8, 95)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(79, 27)
         Me.Label3.TabIndex = 125
@@ -216,9 +193,9 @@ Partial Class RegistroHuespedes
         Me.BtnEmpresa.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(167, Byte), Integer))
         Me.BtnEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnEmpresa.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnEmpresa.Location = New System.Drawing.Point(496, 13)
+        Me.BtnEmpresa.Location = New System.Drawing.Point(512, 17)
         Me.BtnEmpresa.Name = "BtnEmpresa"
-        Me.BtnEmpresa.Size = New System.Drawing.Size(172, 35)
+        Me.BtnEmpresa.Size = New System.Drawing.Size(141, 41)
         Me.BtnEmpresa.TabIndex = 133
         Me.BtnEmpresa.Text = "Agregar" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.BtnEmpresa.UseVisualStyleBackColor = False
@@ -227,11 +204,12 @@ Partial Class RegistroHuespedes
         '
         Me.TxtEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtEmpresa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TxtEmpresa.Location = New System.Drawing.Point(142, 15)
+        Me.TxtEmpresa.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
+        Me.TxtEmpresa.Location = New System.Drawing.Point(115, 15)
         Me.TxtEmpresa.MaxLength = 100
         Me.TxtEmpresa.Multiline = True
         Me.TxtEmpresa.Name = "TxtEmpresa"
-        Me.TxtEmpresa.Size = New System.Drawing.Size(295, 29)
+        Me.TxtEmpresa.Size = New System.Drawing.Size(328, 46)
         Me.TxtEmpresa.TabIndex = 131
         '
         'Label8
@@ -239,7 +217,7 @@ Partial Class RegistroHuespedes
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(39, 17)
+        Me.Label8.Location = New System.Drawing.Point(25, 24)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(72, 27)
         Me.Label8.TabIndex = 132
@@ -250,7 +228,7 @@ Partial Class RegistroHuespedes
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(486, 176)
+        Me.Label5.Location = New System.Drawing.Point(470, 138)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(96, 27)
         Me.Label5.TabIndex = 139
@@ -260,10 +238,10 @@ Partial Class RegistroHuespedes
         '
         Me.TxtProcedencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtProcedencia.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TxtProcedencia.Location = New System.Drawing.Point(606, 178)
+        Me.TxtProcedencia.Location = New System.Drawing.Point(590, 140)
         Me.TxtProcedencia.MaxLength = 40
         Me.TxtProcedencia.Name = "TxtProcedencia"
-        Me.TxtProcedencia.Size = New System.Drawing.Size(295, 25)
+        Me.TxtProcedencia.Size = New System.Drawing.Size(328, 25)
         Me.TxtProcedencia.TabIndex = 138
         '
         'CmbNacion
@@ -272,9 +250,9 @@ Partial Class RegistroHuespedes
         Me.CmbNacion.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
         Me.CmbNacion.FormattingEnabled = True
         Me.CmbNacion.Items.AddRange(New Object() {"Afganistán", "Akrotiri", "Albania", "Alemania", "Andorra", "Angola", "Anguila", "Antártida", "Antigua y Barbuda", "Antillas Neerlandesas", "Arabia Saudí", "Arctic Ocean", "Argelia", "Argentina", "Armenia", "Aruba", "Ashmore andCartier Islands", "Atlantic Ocean", "Australia", "Austria", "Azerbaiyán", "Bahamas", "Bahráin", "Bangladesh", "Barbados", "Bélgica", "Belice", "Benín", "Bermudas", "Bielorrusia", "Birmania Myanmar", "Bolivia", "Bosnia y Hercegovina", "Botsuana", "Brasil", "Brunéi", "Bulgaria", "Burkina Faso", "Burundi", "Bután", "Cabo Verde", "Camboya", "Camerún", "Canadá", "Chad", "Chile", "China", "Chipre", "Clipperton Island", "Colombia", "Comoras", "Congo", "Coral Sea Islands", "Corea del Norte", "Corea del Sur", "Costa de Marfil", "Costa Rica", "Croacia", "Cuba", "Dhekelia", "Dinamarca", "Dominica", "Ecuador", "Egipto", "El Salvador", "El Vaticano", "Emiratos Árabes Unidos", "Eritrea", "Eslovaquia", "Eslovenia", "España", "Estados Unidos", "Estonia", "Etiopía", "Filipinas", "Finlandia", "Fiyi", "Francia", "Gabón", "Gambia", "Gaza Strip", "Georgia", "Ghana", "Gibraltar", "Granada", "Grecia", "Groenlandia", "Guam", "Guatemala", "Guernsey", "Guinea", "Guinea Ecuatorial", "Guinea-Bissau", "Guyana", "Haití", "Honduras", "Hong Kong", "Hungría", "India", "Indian Ocean", "Indonesia", "Irán", "Iraq", "Irlanda", "Isla Bouvet", "Isla Christmas", "Isla Norfolk", "Islandia", "Islas Caimán", "Islas Cocos", "Islas Cook", "Islas Feroe", "Islas Georgia del Sur y Sandwich del Sur", "Islas Heard y McDonald", "Islas Malvinas", "Islas Marianas del Norte", "IslasMarshall", "Islas Pitcairn", "Islas Salomón", "Islas Turcas y Caicos", "Islas Vírgenes Americanas", "Islas Vírgenes Británicas", "Israel", "Italia", "Jamaica", "Jan Mayen", "Japón", "Jersey", "Jordania", "Kazajistán", "Kenia", "Kirguizistán", "Kiribati", "Kuwait", "Laos", "Lesoto", "Letonia", "Líbano", "Liberia", "Libia", "Liechtenstein", "Lituania", "Luxemburgo", "Macao", "Macedonia", "Madagascar", "Malasia", "Malaui", "Maldivas", "Malí", "Malta", "Man, Isle of", "Marruecos", "Mauricio", "Mauritania", "Mayotte", "México", "Micronesia", "Moldavia", "Mónaco", "Mongolia", "Montserrat", "Mozambique", "Namibia", "Nauru", "Navassa Island", "Nepal", "Nicaragua", "Níger", "Nigeria", "Niue", "Noruega", "Nueva Caledonia", "Nueva Zelanda", "Omán", "Pacific Ocean", "Países Bajos", "Pakistán", "Palaos", "Panamá", "Papúa-Nueva Guinea", "Paracel Islands", "Paraguay", "Perú", "Polinesia Francesa", "Polonia", "Portugal", "Puerto Rico", "Qatar", "Reino Unido", "República Centroafricana", "República Checa", "República Democrática del Congo", "República Dominicana", "Ruanda", "Rumania", "Rusia", "Sáhara Occidental", "Samoa", "Samoa Americana", "San Cristóbal y Nieves", "San Marino", "San Pedro y Miquelón", "San Vicente y las Granadinas", "Santa Helena", "Santa Lucía", "Santo Tomé y Príncipe", "Senegal", "Seychelles", "Sierra Leona", "Singapur", "Siria", "Somalia", "Southern Ocean", "Spratly Islands", "Sri Lanka", "Suazilandia", "Sudáfrica", "Sudán", "Suecia", "Suiza", "Surinam", "Svalbard y Jan Mayen", "Tailandia", "Taiwán", "Tanzania", "Tayikistán", "TerritorioBritánicodel Océano Indico", "Territorios Australes Franceses", "Timor Oriental", "Togo", "Tokelau", "Tonga", "Trinidad y Tobago", "Túnez", "Turkmenistán", "Turquía", "Tuvalu", "Ucrania", "Uganda", "Unión Europea", "Uruguay", "Uzbekistán", "Vanuatu", "Venezuela", "Vietnam", "Wake Island", "Wallis y Futuna", "West Bank", "World", "Yemen", "Yibuti", "Zambia", "Zimbabue"})
-        Me.CmbNacion.Location = New System.Drawing.Point(606, 139)
+        Me.CmbNacion.Location = New System.Drawing.Point(590, 94)
         Me.CmbNacion.Name = "CmbNacion"
-        Me.CmbNacion.Size = New System.Drawing.Size(295, 27)
+        Me.CmbNacion.Size = New System.Drawing.Size(328, 27)
         Me.CmbNacion.TabIndex = 137
         '
         'Label13
@@ -282,7 +260,7 @@ Partial Class RegistroHuespedes
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(486, 140)
+        Me.Label13.Location = New System.Drawing.Point(470, 95)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(102, 27)
         Me.Label13.TabIndex = 136
@@ -292,12 +270,12 @@ Partial Class RegistroHuespedes
         '
         Me.TxtObservaciones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtObservaciones.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TxtObservaciones.Location = New System.Drawing.Point(606, 214)
+        Me.TxtObservaciones.Location = New System.Drawing.Point(590, 185)
         Me.TxtObservaciones.MaxLength = 200
         Me.TxtObservaciones.Multiline = True
         Me.TxtObservaciones.Name = "TxtObservaciones"
         Me.TxtObservaciones.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TxtObservaciones.Size = New System.Drawing.Size(295, 47)
+        Me.TxtObservaciones.Size = New System.Drawing.Size(328, 67)
         Me.TxtObservaciones.TabIndex = 134
         '
         'Label12
@@ -305,7 +283,7 @@ Partial Class RegistroHuespedes
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(486, 225)
+        Me.Label12.Location = New System.Drawing.Point(470, 185)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(114, 27)
         Me.Label12.TabIndex = 135
@@ -316,9 +294,9 @@ Partial Class RegistroHuespedes
         Me.GroupBox1.Controls.Add(Me.TxtEmpresa)
         Me.GroupBox1.Controls.Add(Me.Label8)
         Me.GroupBox1.Controls.Add(Me.BtnEmpresa)
-        Me.GroupBox1.Location = New System.Drawing.Point(464, 266)
+        Me.GroupBox1.Location = New System.Drawing.Point(475, 258)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(684, 57)
+        Me.GroupBox1.Size = New System.Drawing.Size(673, 72)
         Me.GroupBox1.TabIndex = 140
         Me.GroupBox1.TabStop = False
         '
@@ -327,9 +305,9 @@ Partial Class RegistroHuespedes
         Me.BtnLimpiar.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnLimpiar.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnLimpiar.Location = New System.Drawing.Point(948, 226)
+        Me.BtnLimpiar.Location = New System.Drawing.Point(960, 180)
         Me.BtnLimpiar.Name = "BtnLimpiar"
-        Me.BtnLimpiar.Size = New System.Drawing.Size(200, 35)
+        Me.BtnLimpiar.Size = New System.Drawing.Size(188, 35)
         Me.BtnLimpiar.TabIndex = 144
         Me.BtnLimpiar.Text = "Limpiar"
         Me.BtnLimpiar.UseVisualStyleBackColor = False
@@ -339,9 +317,9 @@ Partial Class RegistroHuespedes
         Me.BtnEliminar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.BtnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnEliminar.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnEliminar.Location = New System.Drawing.Point(948, 145)
+        Me.BtnEliminar.Location = New System.Drawing.Point(960, 222)
         Me.BtnEliminar.Name = "BtnEliminar"
-        Me.BtnEliminar.Size = New System.Drawing.Size(200, 35)
+        Me.BtnEliminar.Size = New System.Drawing.Size(188, 35)
         Me.BtnEliminar.TabIndex = 143
         Me.BtnEliminar.Text = "Eliminar"
         Me.BtnEliminar.UseVisualStyleBackColor = False
@@ -351,9 +329,9 @@ Partial Class RegistroHuespedes
         Me.BtnModificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnModificar.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnModificar.Location = New System.Drawing.Point(948, 185)
+        Me.BtnModificar.Location = New System.Drawing.Point(960, 138)
         Me.BtnModificar.Name = "BtnModificar"
-        Me.BtnModificar.Size = New System.Drawing.Size(200, 35)
+        Me.BtnModificar.Size = New System.Drawing.Size(188, 35)
         Me.BtnModificar.TabIndex = 142
         Me.BtnModificar.Text = "Modificar"
         Me.BtnModificar.UseVisualStyleBackColor = False
@@ -363,67 +341,45 @@ Partial Class RegistroHuespedes
         Me.BtnAgregar.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnAgregar.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnAgregar.Location = New System.Drawing.Point(948, 105)
+        Me.BtnAgregar.Location = New System.Drawing.Point(960, 97)
         Me.BtnAgregar.Name = "BtnAgregar"
-        Me.BtnAgregar.Size = New System.Drawing.Size(200, 35)
+        Me.BtnAgregar.Size = New System.Drawing.Size(188, 35)
         Me.BtnAgregar.TabIndex = 141
         Me.BtnAgregar.Text = "Agregar"
         Me.BtnAgregar.UseVisualStyleBackColor = False
         '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(113, 240)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(21, 27)
-        Me.Label9.TabIndex = 145
-        Me.Label9.Text = "1"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(113, 283)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(21, 27)
-        Me.Label10.TabIndex = 146
-        Me.Label10.Text = "2"
-        '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.TextBox1)
+        Me.GroupBox2.Controls.Add(Me.TxtBusqueda)
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Font = New System.Drawing.Font("Dubai", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.White
-        Me.GroupBox2.Location = New System.Drawing.Point(15, 339)
+        Me.GroupBox2.Location = New System.Drawing.Point(15, 352)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(1133, 67)
+        Me.GroupBox2.Size = New System.Drawing.Size(1133, 57)
         Me.GroupBox2.TabIndex = 147
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Control de Huéspedes"
+        '
+        'TxtBusqueda
+        '
+        Me.TxtBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtBusqueda.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
+        Me.TxtBusqueda.Location = New System.Drawing.Point(279, 22)
+        Me.TxtBusqueda.Name = "TxtBusqueda"
+        Me.TxtBusqueda.ShortcutsEnabled = False
+        Me.TxtBusqueda.Size = New System.Drawing.Size(608, 25)
+        Me.TxtBusqueda.TabIndex = 148
         '
         'Label11
         '
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label11.Location = New System.Drawing.Point(162, 27)
+        Me.Label11.Location = New System.Drawing.Point(162, 22)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(96, 27)
         Me.Label11.TabIndex = 107
         Me.Label11.Text = "Por Nombre"
-        '
-        'TextBox1
-        '
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TextBox1.Location = New System.Drawing.Point(279, 27)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ShortcutsEnabled = False
-        Me.TextBox1.Size = New System.Drawing.Size(608, 25)
-        Me.TextBox1.TabIndex = 148
         '
         'DgvHuespedes
         '
@@ -431,62 +387,62 @@ Partial Class RegistroHuespedes
         Me.DgvHuespedes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DgvHuespedes.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.DgvHuespedes.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Papyrus", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvHuespedes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvHuespedes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DgvHuespedes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvHuespedes.Cursor = System.Windows.Forms.Cursors.Hand
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Papyrus", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvHuespedes.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Dubai", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvHuespedes.DefaultCellStyle = DataGridViewCellStyle2
         Me.DgvHuespedes.GridColor = System.Drawing.SystemColors.AppWorkspace
-        Me.DgvHuespedes.Location = New System.Drawing.Point(15, 422)
+        Me.DgvHuespedes.Location = New System.Drawing.Point(15, 419)
         Me.DgvHuespedes.Name = "DgvHuespedes"
-        Me.DgvHuespedes.Size = New System.Drawing.Size(1133, 268)
+        Me.DgvHuespedes.Size = New System.Drawing.Size(1133, 274)
         Me.DgvHuespedes.TabIndex = 148
         '
-        'Button2
+        'BtnAnterior
         '
-        Me.Button2.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(167, Byte), Integer))
-        Me.Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button2.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(918, 696)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(110, 40)
-        Me.Button2.TabIndex = 150
-        Me.Button2.Text = "Anterior"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.BtnAnterior.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(167, Byte), Integer))
+        Me.BtnAnterior.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnAnterior.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnAnterior.ForeColor = System.Drawing.Color.Black
+        Me.BtnAnterior.Location = New System.Drawing.Point(918, 699)
+        Me.BtnAnterior.Name = "BtnAnterior"
+        Me.BtnAnterior.Size = New System.Drawing.Size(110, 40)
+        Me.BtnAnterior.TabIndex = 150
+        Me.BtnAnterior.Text = "Anterior"
+        Me.BtnAnterior.UseVisualStyleBackColor = False
         '
-        'Button1
+        'BtnSiguiente
         '
-        Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(167, Byte), Integer))
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(1034, 696)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(114, 40)
-        Me.Button1.TabIndex = 149
-        Me.Button1.Text = "Siguiente"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.BtnSiguiente.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(167, Byte), Integer))
+        Me.BtnSiguiente.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnSiguiente.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnSiguiente.ForeColor = System.Drawing.Color.Black
+        Me.BtnSiguiente.Location = New System.Drawing.Point(1034, 699)
+        Me.BtnSiguiente.Name = "BtnSiguiente"
+        Me.BtnSiguiente.Size = New System.Drawing.Size(114, 40)
+        Me.BtnSiguiente.TabIndex = 149
+        Me.BtnSiguiente.Text = "Siguiente"
+        Me.BtnSiguiente.UseVisualStyleBackColor = False
         '
         'Label14
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(16, 701)
+        Me.Label14.Location = New System.Drawing.Point(16, 704)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(92, 27)
         Me.Label14.TabIndex = 152
@@ -497,10 +453,21 @@ Partial Class RegistroHuespedes
         Me.LblContador.AutoSize = True
         Me.LblContador.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
         Me.LblContador.ForeColor = System.Drawing.Color.White
-        Me.LblContador.Location = New System.Drawing.Point(113, 703)
+        Me.LblContador.Location = New System.Drawing.Point(113, 704)
         Me.LblContador.Name = "LblContador"
         Me.LblContador.Size = New System.Drawing.Size(0, 27)
         Me.LblContador.TabIndex = 151
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(8, 228)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(86, 27)
+        Me.Label9.TabIndex = 153
+        Me.Label9.Text = "Teléfono 2"
         '
         'RegistroHuespedes
         '
@@ -508,14 +475,13 @@ Partial Class RegistroHuespedes
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(1160, 748)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.LblContador)
-        Me.Controls.Add(Me.Button2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.BtnAnterior)
+        Me.Controls.Add(Me.BtnSiguiente)
         Me.Controls.Add(Me.DgvHuespedes)
         Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.Label10)
-        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.BtnLimpiar)
         Me.Controls.Add(Me.BtnEliminar)
         Me.Controls.Add(Me.BtnModificar)
@@ -529,8 +495,6 @@ Partial Class RegistroHuespedes
         Me.Controls.Add(Me.Label12)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.CmbTipoCliente)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.TxtCorreo)
         Me.Controls.Add(Me.TxtTel2)
         Me.Controls.Add(Me.TxtTel1)
         Me.Controls.Add(Me.Label6)
@@ -540,6 +504,7 @@ Partial Class RegistroHuespedes
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "RegistroHuespedes"
         Me.Text = "RegistroHuespedes"
         Me.Panel1.ResumeLayout(False)
@@ -558,8 +523,6 @@ Partial Class RegistroHuespedes
     Friend WithEvents Label1 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents CmbTipoCliente As ComboBox
-    Friend WithEvents Label7 As Label
-    Friend WithEvents TxtCorreo As TextBox
     Friend WithEvents TxtTel2 As TextBox
     Friend WithEvents TxtTel1 As TextBox
     Friend WithEvents Label6 As Label
@@ -581,14 +544,13 @@ Partial Class RegistroHuespedes
     Friend WithEvents BtnEliminar As Button
     Friend WithEvents BtnModificar As Button
     Friend WithEvents BtnAgregar As Button
-    Friend WithEvents Label9 As Label
-    Friend WithEvents Label10 As Label
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TxtBusqueda As TextBox
     Friend WithEvents Label11 As Label
     Friend WithEvents DgvHuespedes As DataGridView
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BtnAnterior As Button
+    Friend WithEvents BtnSiguiente As Button
     Friend WithEvents Label14 As Label
     Friend WithEvents LblContador As Label
+    Friend WithEvents Label9 As Label
 End Class

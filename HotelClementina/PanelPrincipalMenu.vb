@@ -9,6 +9,7 @@
         botonAnterior = BtnHome
         BtnHome.ForeColor = Color.Black
         BtnHome.BackColor = Color.FromArgb(228, 187, 19)
+
     End Sub
 
     Private Sub ocultarSubMenu()
@@ -174,33 +175,5 @@
 
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
         Me.Close()
-    End Sub
-
-    ' Eventos Click para los botones del submenú PnHuespedes
-    Private Sub BtnRegHuespedes_Click_1(sender As Object, e As EventArgs) Handles BtnRegHuespedes.Click
-        RestablecerColorBotonAnterior()
-        abrirPantallas(New RegistroHuespedes())
-        BtnRegHuespedes.BackColor = Color.FromArgb(228, 187, 19)
-        BtnRegHuespedes.ForeColor = Color.Black
-        botonAnterior = BtnHuespedes ' Importante: El botón principal sigue siendo el "padre" del submenú
-        ocultarSubMenu() ' Oculta el submenú después de seleccionar una opción
-    End Sub
-
-    Private Sub BtnEmpresas_Click_1(sender As Object, e As EventArgs) Handles BtnEmpresas.Click
-        RestablecerColorBotonAnterior()
-        abrirPantallas(New RegistroEmpresas())
-        BtnEmpresas.BackColor = Color.FromArgb(228, 187, 19)
-        BtnEmpresas.ForeColor = Color.Black
-        botonAnterior = BtnHuespedes ' Importante: El botón principal sigue siendo el "padre" del submenú
-        ocultarSubMenu() ' Oculta el submenú después de seleccionar una opción
-    End Sub
-
-    Private Sub BtnHistorial_Click_1(sender As Object, e As EventArgs) Handles BtnHistorial.Click
-        RestablecerColorBotonAnterior()
-        abrirPantallas(New HistorialReservas())
-        BtnHistorial.BackColor = Color.FromArgb(228, 187, 19)
-        BtnHistorial.ForeColor = Color.Black
-        botonAnterior = BtnHuespedes ' Importante: El botón principal sigue siendo el "padre" del submenú
-        ocultarSubMenu() ' Oculta el submenú después de seleccionar una opción
     End Sub
 End Class

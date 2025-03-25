@@ -1,10 +1,12 @@
 ﻿Imports System.Data.SqlClient 'libreria de SQL
 Public Class ClsConexion
-    Public servidor As String = "Data Source=Localhost;Initial Catalog=Hotel_Casa_Encantada;Integrated Security=True" 'variable para guardar la conexion con el servidor en SQL
+    Public servidor As String = "Data Source=Localhost;Initial Catalog=Hotel_Clementina;Integrated Security=True" 'variable para guardar la conexion con el servidor en SQL
     Public cnn As New SqlConnection(servidor) 'variable conexion con el parametro del servidor
     Dim query As String 'variable para las consultas
+    Dim dr As IDataReader 'para leer cadenas de datos'
+    Dim Det As Integer 'variable usada para el autonumerado
 
-    Public ClsConect As New SqlConnection("Data Source=Localhost;Initial Catalog=Hotel_Casa_Encantada;Integrated Security=True") 'conexion con la BD
+    Public ClsConect As New SqlConnection("Data Source=Localhost;Initial Catalog=Hotel_Clementina;Integrated Security=True") 'conexion con la BD
 
     Public Sub conectar()
         Try
@@ -170,20 +172,24 @@ Public Class ClsConexion
         Return resultado
     End Function
 
-    ' Método para ejecutar consultas que NO devuelven datos (INSERT, UPDATE, DELETE)
-    Public Sub EjecutarConsulta(ByVal query As String, ByVal parametros As List(Of SqlParameter))
+    'funcion para llenar gridview sin parametro
+    Public Sub cargarDgv(ByVal consulta As String, ByVal Dgv As DataGridView, ByVal dv As DataView)
         Try
-            conectar()
-            Using comando As New SqlCommand(query, cnn)
-                If parametros IsNot Nothing Then
-                    comando.Parameters.AddRange(parametros.ToArray())
-                End If
-                comando.ExecuteNonQuery()
-            End Using
-        Catch ex As Exception
-            MsgBox("Error al ejecutar la consulta: " & ex.Message, MsgBoxStyle.Critical, "Error de SQL")
-        Finally
-            desconectar()
+            query = consulta 'consulta para conectar con la BD
+            If val(query) = True Then 'si la consulta retorna un valor
+                Dim da As New SqlDataAdapter(query, cnn) 'declara una variable dataadapter
+                Dim ds As New DataSet 'declara una variable dataset
+                With Dgv 'mientras este leyendo datos
+                    .MultiSelect = False 'opcional: Sin selección múltiple  
+                    .SelectionMode = DataGridViewSelectionMode.FullRowSelect 'seleccioanr fila completa al hacer clic en un registro 
+                End With
+                da.Fill(ds) 'lee las filas del DA
+                dv.Table = ds.Tables(0) 'crea una tabla temporal
+                Dgv.DataSource = dv 'iguala el source del gridview a la variable DV
+            End If
+        Catch ex As Exception 'si captura un error despliega el mensaje
+            MsgBox(ex.Message) 'despliega mensaje de error
         End Try
     End Sub
+
 End Class

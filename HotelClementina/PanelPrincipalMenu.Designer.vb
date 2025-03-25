@@ -22,6 +22,7 @@ Partial Class PanelPrincipalMenu
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PanelPrincipalMenu))
         Me.PnPrincipal = New System.Windows.Forms.Panel()
         Me.PnPantallas = New System.Windows.Forms.Panel()
         Me.PnLineaVertical = New System.Windows.Forms.Panel()
@@ -78,7 +79,7 @@ Partial Class PanelPrincipalMenu
         'PnLineaVertical
         '
         Me.PnLineaVertical.BackColor = System.Drawing.Color.FromArgb(CType(CType(228, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(19, Byte), Integer))
-        Me.PnLineaVertical.Location = New System.Drawing.Point(186, 0)
+        Me.PnLineaVertical.Location = New System.Drawing.Point(185, 0)
         Me.PnLineaVertical.Name = "PnLineaVertical"
         Me.PnLineaVertical.Size = New System.Drawing.Size(5, 752)
         Me.PnLineaVertical.TabIndex = 2
@@ -108,7 +109,7 @@ Partial Class PanelPrincipalMenu
         '
         'PictureBox2
         '
-        Me.PictureBox2.Image = Global.HotelClementina.My.Resources.Resources.cerrarsesionIcon1
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
         Me.PictureBox2.Location = New System.Drawing.Point(9, 722)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(26, 22)
@@ -374,15 +375,15 @@ Partial Class PanelPrincipalMenu
         '
         'TxtCodEmp
         '
-        Me.TxtCodEmp.Location = New System.Drawing.Point(0, 103)
+        Me.TxtCodEmp.Location = New System.Drawing.Point(0, 0)
         Me.TxtCodEmp.Name = "TxtCodEmp"
-        Me.TxtCodEmp.Size = New System.Drawing.Size(66, 20)
+        Me.TxtCodEmp.Size = New System.Drawing.Size(35, 20)
         Me.TxtCodEmp.TabIndex = 0
         Me.TxtCodEmp.Visible = False
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.HotelClementina.My.Resources.Resources.logoSinfondo
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(22, 21)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(138, 83)

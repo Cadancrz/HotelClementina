@@ -22,11 +22,12 @@ Partial Class Home
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Home))
         Me.LblUsuario = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.BtnOcultarISV = New System.Windows.Forms.Button()
         Me.BtnMostrarISV = New System.Windows.Forms.Button()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.GbxImpuesto15 = New System.Windows.Forms.GroupBox()
         Me.BtnCalcular2 = New System.Windows.Forms.Button()
         Me.BtnLimpiar2 = New System.Windows.Forms.Button()
         Me.TxtTotal2 = New System.Windows.Forms.TextBox()
@@ -37,7 +38,7 @@ Partial Class Home
         Me.Label9 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GbxImpuesto4 = New System.Windows.Forms.GroupBox()
         Me.BtnLimpiar = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtImpTur = New System.Windows.Forms.TextBox()
@@ -53,8 +54,8 @@ Partial Class Home
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.GroupBox2.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
+        Me.GbxImpuesto15.SuspendLayout()
+        Me.GbxImpuesto4.SuspendLayout()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -62,23 +63,23 @@ Partial Class Home
         'LblUsuario
         '
         Me.LblUsuario.AutoSize = True
-        Me.LblUsuario.Font = New System.Drawing.Font("Segoe Print", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblUsuario.Font = New System.Drawing.Font("Segoe Print", 18.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LblUsuario.ForeColor = System.Drawing.Color.White
-        Me.LblUsuario.Location = New System.Drawing.Point(182, 97)
+        Me.LblUsuario.Location = New System.Drawing.Point(185, 94)
         Me.LblUsuario.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.LblUsuario.Name = "LblUsuario"
-        Me.LblUsuario.Size = New System.Drawing.Size(0, 43)
+        Me.LblUsuario.Size = New System.Drawing.Size(0, 44)
         Me.LblUsuario.TabIndex = 5
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Segoe Print", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Segoe Print", 18.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.White
         Me.Label2.Location = New System.Drawing.Point(4, 93)
         Me.Label2.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(183, 43)
+        Me.Label2.Size = New System.Drawing.Size(190, 44)
         Me.Label2.TabIndex = 4
         Me.Label2.Text = "Bienvenido(a)"
         '
@@ -106,26 +107,26 @@ Partial Class Home
         Me.BtnMostrarISV.Text = "Mostrar"
         Me.BtnMostrarISV.UseVisualStyleBackColor = False
         '
-        'GroupBox2
+        'GbxImpuesto15
         '
-        Me.GroupBox2.Controls.Add(Me.BtnCalcular2)
-        Me.GroupBox2.Controls.Add(Me.BtnLimpiar2)
-        Me.GroupBox2.Controls.Add(Me.TxtTotal2)
-        Me.GroupBox2.Controls.Add(Me.TxtNeto2)
-        Me.GroupBox2.Controls.Add(Me.TxtImpuesto2)
-        Me.GroupBox2.Controls.Add(Me.TxtBase2)
-        Me.GroupBox2.Controls.Add(Me.Label8)
-        Me.GroupBox2.Controls.Add(Me.Label9)
-        Me.GroupBox2.Controls.Add(Me.Label10)
-        Me.GroupBox2.Controls.Add(Me.Label11)
-        Me.GroupBox2.Font = New System.Drawing.Font("Dubai", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.ForeColor = System.Drawing.Color.White
-        Me.GroupBox2.Location = New System.Drawing.Point(536, 427)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(410, 296)
-        Me.GroupBox2.TabIndex = 28
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Impuesto 15%"
+        Me.GbxImpuesto15.Controls.Add(Me.BtnCalcular2)
+        Me.GbxImpuesto15.Controls.Add(Me.BtnLimpiar2)
+        Me.GbxImpuesto15.Controls.Add(Me.TxtTotal2)
+        Me.GbxImpuesto15.Controls.Add(Me.TxtNeto2)
+        Me.GbxImpuesto15.Controls.Add(Me.TxtImpuesto2)
+        Me.GbxImpuesto15.Controls.Add(Me.TxtBase2)
+        Me.GbxImpuesto15.Controls.Add(Me.Label8)
+        Me.GbxImpuesto15.Controls.Add(Me.Label9)
+        Me.GbxImpuesto15.Controls.Add(Me.Label10)
+        Me.GbxImpuesto15.Controls.Add(Me.Label11)
+        Me.GbxImpuesto15.Font = New System.Drawing.Font("Dubai", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GbxImpuesto15.ForeColor = System.Drawing.Color.White
+        Me.GbxImpuesto15.Location = New System.Drawing.Point(536, 427)
+        Me.GbxImpuesto15.Name = "GbxImpuesto15"
+        Me.GbxImpuesto15.Size = New System.Drawing.Size(410, 296)
+        Me.GbxImpuesto15.TabIndex = 28
+        Me.GbxImpuesto15.TabStop = False
+        Me.GbxImpuesto15.Text = "Impuesto 15%"
         '
         'BtnCalcular2
         '
@@ -155,16 +156,16 @@ Partial Class Home
         '
         'TxtTotal2
         '
-        Me.TxtTotal2.Font = New System.Drawing.Font("Dubai", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtTotal2.Font = New System.Drawing.Font("Dubai", 18.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtTotal2.Location = New System.Drawing.Point(219, 191)
         Me.TxtTotal2.Name = "TxtTotal2"
         Me.TxtTotal2.ReadOnly = True
-        Me.TxtTotal2.Size = New System.Drawing.Size(166, 48)
+        Me.TxtTotal2.Size = New System.Drawing.Size(166, 50)
         Me.TxtTotal2.TabIndex = 27
         '
         'TxtNeto2
         '
-        Me.TxtNeto2.Font = New System.Drawing.Font("Dubai", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtNeto2.Font = New System.Drawing.Font("Dubai", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtNeto2.Location = New System.Drawing.Point(219, 81)
         Me.TxtNeto2.Name = "TxtNeto2"
         Me.TxtNeto2.ReadOnly = True
@@ -173,7 +174,7 @@ Partial Class Home
         '
         'TxtImpuesto2
         '
-        Me.TxtImpuesto2.Font = New System.Drawing.Font("Dubai", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtImpuesto2.Font = New System.Drawing.Font("Dubai", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtImpuesto2.Location = New System.Drawing.Point(219, 136)
         Me.TxtImpuesto2.Name = "TxtImpuesto2"
         Me.TxtImpuesto2.ReadOnly = True
@@ -182,7 +183,7 @@ Partial Class Home
         '
         'TxtBase2
         '
-        Me.TxtBase2.Font = New System.Drawing.Font("Dubai", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBase2.Font = New System.Drawing.Font("Dubai", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TxtBase2.Location = New System.Drawing.Point(219, 26)
         Me.TxtBase2.Name = "TxtBase2"
         Me.TxtBase2.Size = New System.Drawing.Size(166, 48)
@@ -232,28 +233,28 @@ Partial Class Home
         Me.Label11.TabIndex = 20
         Me.Label11.Text = "Ingrese Base"
         '
-        'GroupBox1
+        'GbxImpuesto4
         '
-        Me.GroupBox1.Controls.Add(Me.BtnLimpiar)
-        Me.GroupBox1.Controls.Add(Me.Label5)
-        Me.GroupBox1.Controls.Add(Me.TxtImpTur)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.BtnCalcular)
-        Me.GroupBox1.Controls.Add(Me.Label7)
-        Me.GroupBox1.Controls.Add(Me.Label4)
-        Me.GroupBox1.Controls.Add(Me.Label6)
-        Me.GroupBox1.Controls.Add(Me.TxtBase)
-        Me.GroupBox1.Controls.Add(Me.TxtImpuesto)
-        Me.GroupBox1.Controls.Add(Me.TxtNeto)
-        Me.GroupBox1.Controls.Add(Me.TxtTotal)
-        Me.GroupBox1.Font = New System.Drawing.Font("Dubai", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.GroupBox1.Location = New System.Drawing.Point(536, 129)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(410, 288)
-        Me.GroupBox1.TabIndex = 27
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Impuesto 4%"
+        Me.GbxImpuesto4.Controls.Add(Me.BtnLimpiar)
+        Me.GbxImpuesto4.Controls.Add(Me.Label5)
+        Me.GbxImpuesto4.Controls.Add(Me.TxtImpTur)
+        Me.GbxImpuesto4.Controls.Add(Me.Label3)
+        Me.GbxImpuesto4.Controls.Add(Me.BtnCalcular)
+        Me.GbxImpuesto4.Controls.Add(Me.Label7)
+        Me.GbxImpuesto4.Controls.Add(Me.Label4)
+        Me.GbxImpuesto4.Controls.Add(Me.Label6)
+        Me.GbxImpuesto4.Controls.Add(Me.TxtBase)
+        Me.GbxImpuesto4.Controls.Add(Me.TxtImpuesto)
+        Me.GbxImpuesto4.Controls.Add(Me.TxtNeto)
+        Me.GbxImpuesto4.Controls.Add(Me.TxtTotal)
+        Me.GbxImpuesto4.Font = New System.Drawing.Font("Dubai", 12.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GbxImpuesto4.ForeColor = System.Drawing.Color.White
+        Me.GbxImpuesto4.Location = New System.Drawing.Point(536, 129)
+        Me.GbxImpuesto4.Name = "GbxImpuesto4"
+        Me.GbxImpuesto4.Size = New System.Drawing.Size(410, 288)
+        Me.GbxImpuesto4.TabIndex = 27
+        Me.GbxImpuesto4.TabStop = False
+        Me.GbxImpuesto4.Text = "Impuesto 4%"
         '
         'BtnLimpiar
         '
@@ -273,7 +274,7 @@ Partial Class Home
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Dubai", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(76, 36)
+        Me.Label5.Location = New System.Drawing.Point(76, 27)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(115, 32)
         Me.Label5.TabIndex = 10
@@ -281,11 +282,11 @@ Partial Class Home
         '
         'TxtImpTur
         '
-        Me.TxtImpTur.Font = New System.Drawing.Font("Microsoft YaHei", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtImpTur.Location = New System.Drawing.Point(228, 155)
+        Me.TxtImpTur.Font = New System.Drawing.Font("Microsoft YaHei", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtImpTur.Location = New System.Drawing.Point(228, 152)
         Me.TxtImpTur.Name = "TxtImpTur"
         Me.TxtImpTur.ReadOnly = True
-        Me.TxtImpTur.Size = New System.Drawing.Size(157, 29)
+        Me.TxtImpTur.Size = New System.Drawing.Size(157, 33)
         Me.TxtImpTur.TabIndex = 24
         '
         'Label3
@@ -293,7 +294,7 @@ Partial Class Home
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Dubai", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(134, 114)
+        Me.Label3.Location = New System.Drawing.Point(134, 109)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(57, 32)
         Me.Label3.TabIndex = 11
@@ -317,7 +318,7 @@ Partial Class Home
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Dubai", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(74, 154)
+        Me.Label7.Location = New System.Drawing.Point(74, 151)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(117, 32)
         Me.Label7.TabIndex = 23
@@ -328,7 +329,7 @@ Partial Class Home
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Dubai", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(34, 75)
+        Me.Label4.Location = New System.Drawing.Point(34, 68)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(157, 32)
         Me.Label4.TabIndex = 12
@@ -339,7 +340,7 @@ Partial Class Home
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Dubai", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(117, 194)
+        Me.Label6.Location = New System.Drawing.Point(117, 193)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(74, 32)
         Me.Label6.TabIndex = 13
@@ -347,37 +348,37 @@ Partial Class Home
         '
         'TxtBase
         '
-        Me.TxtBase.Font = New System.Drawing.Font("Microsoft YaHei", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtBase.Location = New System.Drawing.Point(228, 37)
+        Me.TxtBase.Font = New System.Drawing.Font("Microsoft YaHei", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtBase.Location = New System.Drawing.Point(228, 28)
         Me.TxtBase.Name = "TxtBase"
-        Me.TxtBase.Size = New System.Drawing.Size(157, 29)
+        Me.TxtBase.Size = New System.Drawing.Size(157, 33)
         Me.TxtBase.TabIndex = 14
         '
         'TxtImpuesto
         '
-        Me.TxtImpuesto.Font = New System.Drawing.Font("Microsoft YaHei", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtImpuesto.Location = New System.Drawing.Point(228, 115)
+        Me.TxtImpuesto.Font = New System.Drawing.Font("Microsoft YaHei", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtImpuesto.Location = New System.Drawing.Point(228, 110)
         Me.TxtImpuesto.Name = "TxtImpuesto"
         Me.TxtImpuesto.ReadOnly = True
-        Me.TxtImpuesto.Size = New System.Drawing.Size(157, 29)
+        Me.TxtImpuesto.Size = New System.Drawing.Size(157, 33)
         Me.TxtImpuesto.TabIndex = 15
         '
         'TxtNeto
         '
-        Me.TxtNeto.Font = New System.Drawing.Font("Microsoft YaHei", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtNeto.Location = New System.Drawing.Point(228, 76)
+        Me.TxtNeto.Font = New System.Drawing.Font("Microsoft YaHei", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtNeto.Location = New System.Drawing.Point(228, 69)
         Me.TxtNeto.Name = "TxtNeto"
         Me.TxtNeto.ReadOnly = True
-        Me.TxtNeto.Size = New System.Drawing.Size(157, 29)
+        Me.TxtNeto.Size = New System.Drawing.Size(157, 33)
         Me.TxtNeto.TabIndex = 16
         '
         'TxtTotal
         '
-        Me.TxtTotal.Font = New System.Drawing.Font("Microsoft YaHei", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtTotal.Location = New System.Drawing.Point(228, 194)
+        Me.TxtTotal.Font = New System.Drawing.Font("Microsoft YaHei", 15.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtTotal.Location = New System.Drawing.Point(228, 193)
         Me.TxtTotal.Name = "TxtTotal"
         Me.TxtTotal.ReadOnly = True
-        Me.TxtTotal.Size = New System.Drawing.Size(157, 29)
+        Me.TxtTotal.Size = New System.Drawing.Size(157, 34)
         Me.TxtTotal.TabIndex = 17
         '
         'Panel1
@@ -401,7 +402,7 @@ Partial Class Home
         '
         'PictureBox1
         '
-        Me.PictureBox1.Image = Global.HotelClementina.My.Resources.Resources.HC_F4
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(12, 143)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(499, 580)
@@ -416,8 +417,8 @@ Partial Class Home
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(1160, 748)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.GbxImpuesto15)
+        Me.Controls.Add(Me.GbxImpuesto4)
         Me.Controls.Add(Me.BtnOcultarISV)
         Me.Controls.Add(Me.BtnMostrarISV)
         Me.Controls.Add(Me.LblUsuario)
@@ -426,10 +427,10 @@ Partial Class Home
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Home"
         Me.Text = "Home"
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.GbxImpuesto15.ResumeLayout(False)
+        Me.GbxImpuesto15.PerformLayout()
+        Me.GbxImpuesto4.ResumeLayout(False)
+        Me.GbxImpuesto4.PerformLayout()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -442,7 +443,7 @@ Partial Class Home
     Friend WithEvents Label2 As Label
     Friend WithEvents BtnOcultarISV As Button
     Friend WithEvents BtnMostrarISV As Button
-    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents GbxImpuesto15 As GroupBox
     Friend WithEvents TxtTotal2 As TextBox
     Friend WithEvents TxtNeto2 As TextBox
     Friend WithEvents TxtImpuesto2 As TextBox
@@ -451,7 +452,7 @@ Partial Class Home
     Friend WithEvents Label9 As Label
     Friend WithEvents Label10 As Label
     Friend WithEvents Label11 As Label
-    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GbxImpuesto4 As GroupBox
     Friend WithEvents Label5 As Label
     Friend WithEvents TxtImpTur As TextBox
     Friend WithEvents Label3 As Label

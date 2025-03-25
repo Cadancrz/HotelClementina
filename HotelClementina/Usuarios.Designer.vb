@@ -44,11 +44,13 @@ Partial Class Usuarios
         Me.TxtContraseña = New System.Windows.Forms.TextBox()
         Me.BtnLimpiar = New System.Windows.Forms.Button()
         Me.BtnCambiarContra = New System.Windows.Forms.Button()
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DgvEmp, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -124,10 +126,10 @@ Partial Class Usuarios
         '
         Me.TxtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtNombre.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TxtNombre.Location = New System.Drawing.Point(639, 251)
+        Me.TxtNombre.Location = New System.Drawing.Point(27, 184)
         Me.TxtNombre.Name = "TxtNombre"
         Me.TxtNombre.ReadOnly = True
-        Me.TxtNombre.Size = New System.Drawing.Size(416, 25)
+        Me.TxtNombre.Size = New System.Drawing.Size(358, 25)
         Me.TxtNombre.TabIndex = 98
         '
         'Label6
@@ -135,7 +137,7 @@ Partial Class Usuarios
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(634, 221)
+        Me.Label6.Location = New System.Drawing.Point(21, 144)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(166, 27)
         Me.Label6.TabIndex = 96
@@ -146,7 +148,7 @@ Partial Class Usuarios
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(634, 143)
+        Me.Label2.Location = New System.Drawing.Point(21, 42)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(79, 27)
         Me.Label2.TabIndex = 97
@@ -156,10 +158,10 @@ Partial Class Usuarios
         '
         Me.TxtIdentidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtIdentidad.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TxtIdentidad.Location = New System.Drawing.Point(639, 173)
+        Me.TxtIdentidad.Location = New System.Drawing.Point(27, 82)
         Me.TxtIdentidad.Name = "TxtIdentidad"
         Me.TxtIdentidad.ReadOnly = True
-        Me.TxtIdentidad.Size = New System.Drawing.Size(416, 25)
+        Me.TxtIdentidad.Size = New System.Drawing.Size(358, 25)
         Me.TxtIdentidad.TabIndex = 99
         '
         'DgvUsuarios
@@ -304,6 +306,21 @@ Partial Class Usuarios
         Me.BtnCambiarContra.Text = "Cambiar Contraseña"
         Me.BtnCambiarContra.UseVisualStyleBackColor = False
         '
+        'GroupBox3
+        '
+        Me.GroupBox3.Controls.Add(Me.Label6)
+        Me.GroupBox3.Controls.Add(Me.TxtIdentidad)
+        Me.GroupBox3.Controls.Add(Me.Label2)
+        Me.GroupBox3.Controls.Add(Me.TxtNombre)
+        Me.GroupBox3.Font = New System.Drawing.Font("Dubai", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox3.ForeColor = System.Drawing.Color.White
+        Me.GroupBox3.Location = New System.Drawing.Point(638, 91)
+        Me.GroupBox3.Name = "GroupBox3"
+        Me.GroupBox3.Size = New System.Drawing.Size(417, 244)
+        Me.GroupBox3.TabIndex = 106
+        Me.GroupBox3.TabStop = False
+        Me.GroupBox3.Text = "Información del Empleado"
+        '
         'Usuarios
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -321,12 +338,9 @@ Partial Class Usuarios
         Me.Controls.Add(Me.TxtContraseña)
         Me.Controls.Add(Me.BtnLimpiar)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.TxtNombre)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.TxtIdentidad)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.Panel1)
+        Me.Controls.Add(Me.GroupBox3)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Usuarios"
         Me.Text = "Usuarios"
@@ -337,6 +351,8 @@ Partial Class Usuarios
         CType(Me.DgvEmp, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DgvUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox3.ResumeLayout(False)
+        Me.GroupBox3.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -364,4 +380,5 @@ Partial Class Usuarios
     Friend WithEvents TxtContraseña As TextBox
     Friend WithEvents BtnLimpiar As Button
     Friend WithEvents BtnCambiarContra As Button
+    Friend WithEvents GroupBox3 As GroupBox
 End Class

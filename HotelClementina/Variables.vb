@@ -1,12 +1,9 @@
-﻿Imports System.Data.SqlClient
-
-Public Class Variables
+﻿Imports System.Data.SqlClient 'libreria de SQL
+Module Variables
     'Clase
-    Public ClaseConeccion As New ClsConexion 'variable para llamar a la clase conexion
-
+    Public con As New ClsConexion 'variable para llamar a la clase conexion
     'Data
     Public cmd As New SqlClient.SqlCommand 'variable SQL para ejecutar comandos
-
     Public numAtext As String 'variable que guarda la cantidad en letras del total
     Public varfactura As Integer 'variable para dirigir a factura o facturacion
     Public Usuario As String 'variable para guardar el nombre de usuario
@@ -23,5 +20,4 @@ Public Class Variables
     Public RPTPlanilla As String 'variable para guardar los codigos de los reportes
     Public pagoatrasado As String 'variable para pagar facturas atrasadas
 
-
-End Class
+End Module

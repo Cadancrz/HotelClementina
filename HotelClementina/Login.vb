@@ -83,13 +83,12 @@ Public Class Login
                     If codCargo = 1 Then
                         MsgBox("Bienvenido(a) " & NombreEmpleado, MsgBoxStyle.Information, "Acceso Permitido")
                     Else
-                        MsgBox("Bienvenido(a) " & NombreEmpleado, MsgBoxStyle.Information, "Acceso Permitido")
-                        PanelPrincipalMenu.BtnEmpleados.Visible = False
                         PanelPrincipalMenu.BtnTipoHab.Visible = False
                         PanelPrincipalMenu.BtnUsuarios.Visible = False
                         PanelPrincipalMenu.BtnSalon.Visible = False
                         PanelPrincipalMenu.BtnBitacora.Visible = False
                         PanelPrincipalMenu.PnHabitaciones.Height = 32 ' Establecer el alto a píxeles
+                        MsgBox("Bienvenido(a) " & NombreEmpleado, MsgBoxStyle.Information, "Acceso Permitido")
                     End If
 
                     ' Asignar Id_Usu al TxtCodEmp

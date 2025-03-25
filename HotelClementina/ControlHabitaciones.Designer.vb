@@ -22,6 +22,7 @@ Partial Class ControlHabitaciones
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ControlHabitaciones))
         Me.btnFact01 = New System.Windows.Forms.Button()
         Me.btnDet01 = New System.Windows.Forms.Button()
         Me.btnRes01 = New System.Windows.Forms.Button()
@@ -41,6 +42,7 @@ Partial Class ControlHabitaciones
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.btnRes03 = New System.Windows.Forms.Button()
         Me.btnDisp03 = New System.Windows.Forms.Button()
@@ -64,6 +66,7 @@ Partial Class ControlHabitaciones
         Me.Button8 = New System.Windows.Forms.Button()
         Me.btnDet05 = New System.Windows.Forms.Button()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.btnRes04 = New System.Windows.Forms.Button()
         Me.btnDisp04 = New System.Windows.Forms.Button()
@@ -71,6 +74,7 @@ Partial Class ControlHabitaciones
         Me.Button7 = New System.Windows.Forms.Button()
         Me.btnFact04 = New System.Windows.Forms.Button()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Button16 = New System.Windows.Forms.Button()
         Me.BtnFact13 = New System.Windows.Forms.Button()
         Me.btnDet13 = New System.Windows.Forms.Button()
@@ -86,6 +90,7 @@ Partial Class ControlHabitaciones
         Me.btnRes10 = New System.Windows.Forms.Button()
         Me.btnDet10 = New System.Windows.Forms.Button()
         Me.GroupBox9 = New System.Windows.Forms.GroupBox()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.Button15 = New System.Windows.Forms.Button()
         Me.PictureBox9 = New System.Windows.Forms.PictureBox()
         Me.btnRes12 = New System.Windows.Forms.Button()
@@ -101,6 +106,7 @@ Partial Class ControlHabitaciones
         Me.btnRes09 = New System.Windows.Forms.Button()
         Me.btnDisp09 = New System.Windows.Forms.Button()
         Me.GroupBox11 = New System.Windows.Forms.GroupBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.Button14 = New System.Windows.Forms.Button()
         Me.btnFact11 = New System.Windows.Forms.Button()
         Me.btnDet11 = New System.Windows.Forms.Button()
@@ -147,11 +153,6 @@ Partial Class ControlHabitaciones
         Me.btnDisp14 = New System.Windows.Forms.Button()
         Me.btnDet14 = New System.Windows.Forms.Button()
         Me.BtnFact14 = New System.Windows.Forms.Button()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -356,7 +357,7 @@ Partial Class ControlHabitaciones
         'PictureBox5
         '
         Me.PictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox5.Image = Global.HotelClementina.My.Resources.Resources.puerta1Sinfondo1
+        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
         Me.PictureBox5.Location = New System.Drawing.Point(6, 43)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(62, 90)
@@ -396,7 +397,7 @@ Partial Class ControlHabitaciones
         'PictureBox3
         '
         Me.PictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox3.Image = Global.HotelClementina.My.Resources.Resources.puerta1Sinfondo1
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
         Me.PictureBox3.Location = New System.Drawing.Point(9, 43)
         Me.PictureBox3.Name = "PictureBox3"
         Me.PictureBox3.Size = New System.Drawing.Size(62, 90)
@@ -435,10 +436,21 @@ Partial Class ControlHabitaciones
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "03"
         '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(6, 137)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(65, 27)
+        Me.Label5.TabIndex = 138
+        Me.Label5.Text = "Sencilla"
+        '
         'PictureBox4
         '
         Me.PictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox4.Image = Global.HotelClementina.My.Resources.Resources.puerta1Sinfondo1
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
         Me.PictureBox4.Location = New System.Drawing.Point(9, 43)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(62, 90)
@@ -569,7 +581,7 @@ Partial Class ControlHabitaciones
         'PictureBox6
         '
         Me.PictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox6.Image = Global.HotelClementina.My.Resources.Resources.puerta1Sinfondo1
+        Me.PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), System.Drawing.Image)
         Me.PictureBox6.Location = New System.Drawing.Point(9, 43)
         Me.PictureBox6.Name = "PictureBox6"
         Me.PictureBox6.Size = New System.Drawing.Size(62, 90)
@@ -648,7 +660,7 @@ Partial Class ControlHabitaciones
         'PictureBox7
         '
         Me.PictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox7.Image = Global.HotelClementina.My.Resources.Resources.puerta1Sinfondo1
+        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
         Me.PictureBox7.Location = New System.Drawing.Point(9, 43)
         Me.PictureBox7.Name = "PictureBox7"
         Me.PictureBox7.Size = New System.Drawing.Size(62, 90)
@@ -739,10 +751,21 @@ Partial Class ControlHabitaciones
         Me.GroupBox6.TabStop = False
         Me.GroupBox6.Text = "04"
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label9.ForeColor = System.Drawing.Color.White
+        Me.Label9.Location = New System.Drawing.Point(6, 137)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(65, 27)
+        Me.Label9.TabIndex = 142
+        Me.Label9.Text = "Sencilla"
+        '
         'PictureBox8
         '
         Me.PictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox8.Image = Global.HotelClementina.My.Resources.Resources.puerta1Sinfondo1
+        Me.PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), System.Drawing.Image)
         Me.PictureBox8.Location = New System.Drawing.Point(9, 43)
         Me.PictureBox8.Name = "PictureBox8"
         Me.PictureBox8.Size = New System.Drawing.Size(62, 90)
@@ -833,6 +856,17 @@ Partial Class ControlHabitaciones
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "13"
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(6, 137)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(65, 27)
+        Me.Label4.TabIndex = 173
+        Me.Label4.Text = "Sencilla"
+        '
         'Button16
         '
         Me.Button16.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(49, Byte), Integer))
@@ -875,7 +909,7 @@ Partial Class ControlHabitaciones
         'PictureBox1
         '
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox1.Image = Global.HotelClementina.My.Resources.Resources.puerta1Sinfondo1
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
         Me.PictureBox1.Location = New System.Drawing.Point(9, 43)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(62, 90)
@@ -954,7 +988,7 @@ Partial Class ControlHabitaciones
         'PictureBox2
         '
         Me.PictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox2.Image = Global.HotelClementina.My.Resources.Resources.puerta1Sinfondo1
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
         Me.PictureBox2.Location = New System.Drawing.Point(9, 43)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(62, 90)
@@ -1032,6 +1066,17 @@ Partial Class ControlHabitaciones
         Me.GroupBox9.TabStop = False
         Me.GroupBox9.Text = "12"
         '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label12.ForeColor = System.Drawing.Color.White
+        Me.Label12.Location = New System.Drawing.Point(6, 137)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(65, 27)
+        Me.Label12.TabIndex = 161
+        Me.Label12.Text = "Sencilla"
+        '
         'Button15
         '
         Me.Button15.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(49, Byte), Integer))
@@ -1048,7 +1093,7 @@ Partial Class ControlHabitaciones
         'PictureBox9
         '
         Me.PictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox9.Image = Global.HotelClementina.My.Resources.Resources.puerta1Sinfondo1
+        Me.PictureBox9.Image = CType(resources.GetObject("PictureBox9.Image"), System.Drawing.Image)
         Me.PictureBox9.Location = New System.Drawing.Point(9, 43)
         Me.PictureBox9.Name = "PictureBox9"
         Me.PictureBox9.Size = New System.Drawing.Size(62, 90)
@@ -1166,7 +1211,7 @@ Partial Class ControlHabitaciones
         'PictureBox10
         '
         Me.PictureBox10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox10.Image = Global.HotelClementina.My.Resources.Resources.puerta1Sinfondo1
+        Me.PictureBox10.Image = CType(resources.GetObject("PictureBox10.Image"), System.Drawing.Image)
         Me.PictureBox10.Location = New System.Drawing.Point(9, 43)
         Me.PictureBox10.Name = "PictureBox10"
         Me.PictureBox10.Size = New System.Drawing.Size(62, 90)
@@ -1231,6 +1276,17 @@ Partial Class ControlHabitaciones
         Me.GroupBox11.TabStop = False
         Me.GroupBox11.Text = "11"
         '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label10.ForeColor = System.Drawing.Color.White
+        Me.Label10.Location = New System.Drawing.Point(6, 137)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(65, 27)
+        Me.Label10.TabIndex = 172
+        Me.Label10.Text = "Sencilla"
+        '
         'Button14
         '
         Me.Button14.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(49, Byte), Integer))
@@ -1273,7 +1329,7 @@ Partial Class ControlHabitaciones
         'PictureBox11
         '
         Me.PictureBox11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox11.Image = Global.HotelClementina.My.Resources.Resources.puerta1Sinfondo1
+        Me.PictureBox11.Image = CType(resources.GetObject("PictureBox11.Image"), System.Drawing.Image)
         Me.PictureBox11.Location = New System.Drawing.Point(9, 43)
         Me.PictureBox11.Name = "PictureBox11"
         Me.PictureBox11.Size = New System.Drawing.Size(62, 90)
@@ -1352,7 +1408,7 @@ Partial Class ControlHabitaciones
         'PictureBox12
         '
         Me.PictureBox12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox12.Image = Global.HotelClementina.My.Resources.Resources.puerta1Sinfondo1
+        Me.PictureBox12.Image = CType(resources.GetObject("PictureBox12.Image"), System.Drawing.Image)
         Me.PictureBox12.Location = New System.Drawing.Point(6, 43)
         Me.PictureBox12.Name = "PictureBox12"
         Me.PictureBox12.Size = New System.Drawing.Size(62, 90)
@@ -1457,7 +1513,7 @@ Partial Class ControlHabitaciones
         'PictureBox13
         '
         Me.PictureBox13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox13.Image = Global.HotelClementina.My.Resources.Resources.puerta1Sinfondo1
+        Me.PictureBox13.Image = CType(resources.GetObject("PictureBox13.Image"), System.Drawing.Image)
         Me.PictureBox13.Location = New System.Drawing.Point(9, 39)
         Me.PictureBox13.Name = "PictureBox13"
         Me.PictureBox13.Size = New System.Drawing.Size(62, 90)
@@ -1575,7 +1631,7 @@ Partial Class ControlHabitaciones
         'PictureBox15
         '
         Me.PictureBox15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox15.Image = Global.HotelClementina.My.Resources.Resources.puerta1Sinfondo1
+        Me.PictureBox15.Image = CType(resources.GetObject("PictureBox15.Image"), System.Drawing.Image)
         Me.PictureBox15.Location = New System.Drawing.Point(9, 39)
         Me.PictureBox15.Name = "PictureBox15"
         Me.PictureBox15.Size = New System.Drawing.Size(62, 90)
@@ -1680,7 +1736,7 @@ Partial Class ControlHabitaciones
         'PictureBox16
         '
         Me.PictureBox16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox16.Image = Global.HotelClementina.My.Resources.Resources.puerta1Sinfondo1
+        Me.PictureBox16.Image = CType(resources.GetObject("PictureBox16.Image"), System.Drawing.Image)
         Me.PictureBox16.Location = New System.Drawing.Point(9, 39)
         Me.PictureBox16.Name = "PictureBox16"
         Me.PictureBox16.Size = New System.Drawing.Size(62, 90)
@@ -1772,7 +1828,7 @@ Partial Class ControlHabitaciones
         'PictureBox17
         '
         Me.PictureBox17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PictureBox17.Image = Global.HotelClementina.My.Resources.Resources.puerta1Sinfondo1
+        Me.PictureBox17.Image = CType(resources.GetObject("PictureBox17.Image"), System.Drawing.Image)
         Me.PictureBox17.Location = New System.Drawing.Point(6, 43)
         Me.PictureBox17.Name = "PictureBox17"
         Me.PictureBox17.Size = New System.Drawing.Size(62, 90)
@@ -1831,61 +1887,6 @@ Partial Class ControlHabitaciones
         Me.BtnFact14.TabIndex = 166
         Me.BtnFact14.Text = "Facturar"
         Me.BtnFact14.UseVisualStyleBackColor = False
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label5.ForeColor = System.Drawing.Color.White
-        Me.Label5.Location = New System.Drawing.Point(6, 137)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(65, 27)
-        Me.Label5.TabIndex = 138
-        Me.Label5.Text = "Sencilla"
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(6, 137)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(65, 27)
-        Me.Label9.TabIndex = 142
-        Me.Label9.Text = "Sencilla"
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label10.ForeColor = System.Drawing.Color.White
-        Me.Label10.Location = New System.Drawing.Point(6, 137)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(65, 27)
-        Me.Label10.TabIndex = 172
-        Me.Label10.Text = "Sencilla"
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(6, 137)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(65, 27)
-        Me.Label12.TabIndex = 161
-        Me.Label12.Text = "Sencilla"
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(6, 137)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(65, 27)
-        Me.Label4.TabIndex = 173
-        Me.Label4.Text = "Sencilla"
         '
         'ControlHabitaciones
         '

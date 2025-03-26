@@ -207,7 +207,16 @@ Public Class RegistroHuespedes
             query = "SELECT * FROM Clientes WHERE Cod_Cli='" & TxtIdentidad.Text & "'"
             If con.val(query) = False Then
                 ' Obtener el código del país seleccionado
-                Dim codPais As Integer = CInt(CmbNacion.SelectedValue)
+                Dim codPais As Integer
+                query = "Select Cod_Pais from Nacionalidad where Pais = '" & CmbNacion.Text & "'"
+
+                If con.val(query) = True Then
+                    export = con.reader(query)
+                    While export.Read
+                        codPais = export.GetInt32(0)
+                    End While
+                    export.Close()
+                End If
 
                 ' Escapar comillas simples en los nombres para evitar errores
                 Dim nomHuespedEscapado As String = TxtNombres.Text.Replace("'", "''")
@@ -219,7 +228,7 @@ Public Class RegistroHuespedes
                 Dim tipoCliente As Integer = If(CmbTipoCliente.SelectedItem.ToString() = "Credito", 0, 1)
 
                 ' Insertar el huésped en la base de datos
-                StrInsert = "INSERT INTO Clientes (Cod_Cli, Nom_Cli, Tel1_Huesped, Tel2_Huesped, Empresa_Huesped, Cod_Pais, Procedencia, Observaciones, Tipo_Cliente) " &
+                StrInsert = "INSERT INTO Clientes (Cod_Cli, Nom_Cli, Tel1_Huesped, Tel2_Huesped, Empresa_Huesped, Cod_Pais, Procedencia, Observaciones, Tipo_Cli) " &
                         "VALUES ('" & TxtIdentidad.Text & "', '" & nomHuespedEscapado & "', '" & TxtTel1.Text & "', '" & TxtTel2.Text & "', '" & empresaEscapada & "', '" & codPais & "', '" & procedenciaEscapada & "', '" & observacionesEscapadas & "', '" & tipoCliente & "')"
                 con.insertar(StrInsert)
 
@@ -239,6 +248,10 @@ Public Class RegistroHuespedes
                 MsgBox("Este código de cliente ya está registrado", MsgBoxStyle.Information, "Información")
             End If
         End If
+    End Sub
+
+    Private Sub CmbNacion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbNacion.SelectedIndexChanged
+
     End Sub
 
     Private Sub TxtTel1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtTel1.KeyPress

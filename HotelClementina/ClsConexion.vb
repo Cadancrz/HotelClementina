@@ -191,5 +191,18 @@ Public Class ClsConexion
             MsgBox(ex.Message) 'despliega mensaje de error
         End Try
     End Sub
-
+    Public Sub eliminar(ByVal query As String, Optional ByVal parametros As List(Of SqlParameter) = Nothing)
+        Dim comando As New SqlCommand(query, cnn)
+        Try
+            conectar()
+            If parametros IsNot Nothing Then
+                comando.Parameters.AddRange(parametros.ToArray())
+            End If
+            comando.ExecuteNonQuery()
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Finally
+            desconectar()
+        End Try
+    End Sub
 End Class

@@ -12,6 +12,7 @@ Public Class RegistroHuespedes
     Dim resultado As Integer 'variable para mensajes de confirmacion
     Dim conthuesped As Integer 'variable contador de huespedes
     Dim tipocliente As Integer 'variable que guarda el tipo del cliente, contado/credito
+
     ' Variables globales para la paginación
     Private totalPaginas As Integer = 1 ' Variable para almacenar el total de páginas
     Private paginaActual As Integer = 1
@@ -94,7 +95,7 @@ Public Class RegistroHuespedes
     Private Sub RegistroHuespedes_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CmbNacion.DropDownStyle = ComboBoxStyle.DropDownList 'Evita el ingreso de letras en el combobox
         CmbTipoCliente.DropDownStyle = ComboBoxStyle.DropDownList
-        If codusuario = 1 Then 'si la variable es usuario administrador entra al cliclo
+        If Login.codUsu = 1 Then 'si la variable es usuario administrador entra al cliclo
             BtnEliminar.Visible = True 'habilita el boton
         Else
             BtnEliminar.Visible = False 'desabilita el boton
@@ -232,13 +233,13 @@ Public Class RegistroHuespedes
                         "VALUES ('" & TxtIdentidad.Text & "', '" & nomHuespedEscapado & "', '" & TxtTel1.Text & "', '" & TxtTel2.Text & "', '" & empresaEscapada & "', '" & codPais & "', '" & procedenciaEscapada & "', '" & observacionesEscapadas & "', '" & tipoCliente & "')"
                 con.insertar(StrInsert)
 
-                '' Registrar en la Bitácora
-                'Dim fecha As String = DateTime.Now.ToString("yyyy-MM-dd")
-                'Dim hora As String = DateTime.Now.ToString("HH:mm:ss")
-                'Dim descripcion As String = Login.NombreEmpleado & " registró un nuevo huésped con Identidad: " & TxtIdentidad.Text & " y nombre: " & TxtNombres.Text
+                ' Registrar en la Bitácora
+                Dim fecha As String = DateTime.Now.ToString("yyyy-MM-dd")
+                Dim hora As String = DateTime.Now.ToString("HH:mm:ss")
+                Dim descripcion As String = Login.NombreEmpleado & " registró un nuevo huésped con Identidad: " & TxtIdentidad.Text & " y nombre: " & TxtNombres.Text
 
-                'query = "INSERT INTO Bitacora (Cod_Usu, Fch_Bita, Hrs_Bita, Obs_Bita) VALUES (" & Login.codUsu & ", '" & fecha & "', '" & hora & "', '" & descripcion & "')"
-                'con.insertar(query)
+                query = "INSERT INTO Bitacora (Cod_Usu, Fch_Bita, Hrs_Bita, Obs_Bita) VALUES (" & Login.codUsu & ", '" & fecha & "', '" & hora & "', '" & descripcion & "')"
+                con.insertar(query)
 
                 limpiar()
                 Carga()
@@ -252,6 +253,95 @@ Public Class RegistroHuespedes
 
     Private Sub CmbNacion_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbNacion.SelectedIndexChanged
 
+    End Sub
+
+    Private Sub BtnModificar_Click(sender As Object, e As EventArgs) Handles BtnModificar.Click
+        If TxtIdentidad.Text = "" Or TxtNombres.Text = "" Or TxtTel1.Text = "" Or CmbNacion.SelectedIndex = -1 Or TxtProcedencia.Text = "" Then
+            MsgBox("No se puede modificar, campo vacío!", MsgBoxStyle.Information, "Información")
+            Return
+        End If
+
+        ' Obtener el código del país seleccionado
+        Dim codPais As Integer = 0
+        query = "Select Cod_Pais from Nacionalidad where Pais = '" & CmbNacion.Text & "'"
+
+        If con.val(query) Then
+            export = con.reader(query)
+            If export.Read Then
+                codPais = export.GetInt32(0)
+            End If
+            export.Close()
+        End If
+
+        ' Escapar comillas simples en los nombres para evitar errores
+        Dim nomHuespedEscapado As String = TxtNombres.Text.Replace("'", "''")
+        Dim procedenciaEscapada As String = TxtProcedencia.Text.Replace("'", "''")
+        Dim observacionesEscapadas As String = TxtObservaciones.Text.Replace("'", "''")
+        Dim empresaEscapada As String = TxtEmpresa.Text.Replace("'", "''")
+
+        ' Determinar si el cliente es de crédito o contado
+        Dim tipoCliente As Integer = If(CmbTipoCliente.SelectedItem.ToString() = "Credito", 0, 1)
+
+        ' Actualizar el huésped en la base de datos
+        Dim strUpdate As String = "UPDATE Clientes SET " &
+                                  "Nom_Cli = '" & nomHuespedEscapado & "', " &
+                                  "Tel1_Huesped = '" & TxtTel1.Text & "', " &
+                                  "Tel2_Huesped = '" & TxtTel2.Text & "', " &
+                                  "Empresa_Huesped = '" & empresaEscapada & "', " &
+                                  "Cod_Pais = '" & codPais & "', " &
+                                  "Procedencia = '" & procedenciaEscapada & "', " &
+                                  "Observaciones = '" & observacionesEscapadas & "', " &
+                                  "Tipo_Cli = '" & tipoCliente & "' " &
+                                  "WHERE Cod_Cli = '" & TxtIdentidad.Text & "'"
+        con.insertar(strUpdate)
+
+        'Registrar en la Bitácora
+        Dim fecha As String = DateTime.Now.ToString("yyyy-MM-dd")
+        Dim hora As String = DateTime.Now.ToString("HH:mm:ss")
+        Dim descripcion As String = Login.NombreEmpleado & " modificó un huésped con Identidad: " & TxtIdentidad.Text & " y nombre: " & TxtNombres.Text
+
+        query = "INSERT INTO Bitacora (Cod_Usu, Fch_Bita, Hrs_Bita, Obs_Bita) VALUES (" & Login.codUsu & ", '" & fecha & "', '" & hora & "', '" & descripcion & "')"
+        con.insertar(query)
+
+        limpiar()
+        Carga()
+        MsgBox("Registro Modificado", MsgBoxStyle.Information, "Información")
+        TxtIdentidad.Focus()
+    End Sub
+
+    Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
+        If TxtIdentidad.Text = "" Then
+            MsgBox("Seleccione un huésped para eliminar", MsgBoxStyle.Information, "Información")
+            Return
+        End If
+
+        Dim resultado As DialogResult = MsgBox("¿Está seguro de que desea eliminar este huésped?", MsgBoxStyle.YesNo, "Confirmar eliminación")
+
+        If resultado = DialogResult.Yes Then
+            Try
+                ' Eliminar el huésped de la base de datos usando parámetros
+                Dim queryEliminar As String = "DELETE FROM Clientes WHERE Cod_Cli = @CodCli"
+                Dim parametros As New List(Of SqlParameter)()
+                parametros.Add(New SqlParameter("@CodCli", TxtIdentidad.Text))
+
+                con.eliminar(queryEliminar, parametros)
+
+                'Registrar en la Bitácora
+                Dim fecha As String = DateTime.Now.ToString("yyyy-MM-dd")
+                Dim hora As String = DateTime.Now.ToString("HH:mm:ss")
+                Dim descripcion As String = Login.NombreEmpleado & " eliminó un huésped con Identidad: " & TxtIdentidad.Text & " y nombre: " & TxtNombres.Text
+
+                query = "INSERT INTO Bitacora (Cod_Usu, Fch_Bita, Hrs_Bita, Obs_Bita) VALUES (" & Login.codUsu & ", '" & fecha & "', '" & hora & "', '" & descripcion & "')"
+                con.insertar(query)
+
+                limpiar()
+                Carga()
+                MsgBox("Huésped eliminado correctamente", MsgBoxStyle.Information, "Información")
+
+            Catch ex As Exception
+                MsgBox($"Error al eliminar el huésped: {ex.Message}", MsgBoxStyle.Critical, "Error")
+            End Try
+        End If
     End Sub
 
     Private Sub TxtTel1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtTel1.KeyPress
@@ -279,11 +369,9 @@ Public Class RegistroHuespedes
     End Sub
 
     Private Sub BtnEmpresa_Click(sender As Object, e As EventArgs) Handles BtnEmpresa.Click
-        reservacion = "empresa" 'iguala la variable al texto
-        RegistroEmpresas.TxtCodigo.Text = "" 'vacia el texbox
-        RegistroEmpresas.TxtNombre.Text = "" 'vacia el texbox
-        RegistroEmpresas.TxtNombre.Enabled = True 'habilita el texbox
-        RegistroEmpresas.ShowDialog() 'muestra el formulario
+        Dim registroEmpresas As New RegistroEmpresas()
+        registroEmpresas.TextBoxDestino = TxtEmpresa ' Asignar el TextBox destino
+        registroEmpresas.ShowDialog()
     End Sub
 
     Private Sub DgvHuespedes_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DgvHuespedes.CellMouseClick

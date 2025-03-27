@@ -8,7 +8,6 @@ Public Class Empleados
     Dim export As SqlDataReader
     Dim StrInsert As String ' Declaración global de StrInsert
 
-
     Private Sub Empleados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txtCodEmp.Focus()
         Carga()

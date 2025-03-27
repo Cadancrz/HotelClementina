@@ -79,6 +79,12 @@
     <Compile Include="Bitacora.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CambiarContraseña.Designer.vb">
+      <DependentUpon>CambiarContraseña.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CambiarContraseña.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CancelarReservacion.Designer.vb">
       <DependentUpon>CancelarReservacion.vb</DependentUpon>
     </Compile>
@@ -209,6 +215,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Bitacora.resx">
       <DependentUpon>Bitacora.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CambiarContraseña.resx">
+      <DependentUpon>CambiarContraseña.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CancelarReservacion.resx">
       <DependentUpon>CancelarReservacion.vb</DependentUpon>

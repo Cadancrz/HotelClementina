@@ -205,4 +205,20 @@ Public Class ClsConexion
             desconectar()
         End Try
     End Sub
+
+    'funcion para hacer autoumerado'
+    Public Function autonum(ByVal con1 As String, ByVal con2 As String)
+        query = con1 'consulta para cargar el codigo de la tabla factura
+        If con.val(query) = True Then 'si carga algun codigo hace la siguiente consulta
+            query = con2 'consulta para seleccionar el codigo maximo en la tabla factura
+            dr = con.reader(query) 'abre el datareader y lee la consulta
+            While dr.Read 'mientras este leyendo datos
+                Det = dr.GetValue(0) + 1 'lee el maximo dato y le suma 1 y lo iguala a la variable
+            End While
+            dr.Close() 'cierra el datareadre
+        Else 'si no encuentra codigo
+            Det = 1 'asigna a la variable valor 1
+        End If
+        Return Det 'retorna el automunerado
+    End Function
 End Class

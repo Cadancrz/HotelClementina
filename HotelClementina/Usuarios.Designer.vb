@@ -22,11 +22,17 @@ Partial Class Usuarios
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TxtBusqueda = New System.Windows.Forms.TextBox()
         Me.DgvEmp = New System.Windows.Forms.DataGridView()
         Me.TxtNombre = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -45,6 +51,7 @@ Partial Class Usuarios
         Me.BtnLimpiar = New System.Windows.Forms.Button()
         Me.BtnCambiarContra = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.LblCodigo = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DgvEmp, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,6 +63,7 @@ Partial Class Usuarios
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(228, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(19, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.LblCodigo)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
@@ -76,13 +84,13 @@ Partial Class Usuarios
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.Label7)
-        Me.GroupBox2.Controls.Add(Me.TextBox1)
+        Me.GroupBox2.Controls.Add(Me.TxtBusqueda)
         Me.GroupBox2.Controls.Add(Me.DgvEmp)
         Me.GroupBox2.Font = New System.Drawing.Font("Dubai", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.White
-        Me.GroupBox2.Location = New System.Drawing.Point(105, 91)
+        Me.GroupBox2.Location = New System.Drawing.Point(82, 91)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(515, 244)
+        Me.GroupBox2.Size = New System.Drawing.Size(538, 244)
         Me.GroupBox2.TabIndex = 90
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Búsqueda de Empleado"
@@ -92,21 +100,21 @@ Partial Class Usuarios
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(16, 38)
+        Me.Label7.Location = New System.Drawing.Point(16, 36)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(68, 27)
         Me.Label7.TabIndex = 105
         Me.Label7.Text = "Nombre"
         '
-        'TextBox1
+        'TxtBusqueda
         '
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TextBox1.Location = New System.Drawing.Point(90, 38)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ShortcutsEnabled = False
-        Me.TextBox1.Size = New System.Drawing.Size(402, 25)
-        Me.TextBox1.TabIndex = 104
+        Me.TxtBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtBusqueda.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
+        Me.TxtBusqueda.Location = New System.Drawing.Point(90, 36)
+        Me.TxtBusqueda.Name = "TxtBusqueda"
+        Me.TxtBusqueda.ShortcutsEnabled = False
+        Me.TxtBusqueda.Size = New System.Drawing.Size(425, 25)
+        Me.TxtBusqueda.TabIndex = 104
         '
         'DgvEmp
         '
@@ -114,19 +122,35 @@ Partial Class Usuarios
         Me.DgvEmp.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DgvEmp.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DgvEmp.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle25.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle25.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle25.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle25.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle25.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle25.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvEmp.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle25
         Me.DgvEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvEmp.Location = New System.Drawing.Point(21, 82)
+        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle26.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle26.Font = New System.Drawing.Font("Dubai", 11.25!)
+        DataGridViewCellStyle26.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvEmp.DefaultCellStyle = DataGridViewCellStyle26
+        Me.DgvEmp.Location = New System.Drawing.Point(21, 73)
         Me.DgvEmp.Name = "DgvEmp"
         Me.DgvEmp.ReadOnly = True
         Me.DgvEmp.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
-        Me.DgvEmp.Size = New System.Drawing.Size(471, 137)
+        Me.DgvEmp.Size = New System.Drawing.Size(494, 153)
         Me.DgvEmp.TabIndex = 103
         '
         'TxtNombre
         '
         Me.TxtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtNombre.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TxtNombre.Location = New System.Drawing.Point(27, 184)
+        Me.TxtNombre.Location = New System.Drawing.Point(27, 176)
         Me.TxtNombre.Name = "TxtNombre"
         Me.TxtNombre.ReadOnly = True
         Me.TxtNombre.Size = New System.Drawing.Size(358, 25)
@@ -137,7 +161,7 @@ Partial Class Usuarios
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(21, 144)
+        Me.Label6.Location = New System.Drawing.Point(21, 136)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(166, 27)
         Me.Label6.TabIndex = 96
@@ -148,7 +172,7 @@ Partial Class Usuarios
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label2.ForeColor = System.Drawing.Color.White
-        Me.Label2.Location = New System.Drawing.Point(21, 42)
+        Me.Label2.Location = New System.Drawing.Point(21, 52)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(79, 27)
         Me.Label2.TabIndex = 97
@@ -158,7 +182,7 @@ Partial Class Usuarios
         '
         Me.TxtIdentidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtIdentidad.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TxtIdentidad.Location = New System.Drawing.Point(27, 82)
+        Me.TxtIdentidad.Location = New System.Drawing.Point(27, 92)
         Me.TxtIdentidad.Name = "TxtIdentidad"
         Me.TxtIdentidad.ReadOnly = True
         Me.TxtIdentidad.Size = New System.Drawing.Size(358, 25)
@@ -167,15 +191,40 @@ Partial Class Usuarios
         'DgvUsuarios
         '
         Me.DgvUsuarios.AllowUserToAddRows = False
+        DataGridViewCellStyle27.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle27.Font = New System.Drawing.Font("Dubai", 11.25!)
+        DataGridViewCellStyle27.ForeColor = System.Drawing.Color.Black
+        Me.DgvUsuarios.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle27
         Me.DgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DgvUsuarios.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DgvUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(82, Byte), Integer))
+        Me.DgvUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None
+        DataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle28.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle28.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle28.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle28.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle28.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle28.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvUsuarios.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle28
         Me.DgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgvUsuarios.Location = New System.Drawing.Point(21, 43)
+        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle29.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle29.Font = New System.Drawing.Font("Dubai", 11.25!)
+        DataGridViewCellStyle29.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvUsuarios.DefaultCellStyle = DataGridViewCellStyle29
+        Me.DgvUsuarios.Location = New System.Drawing.Point(21, 42)
         Me.DgvUsuarios.Name = "DgvUsuarios"
         Me.DgvUsuarios.ReadOnly = True
         Me.DgvUsuarios.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
-        Me.DgvUsuarios.Size = New System.Drawing.Size(610, 286)
+        DataGridViewCellStyle30.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle30.Font = New System.Drawing.Font("Dubai", 11.25!)
+        DataGridViewCellStyle30.ForeColor = System.Drawing.Color.Black
+        Me.DgvUsuarios.RowsDefaultCellStyle = DataGridViewCellStyle30
+        Me.DgvUsuarios.Size = New System.Drawing.Size(635, 286)
         Me.DgvUsuarios.TabIndex = 116
         '
         'GroupBox1
@@ -183,9 +232,9 @@ Partial Class Usuarios
         Me.GroupBox1.Controls.Add(Me.DgvUsuarios)
         Me.GroupBox1.Font = New System.Drawing.Font("Dubai", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.GroupBox1.Location = New System.Drawing.Point(105, 352)
+        Me.GroupBox1.Location = New System.Drawing.Point(82, 352)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(651, 359)
+        Me.GroupBox1.Size = New System.Drawing.Size(674, 351)
         Me.GroupBox1.TabIndex = 106
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Usuarios"
@@ -216,7 +265,7 @@ Partial Class Usuarios
         Me.BtnModificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnModificar.Font = New System.Drawing.Font("Dubai", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnModificar.Location = New System.Drawing.Point(926, 606)
+        Me.BtnModificar.Location = New System.Drawing.Point(926, 597)
         Me.BtnModificar.Name = "BtnModificar"
         Me.BtnModificar.Size = New System.Drawing.Size(129, 47)
         Me.BtnModificar.TabIndex = 127
@@ -228,7 +277,7 @@ Partial Class Usuarios
         Me.BtnGuardar.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnGuardar.Font = New System.Drawing.Font("Dubai", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnGuardar.Location = New System.Drawing.Point(780, 606)
+        Me.BtnGuardar.Location = New System.Drawing.Point(780, 597)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(129, 47)
         Me.BtnGuardar.TabIndex = 126
@@ -240,7 +289,7 @@ Partial Class Usuarios
         Me.RbAdmin.AutoSize = True
         Me.RbAdmin.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
         Me.RbAdmin.ForeColor = System.Drawing.Color.White
-        Me.RbAdmin.Location = New System.Drawing.Point(781, 560)
+        Me.RbAdmin.Location = New System.Drawing.Point(781, 556)
         Me.RbAdmin.Name = "RbAdmin"
         Me.RbAdmin.Size = New System.Drawing.Size(131, 31)
         Me.RbAdmin.TabIndex = 125
@@ -253,7 +302,7 @@ Partial Class Usuarios
         Me.RbInvitado.AutoSize = True
         Me.RbInvitado.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
         Me.RbInvitado.ForeColor = System.Drawing.Color.White
-        Me.RbInvitado.Location = New System.Drawing.Point(935, 560)
+        Me.RbInvitado.Location = New System.Drawing.Point(935, 556)
         Me.RbInvitado.Name = "RbInvitado"
         Me.RbInvitado.Size = New System.Drawing.Size(88, 31)
         Me.RbInvitado.TabIndex = 124
@@ -266,7 +315,7 @@ Partial Class Usuarios
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(776, 434)
+        Me.Label4.Location = New System.Drawing.Point(775, 433)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(91, 27)
         Me.Label4.TabIndex = 123
@@ -276,7 +325,7 @@ Partial Class Usuarios
         '
         Me.TxtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtContraseña.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TxtContraseña.Location = New System.Drawing.Point(781, 464)
+        Me.TxtContraseña.Location = New System.Drawing.Point(780, 463)
         Me.TxtContraseña.Name = "TxtContraseña"
         Me.TxtContraseña.ShortcutsEnabled = False
         Me.TxtContraseña.Size = New System.Drawing.Size(275, 25)
@@ -287,7 +336,7 @@ Partial Class Usuarios
         Me.BtnLimpiar.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnLimpiar.Font = New System.Drawing.Font("Dubai", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnLimpiar.Location = New System.Drawing.Point(781, 664)
+        Me.BtnLimpiar.Location = New System.Drawing.Point(780, 656)
         Me.BtnLimpiar.Name = "BtnLimpiar"
         Me.BtnLimpiar.Size = New System.Drawing.Size(274, 47)
         Me.BtnLimpiar.TabIndex = 121
@@ -299,7 +348,7 @@ Partial Class Usuarios
         Me.BtnCambiarContra.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(167, Byte), Integer))
         Me.BtnCambiarContra.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnCambiarContra.Font = New System.Drawing.Font("Dubai", 12.75!, System.Drawing.FontStyle.Bold)
-        Me.BtnCambiarContra.Location = New System.Drawing.Point(781, 505)
+        Me.BtnCambiarContra.Location = New System.Drawing.Point(780, 504)
         Me.BtnCambiarContra.Name = "BtnCambiarContra"
         Me.BtnCambiarContra.Size = New System.Drawing.Size(274, 43)
         Me.BtnCambiarContra.TabIndex = 130
@@ -320,6 +369,15 @@ Partial Class Usuarios
         Me.GroupBox3.TabIndex = 106
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Información del Empleado"
+        '
+        'LblCodigo
+        '
+        Me.LblCodigo.AutoSize = True
+        Me.LblCodigo.Location = New System.Drawing.Point(18, 17)
+        Me.LblCodigo.Name = "LblCodigo"
+        Me.LblCodigo.Size = New System.Drawing.Size(0, 13)
+        Me.LblCodigo.TabIndex = 131
+        Me.LblCodigo.Visible = False
         '
         'Usuarios
         '
@@ -361,7 +419,7 @@ Partial Class Usuarios
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TxtBusqueda As TextBox
     Friend WithEvents DgvEmp As DataGridView
     Friend WithEvents Label7 As Label
     Friend WithEvents TxtNombre As TextBox
@@ -381,4 +439,5 @@ Partial Class Usuarios
     Friend WithEvents BtnLimpiar As Button
     Friend WithEvents BtnCambiarContra As Button
     Friend WithEvents GroupBox3 As GroupBox
+    Friend WithEvents LblCodigo As Label
 End Class

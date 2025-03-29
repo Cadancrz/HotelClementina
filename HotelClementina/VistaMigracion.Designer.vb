@@ -22,31 +22,34 @@ Partial Class VistaMigracion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(VistaMigracion))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TxtNombre = New System.Windows.Forms.TextBox()
-        Me.TxtIdentidad = New System.Windows.Forms.TextBox()
         Me.BtnAceptar = New System.Windows.Forms.Button()
         Me.BtnQuitar = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TxtIdentidad = New System.Windows.Forms.TextBox()
+        Me.TxtNombre = New System.Windows.Forms.TextBox()
         Me.DgvHuespedes = New System.Windows.Forms.DataGridView()
         Me.LblNumFila = New System.Windows.Forms.Label()
         Me.LblFecha = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         CType(Me.DgvHuespedes, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(228, Byte), Integer), CType(CType(187, Byte), Integer), CType(CType(19, Byte), Integer))
+        Me.Panel1.Controls.Add(Me.PictureBox1)
+        Me.Panel1.Controls.Add(Me.LblNumFila)
         Me.Panel1.Controls.Add(Me.Label1)
         Me.Panel1.Location = New System.Drawing.Point(12, 12)
         Me.Panel1.Name = "Panel1"
@@ -66,72 +69,26 @@ Partial Class VistaMigracion
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.BtnAceptar)
+        Me.GroupBox1.Controls.Add(Me.LblFecha)
         Me.GroupBox1.Controls.Add(Me.BtnQuitar)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
         Me.GroupBox1.Controls.Add(Me.TxtIdentidad)
         Me.GroupBox1.Controls.Add(Me.TxtNombre)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 127)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 87)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(1136, 142)
+        Me.GroupBox1.Size = New System.Drawing.Size(1136, 126)
         Me.GroupBox1.TabIndex = 34
         Me.GroupBox1.TabStop = False
-        '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label4.ForeColor = System.Drawing.Color.White
-        Me.Label4.Location = New System.Drawing.Point(23, 71)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(68, 27)
-        Me.Label4.TabIndex = 139
-        Me.Label4.Text = "Nombre"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(23, 16)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(79, 27)
-        Me.Label3.TabIndex = 138
-        Me.Label3.Text = "Identidad"
-        '
-        'TxtNombre
-        '
-        Me.TxtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TxtNombre.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TxtNombre.Location = New System.Drawing.Point(28, 101)
-        Me.TxtNombre.MaxLength = 25
-        Me.TxtNombre.Name = "TxtNombre"
-        Me.TxtNombre.ReadOnly = True
-        Me.TxtNombre.ShortcutsEnabled = False
-        Me.TxtNombre.Size = New System.Drawing.Size(555, 25)
-        Me.TxtNombre.TabIndex = 137
-        '
-        'TxtIdentidad
-        '
-        Me.TxtIdentidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtIdentidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
-        Me.TxtIdentidad.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TxtIdentidad.Location = New System.Drawing.Point(28, 46)
-        Me.TxtIdentidad.MaxLength = 25
-        Me.TxtIdentidad.Name = "TxtIdentidad"
-        Me.TxtIdentidad.ReadOnly = True
-        Me.TxtIdentidad.ShortcutsEnabled = False
-        Me.TxtIdentidad.Size = New System.Drawing.Size(555, 25)
-        Me.TxtIdentidad.TabIndex = 136
         '
         'BtnAceptar
         '
         Me.BtnAceptar.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnAceptar.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnAceptar.Location = New System.Drawing.Point(604, 46)
+        Me.BtnAceptar.Location = New System.Drawing.Point(600, 25)
         Me.BtnAceptar.Name = "BtnAceptar"
         Me.BtnAceptar.Size = New System.Drawing.Size(159, 38)
         Me.BtnAceptar.TabIndex = 95
@@ -143,12 +100,60 @@ Partial Class VistaMigracion
         Me.BtnQuitar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.BtnQuitar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnQuitar.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnQuitar.Location = New System.Drawing.Point(604, 90)
+        Me.BtnQuitar.Location = New System.Drawing.Point(600, 69)
         Me.BtnQuitar.Name = "BtnQuitar"
         Me.BtnQuitar.Size = New System.Drawing.Size(159, 38)
         Me.BtnQuitar.TabIndex = 94
         Me.BtnQuitar.Text = "Quitar"
         Me.BtnQuitar.UseVisualStyleBackColor = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(20, 74)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(68, 27)
+        Me.Label4.TabIndex = 139
+        Me.Label4.Text = "Nombre"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(20, 29)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(79, 27)
+        Me.Label3.TabIndex = 138
+        Me.Label3.Text = "Identidad"
+        '
+        'TxtIdentidad
+        '
+        Me.TxtIdentidad.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtIdentidad.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtIdentidad.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
+        Me.TxtIdentidad.Location = New System.Drawing.Point(106, 31)
+        Me.TxtIdentidad.MaxLength = 25
+        Me.TxtIdentidad.Name = "TxtIdentidad"
+        Me.TxtIdentidad.ReadOnly = True
+        Me.TxtIdentidad.ShortcutsEnabled = False
+        Me.TxtIdentidad.Size = New System.Drawing.Size(474, 25)
+        Me.TxtIdentidad.TabIndex = 136
+        '
+        'TxtNombre
+        '
+        Me.TxtNombre.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtNombre.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
+        Me.TxtNombre.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
+        Me.TxtNombre.Location = New System.Drawing.Point(106, 75)
+        Me.TxtNombre.MaxLength = 25
+        Me.TxtNombre.Name = "TxtNombre"
+        Me.TxtNombre.ReadOnly = True
+        Me.TxtNombre.ShortcutsEnabled = False
+        Me.TxtNombre.Size = New System.Drawing.Size(474, 25)
+        Me.TxtNombre.TabIndex = 137
         '
         'DgvHuespedes
         '
@@ -156,34 +161,34 @@ Partial Class VistaMigracion
         Me.DgvHuespedes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader
         Me.DgvHuespedes.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.DgvHuespedes.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Papyrus", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvHuespedes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Papyrus", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvHuespedes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DgvHuespedes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvHuespedes.Cursor = System.Windows.Forms.Cursors.Hand
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Papyrus", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvHuespedes.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Papyrus", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvHuespedes.DefaultCellStyle = DataGridViewCellStyle6
         Me.DgvHuespedes.GridColor = System.Drawing.SystemColors.AppWorkspace
-        Me.DgvHuespedes.Location = New System.Drawing.Point(12, 286)
+        Me.DgvHuespedes.Location = New System.Drawing.Point(12, 230)
         Me.DgvHuespedes.Name = "DgvHuespedes"
-        Me.DgvHuespedes.Size = New System.Drawing.Size(1136, 450)
+        Me.DgvHuespedes.Size = New System.Drawing.Size(1136, 490)
         Me.DgvHuespedes.TabIndex = 92
         '
         'LblNumFila
         '
         Me.LblNumFila.AutoSize = True
-        Me.LblNumFila.Location = New System.Drawing.Point(763, 377)
+        Me.LblNumFila.Location = New System.Drawing.Point(25, 17)
         Me.LblNumFila.Name = "LblNumFila"
         Me.LblNumFila.Size = New System.Drawing.Size(0, 13)
         Me.LblNumFila.TabIndex = 135
@@ -193,43 +198,33 @@ Partial Class VistaMigracion
         '
         Me.LblFecha.AutoSize = True
         Me.LblFecha.BackColor = System.Drawing.Color.Transparent
-        Me.LblFecha.Font = New System.Drawing.Font("Papyrus", 36.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblFecha.Location = New System.Drawing.Point(397, 336)
+        Me.LblFecha.Font = New System.Drawing.Font("Dubai", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblFecha.Location = New System.Drawing.Point(886, 43)
         Me.LblFecha.Name = "LblFecha"
-        Me.LblFecha.Size = New System.Drawing.Size(0, 76)
-        Me.LblFecha.TabIndex = 134
+        Me.LblFecha.Size = New System.Drawing.Size(0, 36)
+        Me.LblFecha.TabIndex = 136
         Me.LblFecha.TextAlign = System.Drawing.ContentAlignment.TopCenter
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(352, 89)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(0, 13)
-        Me.Label2.TabIndex = 137
-        Me.Label2.Visible = False
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Font = New System.Drawing.Font("Dubai", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(971, 89)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(0, 36)
-        Me.Label5.TabIndex = 136
-        Me.Label5.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Dubai", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(881, 89)
+        Me.Label6.Location = New System.Drawing.Point(796, 43)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(70, 36)
         Me.Label6.TabIndex = 140
         Me.Label6.Text = "Fecha:"
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(1104, 3)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(29, 27)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PictureBox1.TabIndex = 1
+        Me.PictureBox1.TabStop = False
         '
         'VistaMigracion
         '
@@ -237,11 +232,6 @@ Partial Class VistaMigracion
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(1160, 748)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.LblNumFila)
-        Me.Controls.Add(Me.LblFecha)
         Me.Controls.Add(Me.DgvHuespedes)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel1)
@@ -253,8 +243,8 @@ Partial Class VistaMigracion
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.DgvHuespedes, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
 
@@ -270,7 +260,6 @@ Partial Class VistaMigracion
     Friend WithEvents DgvHuespedes As DataGridView
     Friend WithEvents LblNumFila As Label
     Friend WithEvents LblFecha As Label
-    Friend WithEvents Label2 As Label
-    Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

@@ -26,10 +26,10 @@ Partial Class TipoHabitaciones
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.CmbHabitacion = New System.Windows.Forms.ComboBox()
-        Me.BtnAgregar = New System.Windows.Forms.Button()
-        Me.TxtPrecio = New System.Windows.Forms.TextBox()
-        Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.BtnAgregar = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.TxtPrecio = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -79,6 +79,17 @@ Partial Class TipoHabitaciones
         Me.CmbHabitacion.TabIndex = 110
         Me.CmbHabitacion.ValueMember = "Cod_Tipo_Hab"
         '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(29, 30)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(144, 27)
+        Me.Label3.TabIndex = 106
+        Me.Label3.Text = "Tipo de Habitacion"
+        '
         'BtnAgregar
         '
         Me.BtnAgregar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(0, Byte), Integer))
@@ -91,16 +102,6 @@ Partial Class TipoHabitaciones
         Me.BtnAgregar.Text = "Modificar"
         Me.BtnAgregar.UseVisualStyleBackColor = False
         '
-        'TxtPrecio
-        '
-        Me.TxtPrecio.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TxtPrecio.Location = New System.Drawing.Point(34, 154)
-        Me.TxtPrecio.MaxLength = 50
-        Me.TxtPrecio.Name = "TxtPrecio"
-        Me.TxtPrecio.ShortcutsEnabled = False
-        Me.TxtPrecio.Size = New System.Drawing.Size(314, 25)
-        Me.TxtPrecio.TabIndex = 108
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -112,16 +113,15 @@ Partial Class TipoHabitaciones
         Me.Label4.TabIndex = 107
         Me.Label4.Text = "Precio"
         '
-        'Label3
+        'TxtPrecio
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.Label3.ForeColor = System.Drawing.Color.White
-        Me.Label3.Location = New System.Drawing.Point(29, 30)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(144, 27)
-        Me.Label3.TabIndex = 106
-        Me.Label3.Text = "Tipo de Habitacion"
+        Me.TxtPrecio.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
+        Me.TxtPrecio.Location = New System.Drawing.Point(34, 154)
+        Me.TxtPrecio.MaxLength = 50
+        Me.TxtPrecio.Name = "TxtPrecio"
+        Me.TxtPrecio.ShortcutsEnabled = False
+        Me.TxtPrecio.Size = New System.Drawing.Size(314, 25)
+        Me.TxtPrecio.TabIndex = 108
         '
         'TipoHabitaciones
         '

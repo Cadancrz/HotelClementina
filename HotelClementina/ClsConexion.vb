@@ -84,13 +84,13 @@ Public Class ClsConexion
         End Try
     End Sub
 
-    Public Function EjecutarSP(ByVal nombreSP As String, ByVal parametros As List(Of SqlParameter)) As DataTable
+    Public Function EjecutarSP(ByVal nombreSP As String, Optional ByVal parametros As List(Of SqlParameter) = Nothing) As DataTable
         Dim dt As New DataTable()
         Try
             conectar()
             Using cmd As New SqlCommand(nombreSP, cnn)
                 cmd.CommandType = CommandType.StoredProcedure
-                If parametros IsNot Nothing Then
+                If parametros IsNot Nothing AndAlso parametros.Count > 0 Then ' Verifica si hay parámetros
                     cmd.Parameters.AddRange(parametros.ToArray())
                 End If
                 Using da As New SqlDataAdapter(cmd)

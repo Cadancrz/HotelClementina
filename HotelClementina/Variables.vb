@@ -20,4 +20,9 @@ Module Variables
     Public RPTPlanilla As String 'variable para guardar los codigos de los reportes
     Public pagoatrasado As String 'variable para pagar facturas atrasadas
 
+
+    'Formulario Habitaciones
+    Public numhab As Integer
+    Public estadohabitacion As Integer '1 disponible, 0 ocupada
+    Public frmReservasAbierto As Integer
 End Module

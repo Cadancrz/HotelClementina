@@ -1,12 +1,12 @@
 ﻿Imports System.Data.SqlClient 'libreria de SQL
 Public Class ClsConexion
-    Public servidor As String = "Data Source=Localhost;Initial Catalog=Hotel_Clementina;Integrated Security=True" 'variable para guardar la conexion con el servidor en SQL
+    Public servidor As String = "Data Source=VIERNES\VIERNES;Initial Catalog=Hotel_Clementina;Integrated Security=True" 'variable para guardar la conexion con el servidor en SQL
     Public cnn As New SqlConnection(servidor) 'variable conexion con el parametro del servidor
     Dim query As String 'variable para las consultas
     Dim dr As IDataReader 'para leer cadenas de datos'
     Dim Det As Integer 'variable usada para el autonumerado
 
-    Public ClsConect As New SqlConnection("Data Source=Localhost;Initial Catalog=Hotel_Clementina;Integrated Security=True") 'conexion con la BD
+    Public ClsConect As New SqlConnection("Data Source=VIERNES\VIERNES;Initial Catalog=Hotel_Clementina;Integrated Security=True") 'conexion con la BD
 
     Public Sub conectar()
         Try

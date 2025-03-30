@@ -8,6 +8,7 @@
 
     Private Sub Home_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         LblUsuario.Text = Login.NombreEmpleado
+
     End Sub
 
     Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click

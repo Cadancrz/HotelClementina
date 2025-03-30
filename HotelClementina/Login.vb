@@ -111,6 +111,7 @@ Public Class Login
     End Sub
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Lblhorafecha.Text = DateTime.Now.Hour
         Dim con As New ClsConexion()
         con.conectar()
         TxtUsuario.Focus()

@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Login
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,10 +20,9 @@ Partial Class Login
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Login))
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.TxtUsuario = New System.Windows.Forms.TextBox()
         Me.UsernameLabel = New System.Windows.Forms.Label()
         Me.TxtContraseña = New System.Windows.Forms.TextBox()
@@ -31,20 +30,11 @@ Partial Class Login
         Me.BtnAceptar = New System.Windows.Forms.Button()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.Lblhorafecha = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Edwardian Script ITC", 27.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(46, 106)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(233, 44)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Hotel Clementina"
         '
         'TxtUsuario
         '
@@ -60,7 +50,7 @@ Partial Class Login
         '
         'UsernameLabel
         '
-        Me.UsernameLabel.Font = New System.Drawing.Font("Dubai", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.UsernameLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.UsernameLabel.ForeColor = System.Drawing.Color.White
         Me.UsernameLabel.Location = New System.Drawing.Point(31, 167)
         Me.UsernameLabel.Name = "UsernameLabel"
@@ -85,7 +75,7 @@ Partial Class Login
         '
         'PasswordLabel
         '
-        Me.PasswordLabel.Font = New System.Drawing.Font("Dubai", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PasswordLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PasswordLabel.ForeColor = System.Drawing.Color.White
         Me.PasswordLabel.Location = New System.Drawing.Point(31, 241)
         Me.PasswordLabel.Name = "PasswordLabel"
@@ -98,7 +88,7 @@ Partial Class Login
         '
         Me.BtnAceptar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnAceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnAceptar.Font = New System.Drawing.Font("Dubai", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnAceptar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnAceptar.Location = New System.Drawing.Point(36, 319)
         Me.BtnAceptar.Name = "BtnAceptar"
         Me.BtnAceptar.Size = New System.Drawing.Size(249, 38)
@@ -126,12 +116,36 @@ Partial Class Login
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
+        'Lblhorafecha
+        '
+        Me.Lblhorafecha.AutoSize = True
+        Me.Lblhorafecha.Font = New System.Drawing.Font("Segoe Print", 18.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lblhorafecha.ForeColor = System.Drawing.Color.White
+        Me.Lblhorafecha.Location = New System.Drawing.Point(1, 123)
+        Me.Lblhorafecha.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
+        Me.Lblhorafecha.Name = "Lblhorafecha"
+        Me.Lblhorafecha.Size = New System.Drawing.Size(190, 44)
+        Me.Lblhorafecha.TabIndex = 14
+        Me.Lblhorafecha.Text = "Bienvenido(a)"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 27.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.White
+        Me.Label1.Location = New System.Drawing.Point(46, 106)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(319, 42)
+        Me.Label1.TabIndex = 1
+        Me.Label1.Text = "Hotel Clementina"
+        '
         'Login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(335, 384)
+        Me.Controls.Add(Me.Lblhorafecha)
         Me.Controls.Add(Me.PictureBox2)
         Me.Controls.Add(Me.BtnAceptar)
         Me.Controls.Add(Me.TxtContraseña)
@@ -153,11 +167,12 @@ Partial Class Login
     End Sub
 
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents TxtUsuario As TextBox
     Friend WithEvents UsernameLabel As Label
     Friend WithEvents TxtContraseña As TextBox
     Friend WithEvents PasswordLabel As Label
     Friend WithEvents BtnAceptar As Button
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents Lblhorafecha As Label
+    Friend WithEvents Label1 As Label
 End Class

@@ -946,6 +946,7 @@ Partial Class ControlHabitaciones
         Me.PbHab06P3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab06P3.TabIndex = 259
         Me.PbHab06P3.TabStop = False
+        Me.PbHab06P3.Visible = False
         '
         'PbHab06P2
         '
@@ -957,6 +958,7 @@ Partial Class ControlHabitaciones
         Me.PbHab06P2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab06P2.TabIndex = 258
         Me.PbHab06P2.TabStop = False
+        Me.PbHab06P2.Visible = False
         '
         'PbHab06P1
         '
@@ -968,6 +970,7 @@ Partial Class ControlHabitaciones
         Me.PbHab06P1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab06P1.TabIndex = 257
         Me.PbHab06P1.TabStop = False
+        Me.PbHab06P1.Visible = False
         '
         'PbHab06P6
         '
@@ -979,6 +982,7 @@ Partial Class ControlHabitaciones
         Me.PbHab06P6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab06P6.TabIndex = 256
         Me.PbHab06P6.TabStop = False
+        Me.PbHab06P6.Visible = False
         '
         'PbHab06P5
         '
@@ -990,6 +994,7 @@ Partial Class ControlHabitaciones
         Me.PbHab06P5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab06P5.TabIndex = 255
         Me.PbHab06P5.TabStop = False
+        Me.PbHab06P5.Visible = False
         '
         'PbHab06P4
         '
@@ -1001,6 +1006,7 @@ Partial Class ControlHabitaciones
         Me.PbHab06P4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab06P4.TabIndex = 253
         Me.PbHab06P4.TabStop = False
+        Me.PbHab06P4.Visible = False
         '
         'PbHab06
         '
@@ -1121,6 +1127,7 @@ Partial Class ControlHabitaciones
         Me.PbHab01P3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab01P3.TabIndex = 137
         Me.PbHab01P3.TabStop = False
+        Me.PbHab01P3.Visible = False
         '
         'PbHab01P4
         '
@@ -1132,6 +1139,7 @@ Partial Class ControlHabitaciones
         Me.PbHab01P4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab01P4.TabIndex = 136
         Me.PbHab01P4.TabStop = False
+        Me.PbHab01P4.Visible = False
         '
         'PbHab01P2
         '
@@ -1143,6 +1151,7 @@ Partial Class ControlHabitaciones
         Me.PbHab01P2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab01P2.TabIndex = 135
         Me.PbHab01P2.TabStop = False
+        Me.PbHab01P2.Visible = False
         '
         'PbHab01P1
         '
@@ -1154,6 +1163,7 @@ Partial Class ControlHabitaciones
         Me.PbHab01P1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab01P1.TabIndex = 134
         Me.PbHab01P1.TabStop = False
+        Me.PbHab01P1.Visible = False
         '
         'Label4
         '
@@ -1276,6 +1286,7 @@ Partial Class ControlHabitaciones
         Me.PbHab16P3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab16P3.TabIndex = 270
         Me.PbHab16P3.TabStop = False
+        Me.PbHab16P3.Visible = False
         '
         'PbHab16P2
         '
@@ -1287,6 +1298,7 @@ Partial Class ControlHabitaciones
         Me.PbHab16P2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab16P2.TabIndex = 269
         Me.PbHab16P2.TabStop = False
+        Me.PbHab16P2.Visible = False
         '
         'PbHab16P1
         '
@@ -1298,6 +1310,7 @@ Partial Class ControlHabitaciones
         Me.PbHab16P1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab16P1.TabIndex = 268
         Me.PbHab16P1.TabStop = False
+        Me.PbHab16P1.Visible = False
         '
         'PbHab16P6
         '
@@ -1309,6 +1322,7 @@ Partial Class ControlHabitaciones
         Me.PbHab16P6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab16P6.TabIndex = 267
         Me.PbHab16P6.TabStop = False
+        Me.PbHab16P6.Visible = False
         '
         'PbHab16P5
         '
@@ -1320,6 +1334,7 @@ Partial Class ControlHabitaciones
         Me.PbHab16P5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab16P5.TabIndex = 266
         Me.PbHab16P5.TabStop = False
+        Me.PbHab16P5.Visible = False
         '
         'PbHab16P4
         '
@@ -1331,6 +1346,7 @@ Partial Class ControlHabitaciones
         Me.PbHab16P4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab16P4.TabIndex = 265
         Me.PbHab16P4.TabStop = False
+        Me.PbHab16P4.Visible = False
         '
         'PbHab16
         '
@@ -1449,6 +1465,7 @@ Partial Class ControlHabitaciones
         Me.PbHab04P2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab04P2.TabIndex = 259
         Me.PbHab04P2.TabStop = False
+        Me.PbHab04P2.Visible = False
         '
         'PbHab04P1
         '
@@ -1460,6 +1477,7 @@ Partial Class ControlHabitaciones
         Me.PbHab04P1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab04P1.TabIndex = 196
         Me.PbHab04P1.TabStop = False
+        Me.PbHab04P1.Visible = False
         '
         'PbHab04
         '
@@ -1580,6 +1598,7 @@ Partial Class ControlHabitaciones
         Me.PbHab15P3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab15P3.TabIndex = 266
         Me.PbHab15P3.TabStop = False
+        Me.PbHab15P3.Visible = False
         '
         'PbHab15P4
         '
@@ -1591,6 +1610,7 @@ Partial Class ControlHabitaciones
         Me.PbHab15P4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab15P4.TabIndex = 265
         Me.PbHab15P4.TabStop = False
+        Me.PbHab15P4.Visible = False
         '
         'PbHab15P2
         '
@@ -1602,6 +1622,7 @@ Partial Class ControlHabitaciones
         Me.PbHab15P2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab15P2.TabIndex = 264
         Me.PbHab15P2.TabStop = False
+        Me.PbHab15P2.Visible = False
         '
         'PbHab15P1
         '
@@ -1613,6 +1634,7 @@ Partial Class ControlHabitaciones
         Me.PbHab15P1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab15P1.TabIndex = 263
         Me.PbHab15P1.TabStop = False
+        Me.PbHab15P1.Visible = False
         '
         'PbHab15
         '
@@ -1731,6 +1753,7 @@ Partial Class ControlHabitaciones
         Me.PbHab02P2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab02P2.TabIndex = 257
         Me.PbHab02P2.TabStop = False
+        Me.PbHab02P2.Visible = False
         '
         'PbHab02P1
         '
@@ -1742,6 +1765,7 @@ Partial Class ControlHabitaciones
         Me.PbHab02P1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab02P1.TabIndex = 136
         Me.PbHab02P1.TabStop = False
+        Me.PbHab02P1.Visible = False
         '
         'BtnCancelar02
         '
@@ -1860,6 +1884,7 @@ Partial Class ControlHabitaciones
         Me.PbHab17P2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab17P2.TabIndex = 269
         Me.PbHab17P2.TabStop = False
+        Me.PbHab17P2.Visible = False
         '
         'PbHab17P1
         '
@@ -1871,6 +1896,7 @@ Partial Class ControlHabitaciones
         Me.PbHab17P1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab17P1.TabIndex = 268
         Me.PbHab17P1.TabStop = False
+        Me.PbHab17P1.Visible = False
         '
         'PbHab17
         '
@@ -1989,6 +2015,7 @@ Partial Class ControlHabitaciones
         Me.PbHab05P2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab05P2.TabIndex = 260
         Me.PbHab05P2.TabStop = False
+        Me.PbHab05P2.Visible = False
         '
         'PbHab05P1
         '
@@ -2000,6 +2027,7 @@ Partial Class ControlHabitaciones
         Me.PbHab05P1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab05P1.TabIndex = 250
         Me.PbHab05P1.TabStop = False
+        Me.PbHab05P1.Visible = False
         '
         'PbHab05
         '
@@ -2118,6 +2146,7 @@ Partial Class ControlHabitaciones
         Me.PbHab14P2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab14P2.TabIndex = 267
         Me.PbHab14P2.TabStop = False
+        Me.PbHab14P2.Visible = False
         '
         'PbHab14P1
         '
@@ -2129,6 +2158,7 @@ Partial Class ControlHabitaciones
         Me.PbHab14P1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab14P1.TabIndex = 266
         Me.PbHab14P1.TabStop = False
+        Me.PbHab14P1.Visible = False
         '
         'PbHab14
         '
@@ -2249,6 +2279,7 @@ Partial Class ControlHabitaciones
         Me.PbHab07P3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab07P3.TabIndex = 264
         Me.PbHab07P3.TabStop = False
+        Me.PbHab07P3.Visible = False
         '
         'PbHab07P4
         '
@@ -2260,6 +2291,7 @@ Partial Class ControlHabitaciones
         Me.PbHab07P4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab07P4.TabIndex = 263
         Me.PbHab07P4.TabStop = False
+        Me.PbHab07P4.Visible = False
         '
         'PbHab07P2
         '
@@ -2271,6 +2303,7 @@ Partial Class ControlHabitaciones
         Me.PbHab07P2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab07P2.TabIndex = 262
         Me.PbHab07P2.TabStop = False
+        Me.PbHab07P2.Visible = False
         '
         'PbHab07P1
         '
@@ -2282,6 +2315,7 @@ Partial Class ControlHabitaciones
         Me.PbHab07P1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab07P1.TabIndex = 261
         Me.PbHab07P1.TabStop = False
+        Me.PbHab07P1.Visible = False
         '
         'PbHab07
         '
@@ -2400,6 +2434,7 @@ Partial Class ControlHabitaciones
         Me.PbHab13P2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab13P2.TabIndex = 265
         Me.PbHab13P2.TabStop = False
+        Me.PbHab13P2.Visible = False
         '
         'PbHab13P1
         '
@@ -2411,6 +2446,7 @@ Partial Class ControlHabitaciones
         Me.PbHab13P1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab13P1.TabIndex = 264
         Me.PbHab13P1.TabStop = False
+        Me.PbHab13P1.Visible = False
         '
         'PbHab13
         '
@@ -2529,6 +2565,7 @@ Partial Class ControlHabitaciones
         Me.PbHab11P2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab11P2.TabIndex = 261
         Me.PbHab11P2.TabStop = False
+        Me.PbHab11P2.Visible = False
         '
         'PbHab11P1
         '
@@ -2540,6 +2577,7 @@ Partial Class ControlHabitaciones
         Me.PbHab11P1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab11P1.TabIndex = 260
         Me.PbHab11P1.TabStop = False
+        Me.PbHab11P1.Visible = False
         '
         'PbHab11
         '
@@ -2658,6 +2696,7 @@ Partial Class ControlHabitaciones
         Me.PbHab10P2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab10P2.TabIndex = 258
         Me.PbHab10P2.TabStop = False
+        Me.PbHab10P2.Visible = False
         '
         'PbHab10P1
         '
@@ -2669,6 +2708,7 @@ Partial Class ControlHabitaciones
         Me.PbHab10P1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab10P1.TabIndex = 257
         Me.PbHab10P1.TabStop = False
+        Me.PbHab10P1.Visible = False
         '
         'PbHab10
         '
@@ -2787,6 +2827,7 @@ Partial Class ControlHabitaciones
         Me.PbHab03P2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab03P2.TabIndex = 258
         Me.PbHab03P2.TabStop = False
+        Me.PbHab03P2.Visible = False
         '
         'PbHab03P1
         '
@@ -2798,6 +2839,7 @@ Partial Class ControlHabitaciones
         Me.PbHab03P1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab03P1.TabIndex = 188
         Me.PbHab03P1.TabStop = False
+        Me.PbHab03P1.Visible = False
         '
         'PbHab03
         '
@@ -2918,6 +2960,7 @@ Partial Class ControlHabitaciones
         Me.PbHab09P3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab09P3.TabIndex = 260
         Me.PbHab09P3.TabStop = False
+        Me.PbHab09P3.Visible = False
         '
         'PbHab09P4
         '
@@ -2929,6 +2972,7 @@ Partial Class ControlHabitaciones
         Me.PbHab09P4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab09P4.TabIndex = 259
         Me.PbHab09P4.TabStop = False
+        Me.PbHab09P4.Visible = False
         '
         'PbHab09P2
         '
@@ -2940,6 +2984,7 @@ Partial Class ControlHabitaciones
         Me.PbHab09P2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab09P2.TabIndex = 258
         Me.PbHab09P2.TabStop = False
+        Me.PbHab09P2.Visible = False
         '
         'PbHab09P1
         '
@@ -2951,6 +2996,7 @@ Partial Class ControlHabitaciones
         Me.PbHab09P1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab09P1.TabIndex = 257
         Me.PbHab09P1.TabStop = False
+        Me.PbHab09P1.Visible = False
         '
         'PbHab09
         '
@@ -3069,6 +3115,7 @@ Partial Class ControlHabitaciones
         Me.PbHab12P2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab12P2.TabIndex = 263
         Me.PbHab12P2.TabStop = False
+        Me.PbHab12P2.Visible = False
         '
         'PbHab12P1
         '
@@ -3080,6 +3127,7 @@ Partial Class ControlHabitaciones
         Me.PbHab12P1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PbHab12P1.TabIndex = 262
         Me.PbHab12P1.TabStop = False
+        Me.PbHab12P1.Visible = False
         '
         'PbHab12
         '

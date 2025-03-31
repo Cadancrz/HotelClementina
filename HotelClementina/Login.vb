@@ -93,7 +93,7 @@ Public Class Login
 
                     ' Asignar Id_Usu al TxtCodEmp
                     PanelPrincipalMenu.TxtCodEmp.Text = codUsu
-
+                    Usuario = NombreEmpleado
                     ' Limpiar campos y ocultar el login
                     TxtUsuario.Clear()
                     TxtContraseña.Clear()

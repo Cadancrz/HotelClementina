@@ -4,39 +4,70 @@ Public Class Reservaciones
     Dim query As String 'variable para las consultas
     Dim con As New ClsConexion 'variable conexion
     Dim dv As New DataView 'variable dataview para la busqueda de clientes
-    Dim dvdispon As New DataView 'variable dataview para cargar gridview de habitaciones
-    Dim entrar As String 'variable para entrar a los ciclos
     Dim export As SqlDataReader 'variable datareader para las exportaciones
-    Dim habi As Integer 'variable para guardar los numeros de las habitaciones
-    Dim habidisponibles As String 'variable para guardar las habitaciones disponibles en el ciclo e ir llenando el gridview
-    Dim Det, ResultQuery As Integer 'variable para respuesta de mensajes
     Dim dr As IDataReader 'para leer cadenas de datos'
-    Dim contador As Integer 'EXPORTA EL NUMERO DE HABITACION EN ORDEN ASCENDENTE
-    Dim dias As Integer 'variable para guardar la cantidad de diass de una reserva
-    Dim fecha1, fecha2, fechafin As Date 'variables para las fechas
-    Dim preciodia, preciototal As Double 'variables para cantidades
     ' Variables globales para la paginación
     Private totalPaginas As Integer = 1 ' Variable para almacenar el total de páginas
     Private paginaActual As Integer = 1
     Private RegistrosPorPagina As Integer = 500 ' Cambia este valor según lo que necesites
     Dim conthuesped As Integer 'variable contador de huespedes
+    Dim entradacompleto As DateTime
+    Dim salidacompleto As DateTime
+    Dim numreserva As Integer
+    Dim preciohab As Integer
 
+    Public Sub autonum()
+        query = "select Cod_Res from Reserva"
+        If con.val(query) = True Then
+            query = "select Max(Cod_Res) from Reserva"
+            dr = con.reader(query)
+            While dr.Read
+                numreserva = dr.GetValue(0) + 1
+            End While
+            dr.Close()
+        Else
+            numreserva = 1
+        End If
+    End Sub
 
 
     Private Sub BtnReservar_Click(sender As Object, e As EventArgs) Handles BtnReservar.Click
-        frmReservasAbierto = 1
-        estadohabitacion = 0
 
-        ' Llamar al formulario de reservaciones dentro del panel
-        Dim frmHabitaciones As New ControlHabitaciones()
-        frmHabitaciones.TopLevel = False
-        frmHabitaciones.FormBorderStyle = FormBorderStyle.None
-        frmHabitaciones.Dock = DockStyle.Fill
+        If CmbHabitacion.Text = "Sencilla" Then
+            preciohab = 1300
+        ElseIf CmbHabitacion.Text = "Pareja" Then
+            preciohab = 1700
+        ElseIf CmbHabitacion.Text = "Jr Sencilla" Then
+            preciohab = 1450
+        ElseIf CmbHabitacion.Text = "Jr Pareja" Then
+            preciohab = 1800
+        ElseIf CmbHabitacion.Text = "Doble" Then
+            preciohab = 1850
+        ElseIf CmbHabitacion.Text = "Triple" Then
+            preciohab = 2650
+        ElseIf CmbHabitacion.Text = "Suit" Or CmbHabitacion.Text = "Suit Pareja" Then
+            preciohab = 2100
+        End If
 
-        ' Limpiar el panel y agregar el nuevo formulario
-        PanelPrincipalMenu.PnPantallas.Controls.Clear()
-        PanelPrincipalMenu.PnPantallas.Controls.Add(frmHabitaciones)
-        frmHabitaciones.Show()
+        If TxtNombre.Text = "" Or TxtIdentidad.Text = "" Or TxtEntrada.Text = "" Or TxtSalida.Text = "" Then
+            MsgBox("Faltan datos por ingresar.", MsgBoxStyle.Critical, "Error")
+        Else
+            query = " INSERT INTO Reserva (Cod_Res, Fec_Ini_Res, Fec_Fin_Res, Cod_Hab, Cod_Cli, Nom_Usu, Precio_Unitario, Descuento, Recargo, Pagado_NoPagado, Cod_Est, TipoPago)  VALUES(" & numreserva & ",'" & entradacompleto.ToString("yyyy/dd/MM HH:mm:ss") & "','" & salidacompleto.ToString("yyyy/dd/MM HH:mm:ss") & "','" & TxtHabitacion.Text & "','" & TxtIdentidad.Text & "','" & Usuario & "'," & preciohab & "," & 0 & "," & 0 & "," & 0 & "," & 0 & ", NULL)"
+            con.insertar(query)
+            MsgBox("Reserva elaborada exitosamente.", MsgBoxStyle.Information, "Aviso")
+            ' Llamar al formulario de reservaciones dentro del panel
+            Dim frmHabitaciones As New ControlHabitaciones()
+            frmHabitaciones.TopLevel = False
+            frmHabitaciones.FormBorderStyle = FormBorderStyle.None
+            frmHabitaciones.Dock = DockStyle.Fill
+
+            ' Limpiar el panel y agregar el nuevo formulario
+            PanelPrincipalMenu.PnPantallas.Controls.Clear()
+            PanelPrincipalMenu.PnPantallas.Controls.Add(frmHabitaciones)
+            frmHabitaciones.Show()
+        End If
+
+
     End Sub
 
     Private Sub DGVClientes_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVClientes.CellContentClick
@@ -109,37 +140,43 @@ Public Class Reservaciones
             TxtEntrada.Text = DateTime.Today.ToString("dd/MM/yyyy")
         Else
             ' Asignar la fecha seleccionada al TextBox en formato dd/MM/yyyy
-            TxtEntrada.Text = MCEntrada.SelectionStart.ToString("dd/MM/yyyy")
+            entradacompleto = MCEntrada.SelectionStart.Date + DateTime.Now.TimeOfDay
+            TxtEntrada.Text = entradacompleto.ToString("dd/MM/yyyy HH:mm:ss")
+
         End If
     End Sub
 
     Private Sub MCSalida_DateChanged(sender As Object, e As DateRangeEventArgs) Handles MCSalida.DateChanged
-        ' Validar que la fecha de salida no sea menor a hoy
-        If MCSalida.SelectionStart < DateTime.Today Then
-            ' Validar que la fecha de salida solo sea igual a hoy si es antes de las 12 del mediodía
-            If MCSalida.SelectionStart.Date = DateTime.Today And DateTime.Now.Hour < 12 Then
-                TxtSalida.Text = MCSalida.SelectionStart.ToString("dd/MM/yyyy")
+        If MCSalida.SelectionStart < DateTime.Today Or MCSalida.SelectionStart < MCEntrada.SelectionStart Then
+            MsgBox("El valor de salida es incorrecto.", MsgBoxStyle.Critical, "Error")
+        ElseIf MCSalida.SelectionStart.Date = DateTime.Today Then
+
+            If DateTime.Now.Hour < 12 Then
+                ' Si es antes de las 12 PM, asignamos la fecha correctamente.
+                salidacompleto = MCSalida.SelectionStart.Date + New TimeSpan(12, 0, 0)
+                TxtSalida.Text = salidacompleto.ToString("dd/MM/yyyy HH:mm:ss")
             Else
-                MsgBox("La fecha de salida no puede ser menor a hoy.", MsgBoxStyle.Critical, "Error")
-                MCSalida.SetDate(DateTime.Today.AddDays(1)) ' Restablecer a un día futuro
-                TxtSalida.Text = MCSalida.SelectionStart.ToString("dd/MM/yyyy")
-                Exit Sub
+                ' Si ya pasaron las 12 PM, mostramos el mensaje de error.
+                MsgBox("La hora sobre pasa el check out.", MsgBoxStyle.Critical, "Error")
             End If
+        Else
+            ' Asignar la fecha en TxtSalida si es válida (después de hoy y después de la entrada).
+            salidacompleto = MCSalida.SelectionStart.Date + New TimeSpan(12, 0, 0)
+            TxtSalida.Text = salidacompleto.ToString("dd/MM/yyyy HH:mm:ss")
         End If
 
-        ' Validar que la fecha de salida no sea menor que la fecha de entrada
-        If MCSalida.SelectionStart < MCEntrada.SelectionStart Then
-            MsgBox("La fecha de salida no puede ser menor a la fecha de entrada.", MsgBoxStyle.Critical, "Error")
-            MCSalida.SetDate(MCEntrada.SelectionStart.AddDays(1)) ' Restablecer a un día después de la fecha de entrada
-            TxtSalida.Text = MCSalida.SelectionStart.ToString("dd/MM/yyyy")
-        Else
-            ' Asignar la fecha seleccionada en MCSalida al TextBox en formato dd/MM/yyyy
-            TxtSalida.Text = MCSalida.SelectionStart.ToString("dd/MM/yyyy")
-        End If
     End Sub
 
-
-
+    Private Sub BtnConsultarDispon_Click(sender As Object, e As EventArgs) Handles BtnConsultarDispon.Click
+        query = "EXEC VerificarReserva " & TxtHabitacion.Text & ", '" & entradacompleto.ToString("yyyy/MM/dd") & "', '" & salidacompleto.ToString("yyyy/MM/dd") & "'"
+        If con.val(query) = False Then 'si retorna un valor entra al ciclo
+            MsgBox("Habitacion disponible", MsgBoxStyle.Information, "Aviso")
+            BtnReservar.Visible = True
+        Else
+            MsgBox("Habitacion no disponible para la fecha", MsgBoxStyle.Critical, "Aviso")
+            BtnReservar.Visible = False
+        End If
+    End Sub
 
     Private Function ObtenerTotalRegistros(Optional ByVal cadena1 As String = Nothing,
                                        Optional ByVal cadena2 As String = Nothing,
@@ -181,7 +218,7 @@ Public Class Reservaciones
         Lblhorafecha.Text = DateTime.Now.Hour
         TxtHabitacion.Text = numhab
         Carga()
-
+        autonum()
         ' Limpiar el ComboBox antes de agregar opciones
         CmbHabitacion.Items.Clear()
 
@@ -190,10 +227,10 @@ Public Class Reservaciones
         If Integer.TryParse(numhab, numHabitacion) Then
             Select Case numHabitacion
                 Case 2, 3, 4, 10, 11, 12, 13, 18 To 35
-                    CmbHabitacion.Items.AddRange(New String() {"Sencillo", "Pareja"})
+                    CmbHabitacion.Items.AddRange(New String() {"Sencilla", "Pareja"})
 
                 Case 1, 7, 9, 15
-                    CmbHabitacion.Items.AddRange(New String() {"Sencillo", "Doble"})
+                    CmbHabitacion.Items.AddRange(New String() {"Sencilla", "Doble"})
 
                 Case 5, 14
                     CmbHabitacion.Items.AddRange(New String() {"Jr Sencilla", "Jr Pareja"})

@@ -22,7 +22,7 @@ Partial Class Reservaciones
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -208,11 +208,11 @@ Partial Class Reservaciones
         Me.TxtSalida.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtSalida.Enabled = False
         Me.TxtSalida.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtSalida.Location = New System.Drawing.Point(262, 271)
+        Me.TxtSalida.Location = New System.Drawing.Point(261, 270)
         Me.TxtSalida.Multiline = True
         Me.TxtSalida.Name = "TxtSalida"
         Me.TxtSalida.ReadOnly = True
-        Me.TxtSalida.Size = New System.Drawing.Size(121, 25)
+        Me.TxtSalida.Size = New System.Drawing.Size(192, 25)
         Me.TxtSalida.TabIndex = 89
         '
         'TxtEntrada
@@ -224,7 +224,7 @@ Partial Class Reservaciones
         Me.TxtEntrada.Multiline = True
         Me.TxtEntrada.Name = "TxtEntrada"
         Me.TxtEntrada.ReadOnly = True
-        Me.TxtEntrada.Size = New System.Drawing.Size(121, 25)
+        Me.TxtEntrada.Size = New System.Drawing.Size(190, 25)
         Me.TxtEntrada.TabIndex = 88
         '
         'BtnConsultarDispon
@@ -281,6 +281,7 @@ Partial Class Reservaciones
         Me.BtnReservar.TabIndex = 88
         Me.BtnReservar.Text = "Reservar"
         Me.BtnReservar.UseVisualStyleBackColor = False
+        Me.BtnReservar.Visible = False
         '
         'BtnRestaurar
         '
@@ -337,10 +338,10 @@ Partial Class Reservaciones
         '
         Me.DGVClientes.AllowUserToAddRows = False
         Me.DGVClientes.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
-        Me.DGVClientes.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.RoyalBlue
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
+        Me.DGVClientes.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DGVClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGVClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DGVClientes.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(82, Byte), Integer))

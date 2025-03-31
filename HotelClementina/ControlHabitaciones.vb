@@ -30,22 +30,64 @@ Public Class ControlHabitaciones
         frmReservaciones.Show()
     End Sub
 
-    Private Sub ControlHabitaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        For i As Integer = 1 To 35
-            ' Formateamos el número de habitación en un formato de dos dígitos (01, 02, ..., 35)
-            Dim numHab As String = i.ToString("D2") ' Esto asegura que el número tenga siempre dos dígitos (01, 02, ..., 35)
+    Private Sub VerificarEstadoHabitacion(codHab As Integer)
+        ' Formatear el ID de la habitación a dos dígitos (ejemplo: 01, 02, ..., 10)
+        Dim habId As String = codHab.ToString("D2")
 
-            ' Verificamos el estado de la habitación (0 = Ocupada, 1 = Disponible)
-            If numHab = i And estadohabitacion = 0 And frmReservasAbierto = 1 Then ' Restamos 1 porque el índice de estadohabitacion es de 0 a 34
-                ' Desactivamos el botón de reservar y activamos el botón de cancelar y demás botones relacionados
-                CType(Me.Controls("BtnReservar" & numHab), Button).Visible = False
-                CType(Me.Controls("BtnCancelar" & numHab), Button).Visible = True
-                CType(Me.Controls("BtnFactura" & numHab), Button).Enabled = True
-                CType(Me.Controls("BtnDetalle" & numHab), Button).Enabled = True
+        ' Buscar las TabPages dentro de TabControl1
+        For Each tabPage As TabPage In TabControl1.TabPages
+            ' Verificar si el GroupBox existe dentro de la TabPage
+            Dim groupBox As GroupBox = TryCast(tabPage.Controls("GbHab" & habId), GroupBox)
+            If groupBox IsNot Nothing Then
+
+                ' Obtener los controles dentro del GroupBox
+                Dim btnCancelar As Button = TryCast(groupBox.Controls("BtnCancelar" & habId), Button)
+                Dim btnReservar As Button = TryCast(groupBox.Controls("BtnReservar" & habId), Button)
+                Dim btnDetalle As Button = TryCast(groupBox.Controls("BtnDetalle" & habId), Button)
+                Dim btnFactura As Button = TryCast(groupBox.Controls("BtnFactura" & habId), Button)
+                Dim pbHab As PictureBox = TryCast(groupBox.Controls("PbHab" & habId), PictureBox)
+                Dim pbHabP1 As PictureBox = TryCast(groupBox.Controls("PbHab" & habId & "P1"), PictureBox)
+                Dim pbHabP2 As PictureBox = TryCast(groupBox.Controls("PbHab" & habId & "P2"), PictureBox)
+
+                query = "SELECT Precio_Unitario FROM Reserva WHERE Cod_Hab = " & codHab & "  AND '" & DateTime.Now & "' BETWEEN Fec_Ini_Res AND Fec_Fin_Res"
+
+                If con.val(query) = True Then
+                    export = con.reader(query)
+                    ' Si hay reserva activa
+                    If btnCancelar IsNot Nothing Then btnCancelar.Visible = True
+                    If btnReservar IsNot Nothing Then btnReservar.Visible = False
+                    If btnDetalle IsNot Nothing Then btnDetalle.Enabled = True
+                    If btnFactura IsNot Nothing Then btnFactura.Enabled = True
+                    If pbHab IsNot Nothing Then pbHab.Visible = False
+                    If pbHabP1 IsNot Nothing Then pbHabP1.Visible = True
+
+                    ' Verificar si el precio unitario es 1850.00
+                    While export.Read
+                        Dim precio As Decimal = export.GetDecimal(0)
+                        pbHabP2.Visible = (precio = 1850.0)
+                    End While
+                    export.Close()
+                Else
+                    ' No hay reserva activa
+                    If btnCancelar IsNot Nothing Then btnCancelar.Visible = False
+                    If btnReservar IsNot Nothing Then btnReservar.Visible = True
+                    If btnDetalle IsNot Nothing Then btnDetalle.Enabled = False
+                    If btnFactura IsNot Nothing Then btnFactura.Enabled = False
+                    If pbHab IsNot Nothing Then pbHab.Visible = True
+                    If pbHabP1 IsNot Nothing Then pbHabP1.Visible = False
+                    If pbHabP2 IsNot Nothing Then pbHabP2.Visible = False
+                End If
+
             End If
         Next
+    End Sub
 
-        ' Iterar sobre todos los botones desde BtnReservar01 hasta BtnReservar35
+    Private Sub ControlHabitaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Verificamos todas las habitaciones del 1 al 10 (ajústalo según la cantidad total de habitaciones)
+        For i As Integer = 1 To 35
+            VerificarEstadoHabitacion(i)
+        Next
+
         For i As Integer = 1 To 35
             Dim btn As Button = Me.Controls.Find("BtnReservar" & i.ToString("00"), True).FirstOrDefault()
             If btn IsNot Nothing Then
@@ -53,9 +95,6 @@ Public Class ControlHabitaciones
             End If
         Next
     End Sub
-
-
-
 
     Private Sub BtnHabitacion_Click(sender As Object, e As EventArgs) Handles BtnHab00.Click, BtnHab01.Click, BtnHab02.Click, BtnHab03.Click, BtnHab04.Click, BtnHab05.Click, BtnHab06.Click, BtnHab07.Click, BtnHab08.Click, BtnHab09.Click, BtnHab10.Click, BtnHab11.Click, BtnHab12.Click, BtnHab13.Click, BtnHab14.Click, BtnHab15.Click, BtnHab16.Click, BtnHab17.Click, BtnHab18.Click, BtnHab19.Click, BtnHab20.Click, BtnHab21.Click, BtnHab22.Click, BtnHab23.Click, BtnHab24.Click, BtnHab25.Click, BtnHab26.Click, BtnHab27.Click, BtnHab28.Click, BtnHab29.Click, BtnHab30.Click, BtnHab31.Click, BtnHab32.Click, BtnHab33.Click, BtnHab34.Click, BtnHab35.Click
         ' Obtener el botón que disparó el evento
@@ -73,5 +112,48 @@ Public Class ControlHabitaciones
         End If
     End Sub
 
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar01.Click, BtnCancelar02.Click, BtnCancelar03.Click, BtnCancelar04.Click, BtnCancelar05.Click, BtnCancelar06.Click, BtnCancelar07.Click, BtnCancelar09.Click, BtnCancelar10.Click, BtnCancelar11.Click, BtnCancelar12.Click, BtnCancelar13.Click, BtnCancelar14.Click, BtnCancelar15.Click, BtnCancelar16.Click, BtnCancelar17.Click, BtnCancelar18.Click, BtnCancelar19.Click, BtnCancelar20.Click, BtnCancelar21.Click, BtnCancelar22.Click, BtnCancelar23.Click, BtnCancelar24.Click, BtnCancelar25.Click, BtnCancelar26.Click, BtnCancelar27.Click, BtnCancelar28.Click, BtnCancelar29.Click, BtnCancelar30.Click, BtnCancelar31.Click, BtnCancelar32.Click, BtnCancelar33.Click, BtnCancelar34.Click, BtnCancelar35.Click
+        ' Obtener el botón que disparó el evento
+        Dim btn As Button = DirectCast(sender, Button)
 
+        ' Obtener el número del botón
+        Dim num As String = btn.Name.Replace("BtnCancelar", "")
+
+        ' Buscar el GroupBox correspondiente
+        Dim gb As GroupBox = Me.Controls.Find("GbHab" & num, True).FirstOrDefault()
+
+        ' Si el GroupBox fue encontrado
+        If gb IsNot Nothing Then
+            ' Obtener el Cod_Hab de la habitación (puedes cambiar esta parte si tu Cod_Hab tiene otro formato o fuente)
+            Dim codHab As Integer = Integer.Parse(num)
+
+            Dim btnCancelar As Button = TryCast(gb.Controls("BtnCancelar" & num), Button)
+            Dim btnReservar As Button = TryCast(gb.Controls("BtnReservar" & num), Button)
+            Dim btnDetalle As Button = TryCast(gb.Controls("BtnDetalle" & num), Button)
+            Dim btnFactura As Button = TryCast(gb.Controls("BtnFactura" & num), Button)
+            Dim pbHab As PictureBox = TryCast(gb.Controls("PbHab" & num), PictureBox)
+            Dim pbHabP1 As PictureBox = TryCast(gb.Controls("PbHab" & num & "P1"), PictureBox)
+            Dim pbHabP2 As PictureBox = TryCast(gb.Controls("PbHab" & num & "P2"), PictureBox)
+
+            ' Verificar si hay una reserva activa para esa habitación
+            Dim query As String = "SELECT * FROM Reserva WHERE Cod_Hab = " & codHab & "  AND '" & DateTime.Now & "' BETWEEN Fec_Ini_Res AND Fec_Fin_Res"
+
+            If con.val(query) = True Then
+                Dim deleteQuery As String = "DELETE FROM Reserva WHERE Cod_Hab = " & codHab & " AND '" & DateTime.Now & "' BETWEEN Fec_Ini_Res AND Fec_Fin_Res"
+                con.insertar(deleteQuery)
+                ' Informar al usuario
+                MessageBox.Show("La reserva ha sido cancelada correctamente.", "Cancelación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                If btnCancelar IsNot Nothing Then btnCancelar.Visible = False
+                If btnReservar IsNot Nothing Then btnReservar.Visible = True
+                If btnDetalle IsNot Nothing Then btnDetalle.Enabled = False
+                If btnFactura IsNot Nothing Then btnFactura.Enabled = False
+                If pbHab IsNot Nothing Then pbHab.Visible = True
+                If pbHabP1 IsNot Nothing Then pbHabP1.Visible = False
+                If pbHabP2 IsNot Nothing Then pbHabP2.Visible = False
+            Else
+                ' Si no hay reserva activa para esa habitación
+                MessageBox.Show("No hay reserva activa para esta habitación en este momento.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+        End If
+    End Sub
 End Class

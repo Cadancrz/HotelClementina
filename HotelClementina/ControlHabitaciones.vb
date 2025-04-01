@@ -8,6 +8,11 @@ Public Class ControlHabitaciones
     Dim export As SqlDataReader 'variable datareader
     Dim Id, tel1, tel2, emp, dir, correo, obs, nacion, proced As String 'variables para los datos del huesped
     Dim fecha1, fecha2 As Date 'variables para guardar fechas
+
+    Private Sub TabPage1_Click(sender As Object, e As EventArgs) Handles TabPage1.Click
+
+    End Sub
+
     Dim dias As Integer 'variables para guardar los dias
     Dim resultado As Integer 'variable para mensajes de confirmacion
     Dim conthuesped As Integer 'variable contador de huespedes
@@ -88,12 +93,23 @@ Public Class ControlHabitaciones
             VerificarEstadoHabitacion(i)
         Next
 
+        ' Ocultar botones si CodUsu es 0
+        If Login.codCargo = 0 Then ' Asumiendo que CodUsu es una cadena
+            For i As Integer = 0 To 35 ' Ajusta el rango según tus botones
+                Dim btnHab As Button = Me.Controls.Find("BtnHab" & i.ToString("00"), True).FirstOrDefault()
+                If btnHab IsNot Nothing Then
+                    btnHab.Visible = False
+                End If
+            Next
+        End If
+
         For i As Integer = 1 To 35
             Dim btn As Button = Me.Controls.Find("BtnReservar" & i.ToString("00"), True).FirstOrDefault()
             If btn IsNot Nothing Then
                 AddHandler btn.Click, AddressOf BtnReservar_Click
             End If
         Next
+
     End Sub
 
     Private Sub BtnHabitacion_Click(sender As Object, e As EventArgs) Handles BtnHab00.Click, BtnHab01.Click, BtnHab02.Click, BtnHab03.Click, BtnHab04.Click, BtnHab05.Click, BtnHab06.Click, BtnHab07.Click, BtnHab08.Click, BtnHab09.Click, BtnHab10.Click, BtnHab11.Click, BtnHab12.Click, BtnHab13.Click, BtnHab14.Click, BtnHab15.Click, BtnHab16.Click, BtnHab17.Click, BtnHab18.Click, BtnHab19.Click, BtnHab20.Click, BtnHab21.Click, BtnHab22.Click, BtnHab23.Click, BtnHab24.Click, BtnHab25.Click, BtnHab26.Click, BtnHab27.Click, BtnHab28.Click, BtnHab29.Click, BtnHab30.Click, BtnHab31.Click, BtnHab32.Click, BtnHab33.Click, BtnHab34.Click, BtnHab35.Click

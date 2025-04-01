@@ -81,14 +81,6 @@
         botonAnterior = BtnHistorial
     End Sub
 
-    Private Sub BtnReservaciones_Click(sender As Object, e As EventArgs) Handles BtnReservaciones.Click
-        RestablecerColorBotonAnterior()
-        abrirPantallas(New Reservaciones()) ' Muestra el formulario Reservaciones
-        BtnReservaciones.BackColor = Color.FromArgb(228, 187, 19)
-        BtnReservaciones.ForeColor = Color.Black
-        botonAnterior = BtnReservaciones
-    End Sub
-
     Private Sub BtnControlHab_Click(sender As Object, e As EventArgs) Handles BtnControlHab.Click
         RestablecerColorBotonAnterior()
         abrirPantallas(New ControlHabitaciones())

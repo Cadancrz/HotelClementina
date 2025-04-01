@@ -94,6 +94,7 @@ Public Class Login
                     ' Asignar Id_Usu al TxtCodEmp
                     PanelPrincipalMenu.TxtCodEmp.Text = codUsu
                     Usuario = NombreEmpleado
+
                     ' Limpiar campos y ocultar el login
                     TxtUsuario.Clear()
                     TxtContraseña.Clear()
@@ -111,7 +112,7 @@ Public Class Login
     End Sub
 
     Private Sub Login_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Lblhorafecha.Text = DateTime.Now.Hour
+        Lblhorafecha.Text = DateTime.Now
         Dim con As New ClsConexion()
         con.conectar()
         TxtUsuario.Focus()

@@ -30,7 +30,6 @@ Public Class Reservaciones
         End If
     End Sub
 
-
     Private Sub BtnReservar_Click(sender As Object, e As EventArgs) Handles BtnReservar.Click
 
         If CmbHabitacion.Text = "Sencilla" Then
@@ -65,8 +64,8 @@ Public Class Reservaciones
             PanelPrincipalMenu.PnPantallas.Controls.Clear()
             PanelPrincipalMenu.PnPantallas.Controls.Add(frmHabitaciones)
             frmHabitaciones.Show()
-        End If
 
+        End If
 
     End Sub
 
@@ -119,8 +118,6 @@ Public Class Reservaciones
             ' Obtener el total de productos y calcular la paginación
             totalPaginas = Math.Ceiling(ObtenerTotalRegistros(cadena1, cadena2, cadena3, cadena4) / RegistrosPorPagina)
 
-            ' Actualizar los botones de paginación
-
         Catch ex As Exception
             MsgBox("Error al cargar los huéspedes: " & ex.Message, MsgBoxStyle.Critical, "Error")
         End Try
@@ -137,34 +134,32 @@ Public Class Reservaciones
         If MCEntrada.SelectionStart < DateTime.Today Then
             MsgBox("La fecha de entrada no puede ser menor a hoy.", MsgBoxStyle.Critical, "Error")
             MCEntrada.SetDate(DateTime.Today) ' Restablecer a la fecha actual
-            TxtEntrada.Text = DateTime.Today.ToString("dd/MM/yyyy")
+            TxtEntrada.Text = DateTime.Today.ToString("dd/MM/yyyy HH:mm:ss")
         Else
             ' Asignar la fecha seleccionada al TextBox en formato dd/MM/yyyy
             entradacompleto = MCEntrada.SelectionStart.Date + DateTime.Now.TimeOfDay
             TxtEntrada.Text = entradacompleto.ToString("dd/MM/yyyy HH:mm:ss")
 
+            ' Actualizar la fecha mínima de MCSalida
+            MCSalida.MinDate = MCEntrada.SelectionStart.AddDays(1)
+            ' Actualizar TxtSalida con el día siguiente de la entrada
+            salidacompleto = MCEntrada.SelectionStart.Date.AddDays(1) + New TimeSpan(12, 0, 0)
+            TxtSalida.Text = salidacompleto.ToString("dd/MM/yyyy HH:mm:ss")
         End If
     End Sub
 
     Private Sub MCSalida_DateChanged(sender As Object, e As DateRangeEventArgs) Handles MCSalida.DateChanged
-        If MCSalida.SelectionStart < DateTime.Today Or MCSalida.SelectionStart < MCEntrada.SelectionStart Then
-            MsgBox("El valor de salida es incorrecto.", MsgBoxStyle.Critical, "Error")
-        ElseIf MCSalida.SelectionStart.Date = DateTime.Today Then
-
-            If DateTime.Now.Hour < 12 Then
-                ' Si es antes de las 12 PM, asignamos la fecha correctamente.
-                salidacompleto = MCSalida.SelectionStart.Date + New TimeSpan(12, 0, 0)
-                TxtSalida.Text = salidacompleto.ToString("dd/MM/yyyy HH:mm:ss")
-            Else
-                ' Si ya pasaron las 12 PM, mostramos el mensaje de error.
-                MsgBox("La hora sobre pasa el check out.", MsgBoxStyle.Critical, "Error")
-            End If
+        ' Validar que la fecha de salida no sea menor a la fecha de entrada + 1 día
+        If MCSalida.SelectionStart < MCEntrada.SelectionStart.AddDays(1) Then
+            MsgBox("La fecha de salida debe ser al menos un día después de la fecha de entrada.", MsgBoxStyle.Critical, "Error")
+            MCSalida.SetDate(MCEntrada.SelectionStart.AddDays(1)) ' Restablecer a la fecha de entrada + 1 día
+            salidacompleto = MCEntrada.SelectionStart.Date.AddDays(1) + New TimeSpan(12, 0, 0)
+            TxtSalida.Text = salidacompleto.ToString("dd/MM/yyyy HH:mm:ss")
         Else
-            ' Asignar la fecha en TxtSalida si es válida (después de hoy y después de la entrada).
+            ' Asignar la fecha en TxtSalida si es válida.
             salidacompleto = MCSalida.SelectionStart.Date + New TimeSpan(12, 0, 0)
             TxtSalida.Text = salidacompleto.ToString("dd/MM/yyyy HH:mm:ss")
         End If
-
     End Sub
 
     Private Sub BtnConsultarDispon_Click(sender As Object, e As EventArgs) Handles BtnConsultarDispon.Click
@@ -215,6 +210,11 @@ Public Class Reservaciones
     End Function
 
     Private Sub Reservaciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Configurar el primer MonthCalendar para que no permita seleccionar fechas pasadas
+        MCEntrada.MinDate = DateTime.Today
+        ' Configurar el segundo MonthCalendar con una fecha mínima inicial
+        MCSalida.MinDate = DateTime.Today.AddDays(1)
+        TxtEntrada.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss")
         Lblhorafecha.Text = DateTime.Now.Hour
         TxtHabitacion.Text = numhab
         Carga()
@@ -247,6 +247,10 @@ Public Class Reservaciones
         If CmbHabitacion.Items.Count > 0 Then
             CmbHabitacion.SelectedIndex = 0
         End If
+
+        ' Inicializar TxtSalida con el día siguiente de la entrada
+        salidacompleto = DateTime.Today.AddDays(1) + New TimeSpan(12, 0, 0)
+        TxtSalida.Text = salidacompleto.ToString("dd/MM/yyyy HH:mm:ss")
     End Sub
 
     Private Sub TxtNombre_TextChanged(sender As Object, e As EventArgs) Handles TxtNombre.TextChanged

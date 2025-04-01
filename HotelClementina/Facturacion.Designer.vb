@@ -22,10 +22,12 @@ Partial Class Facturacion
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle13 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle14 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.TxtCodCli = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.TxtCodRes = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.lblpleca1 = New System.Windows.Forms.Label()
@@ -35,22 +37,24 @@ Partial Class Facturacion
         Me.Label14 = New System.Windows.Forms.Label()
         Me.lblDia = New System.Windows.Forms.Label()
         Me.lblCodCli = New System.Windows.Forms.Label()
-        Me.CheckBoxEmpresa = New System.Windows.Forms.CheckBox()
-        Me.TxtEmpresa = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.btnBusCli = New System.Windows.Forms.Button()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.TxtDias = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TxtCodFac = New System.Windows.Forms.TextBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.TxtUsuario = New System.Windows.Forms.TextBox()
+        Me.CheckBoxEmpresa = New System.Windows.Forms.CheckBox()
+        Me.TxtEmpresa = New System.Windows.Forms.TextBox()
+        Me.btnBusCli = New System.Windows.Forms.Button()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.TxtCliente = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.TxtCodCli = New System.Windows.Forms.TextBox()
-        Me.TxtCodRes = New System.Windows.Forms.TextBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.RBTarjeta = New System.Windows.Forms.RadioButton()
+        Me.RBEfectivo = New System.Windows.Forms.RadioButton()
+        Me.TxtDet = New System.Windows.Forms.TextBox()
         Me.CKBConTur = New System.Windows.Forms.CheckBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.CKBsinTur = New System.Windows.Forms.CheckBox()
@@ -68,8 +72,6 @@ Partial Class Facturacion
         Me.TxtCnt = New System.Windows.Forms.TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.TxtIsvTur = New System.Windows.Forms.TextBox()
-        Me.RBEfectivo = New System.Windows.Forms.RadioButton()
-        Me.RBTarjeta = New System.Windows.Forms.RadioButton()
         Me.TxtTotal = New System.Windows.Forms.TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.btnFacturar = New System.Windows.Forms.Button()
@@ -77,14 +79,12 @@ Partial Class Facturacion
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TxtNeto = New System.Windows.Forms.TextBox()
         Me.TxtISV = New System.Windows.Forms.TextBox()
-        Me.TxtDet = New System.Windows.Forms.TextBox()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.DgvDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
+        CType(Me.DgvDetalle, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -98,6 +98,15 @@ Partial Class Facturacion
         Me.Panel1.Size = New System.Drawing.Size(1136, 58)
         Me.Panel1.TabIndex = 33
         '
+        'TxtCodCli
+        '
+        Me.TxtCodCli.Location = New System.Drawing.Point(1031, 32)
+        Me.TxtCodCli.Name = "TxtCodCli"
+        Me.TxtCodCli.Size = New System.Drawing.Size(100, 20)
+        Me.TxtCodCli.TabIndex = 137
+        Me.TxtCodCli.TabStop = False
+        Me.TxtCodCli.Visible = False
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -108,6 +117,15 @@ Partial Class Facturacion
         Me.Label1.Size = New System.Drawing.Size(313, 65)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "FACTURACIÓN"
+        '
+        'TxtCodRes
+        '
+        Me.TxtCodRes.Location = New System.Drawing.Point(1031, 5)
+        Me.TxtCodRes.Name = "TxtCodRes"
+        Me.TxtCodRes.Size = New System.Drawing.Size(100, 20)
+        Me.TxtCodRes.TabIndex = 136
+        Me.TxtCodRes.TabStop = False
+        Me.TxtCodRes.Visible = False
         '
         'GroupBox1
         '
@@ -212,30 +230,6 @@ Partial Class Facturacion
         Me.lblCodCli.TabIndex = 97
         Me.lblCodCli.Text = "Hora"
         '
-        'CheckBoxEmpresa
-        '
-        Me.CheckBoxEmpresa.AutoSize = True
-        Me.CheckBoxEmpresa.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.CheckBoxEmpresa.Location = New System.Drawing.Point(24, 91)
-        Me.CheckBoxEmpresa.Name = "CheckBoxEmpresa"
-        Me.CheckBoxEmpresa.Size = New System.Drawing.Size(91, 31)
-        Me.CheckBoxEmpresa.TabIndex = 91
-        Me.CheckBoxEmpresa.TabStop = False
-        Me.CheckBoxEmpresa.Text = "Empresa"
-        Me.CheckBoxEmpresa.UseVisualStyleBackColor = True
-        '
-        'TxtEmpresa
-        '
-        Me.TxtEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtEmpresa.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TxtEmpresa.Location = New System.Drawing.Point(113, 78)
-        Me.TxtEmpresa.MaxLength = 88
-        Me.TxtEmpresa.Multiline = True
-        Me.TxtEmpresa.Name = "TxtEmpresa"
-        Me.TxtEmpresa.Size = New System.Drawing.Size(372, 57)
-        Me.TxtEmpresa.TabIndex = 1
-        Me.TxtEmpresa.TabStop = False
-        '
         'Label3
         '
         Me.Label3.AutoSize = True
@@ -246,19 +240,6 @@ Partial Class Facturacion
         Me.Label3.Size = New System.Drawing.Size(40, 27)
         Me.Label3.TabIndex = 86
         Me.Label3.Text = "días"
-        '
-        'btnBusCli
-        '
-        Me.btnBusCli.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(167, Byte), Integer))
-        Me.btnBusCli.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnBusCli.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.btnBusCli.ForeColor = System.Drawing.Color.Black
-        Me.btnBusCli.Location = New System.Drawing.Point(358, 148)
-        Me.btnBusCli.Name = "btnBusCli"
-        Me.btnBusCli.Size = New System.Drawing.Size(127, 41)
-        Me.btnBusCli.TabIndex = 81
-        Me.btnBusCli.Text = "Buscar Cliente"
-        Me.btnBusCli.UseVisualStyleBackColor = False
         '
         'Label10
         '
@@ -325,6 +306,43 @@ Partial Class Facturacion
         Me.TxtUsuario.Size = New System.Drawing.Size(391, 25)
         Me.TxtUsuario.TabIndex = 57
         Me.TxtUsuario.TabStop = False
+        '
+        'CheckBoxEmpresa
+        '
+        Me.CheckBoxEmpresa.AutoSize = True
+        Me.CheckBoxEmpresa.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.CheckBoxEmpresa.Location = New System.Drawing.Point(24, 91)
+        Me.CheckBoxEmpresa.Name = "CheckBoxEmpresa"
+        Me.CheckBoxEmpresa.Size = New System.Drawing.Size(91, 31)
+        Me.CheckBoxEmpresa.TabIndex = 91
+        Me.CheckBoxEmpresa.TabStop = False
+        Me.CheckBoxEmpresa.Text = "Empresa"
+        Me.CheckBoxEmpresa.UseVisualStyleBackColor = True
+        '
+        'TxtEmpresa
+        '
+        Me.TxtEmpresa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtEmpresa.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
+        Me.TxtEmpresa.Location = New System.Drawing.Point(113, 78)
+        Me.TxtEmpresa.MaxLength = 88
+        Me.TxtEmpresa.Multiline = True
+        Me.TxtEmpresa.Name = "TxtEmpresa"
+        Me.TxtEmpresa.Size = New System.Drawing.Size(372, 57)
+        Me.TxtEmpresa.TabIndex = 1
+        Me.TxtEmpresa.TabStop = False
+        '
+        'btnBusCli
+        '
+        Me.btnBusCli.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(167, Byte), Integer))
+        Me.btnBusCli.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnBusCli.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.btnBusCli.ForeColor = System.Drawing.Color.Black
+        Me.btnBusCli.Location = New System.Drawing.Point(358, 148)
+        Me.btnBusCli.Name = "btnBusCli"
+        Me.btnBusCli.Size = New System.Drawing.Size(127, 41)
+        Me.btnBusCli.TabIndex = 81
+        Me.btnBusCli.Text = "Buscar Cliente"
+        Me.btnBusCli.UseVisualStyleBackColor = False
         '
         'Label7
         '
@@ -398,23 +416,54 @@ Partial Class Facturacion
         Me.GroupBox2.TabIndex = 126
         Me.GroupBox2.TabStop = False
         '
-        'TxtCodCli
+        'GroupBox4
         '
-        Me.TxtCodCli.Location = New System.Drawing.Point(1031, 32)
-        Me.TxtCodCli.Name = "TxtCodCli"
-        Me.TxtCodCli.Size = New System.Drawing.Size(100, 20)
-        Me.TxtCodCli.TabIndex = 137
-        Me.TxtCodCli.TabStop = False
-        Me.TxtCodCli.Visible = False
+        Me.GroupBox4.Controls.Add(Me.RBTarjeta)
+        Me.GroupBox4.Controls.Add(Me.RBEfectivo)
+        Me.GroupBox4.Font = New System.Drawing.Font("Dubai", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
+        Me.GroupBox4.ForeColor = System.Drawing.Color.White
+        Me.GroupBox4.Location = New System.Drawing.Point(936, 233)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(173, 123)
+        Me.GroupBox4.TabIndex = 186
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Tipo de Pago"
         '
-        'TxtCodRes
+        'RBTarjeta
         '
-        Me.TxtCodRes.Location = New System.Drawing.Point(1031, 5)
-        Me.TxtCodRes.Name = "TxtCodRes"
-        Me.TxtCodRes.Size = New System.Drawing.Size(100, 20)
-        Me.TxtCodRes.TabIndex = 136
-        Me.TxtCodRes.TabStop = False
-        Me.TxtCodRes.Visible = False
+        Me.RBTarjeta.AutoSize = True
+        Me.RBTarjeta.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.RBTarjeta.ForeColor = System.Drawing.Color.White
+        Me.RBTarjeta.Location = New System.Drawing.Point(8, 34)
+        Me.RBTarjeta.Name = "RBTarjeta"
+        Me.RBTarjeta.Size = New System.Drawing.Size(155, 31)
+        Me.RBTarjeta.TabIndex = 172
+        Me.RBTarjeta.Text = "Tarjeta de Credito"
+        Me.RBTarjeta.UseVisualStyleBackColor = True
+        '
+        'RBEfectivo
+        '
+        Me.RBEfectivo.AutoSize = True
+        Me.RBEfectivo.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.RBEfectivo.ForeColor = System.Drawing.Color.White
+        Me.RBEfectivo.Location = New System.Drawing.Point(8, 75)
+        Me.RBEfectivo.Name = "RBEfectivo"
+        Me.RBEfectivo.Size = New System.Drawing.Size(86, 31)
+        Me.RBEfectivo.TabIndex = 173
+        Me.RBEfectivo.Text = "Efectivo"
+        Me.RBEfectivo.UseVisualStyleBackColor = True
+        '
+        'TxtDet
+        '
+        Me.TxtDet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtDet.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
+        Me.TxtDet.Location = New System.Drawing.Point(91, 90)
+        Me.TxtDet.MaxLength = 88
+        Me.TxtDet.Multiline = True
+        Me.TxtDet.Name = "TxtDet"
+        Me.TxtDet.Size = New System.Drawing.Size(394, 95)
+        Me.TxtDet.TabIndex = 92
+        Me.TxtDet.TabStop = False
         '
         'CKBConTur
         '
@@ -458,24 +507,24 @@ Partial Class Facturacion
         Me.DgvDetalle.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DgvDetalle.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.DgvDetalle.BorderStyle = System.Windows.Forms.BorderStyle.None
-        DataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle13.Font = New System.Drawing.Font("Papyrus", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvDetalle.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle13
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvDetalle.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.DgvDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgvDetalle.Cursor = System.Windows.Forms.Cursors.Hand
-        DataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle14.Font = New System.Drawing.Font("Papyrus", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvDetalle.DefaultCellStyle = DataGridViewCellStyle14
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Dubai", 11.25!)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvDetalle.DefaultCellStyle = DataGridViewCellStyle2
         Me.DgvDetalle.GridColor = System.Drawing.SystemColors.AppWorkspace
         Me.DgvDetalle.Location = New System.Drawing.Point(18, 193)
         Me.DgvDetalle.Name = "DgvDetalle"
@@ -633,30 +682,6 @@ Partial Class Facturacion
         Me.TxtIsvTur.TabStop = False
         Me.TxtIsvTur.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'RBEfectivo
-        '
-        Me.RBEfectivo.AutoSize = True
-        Me.RBEfectivo.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.RBEfectivo.ForeColor = System.Drawing.Color.White
-        Me.RBEfectivo.Location = New System.Drawing.Point(8, 75)
-        Me.RBEfectivo.Name = "RBEfectivo"
-        Me.RBEfectivo.Size = New System.Drawing.Size(86, 31)
-        Me.RBEfectivo.TabIndex = 173
-        Me.RBEfectivo.Text = "Efectivo"
-        Me.RBEfectivo.UseVisualStyleBackColor = True
-        '
-        'RBTarjeta
-        '
-        Me.RBTarjeta.AutoSize = True
-        Me.RBTarjeta.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.RBTarjeta.ForeColor = System.Drawing.Color.White
-        Me.RBTarjeta.Location = New System.Drawing.Point(8, 34)
-        Me.RBTarjeta.Name = "RBTarjeta"
-        Me.RBTarjeta.Size = New System.Drawing.Size(155, 31)
-        Me.RBTarjeta.TabIndex = 172
-        Me.RBTarjeta.Text = "Tarjeta de Credito"
-        Me.RBTarjeta.UseVisualStyleBackColor = True
-        '
         'TxtTotal
         '
         Me.TxtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -741,31 +766,6 @@ Partial Class Facturacion
         Me.TxtISV.TabStop = False
         Me.TxtISV.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'TxtDet
-        '
-        Me.TxtDet.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TxtDet.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TxtDet.Location = New System.Drawing.Point(91, 90)
-        Me.TxtDet.MaxLength = 88
-        Me.TxtDet.Multiline = True
-        Me.TxtDet.Name = "TxtDet"
-        Me.TxtDet.Size = New System.Drawing.Size(394, 95)
-        Me.TxtDet.TabIndex = 92
-        Me.TxtDet.TabStop = False
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.Controls.Add(Me.RBTarjeta)
-        Me.GroupBox4.Controls.Add(Me.RBEfectivo)
-        Me.GroupBox4.Font = New System.Drawing.Font("Dubai", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
-        Me.GroupBox4.ForeColor = System.Drawing.Color.White
-        Me.GroupBox4.Location = New System.Drawing.Point(936, 233)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(173, 123)
-        Me.GroupBox4.TabIndex = 186
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Tipo de Pago"
-        '
         'Facturacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -787,9 +787,9 @@ Partial Class Facturacion
         Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.DgvDetalle, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        CType(Me.DgvDetalle, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

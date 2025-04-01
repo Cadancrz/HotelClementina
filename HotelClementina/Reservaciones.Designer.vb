@@ -22,7 +22,9 @@ Partial Class Reservaciones
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
@@ -31,6 +33,7 @@ Partial Class Reservaciones
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GBDisp = New System.Windows.Forms.GroupBox()
+        Me.Lblhorafecha = New System.Windows.Forms.Label()
         Me.MCSalida = New System.Windows.Forms.MonthCalendar()
         Me.LblRestaFechaFin = New System.Windows.Forms.Label()
         Me.LblPrecioTotal = New System.Windows.Forms.Label()
@@ -51,7 +54,6 @@ Partial Class Reservaciones
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TxtIdentidad = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Lblhorafecha = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.GBDisp.SuspendLayout()
@@ -88,7 +90,7 @@ Partial Class Reservaciones
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
         Me.GroupBox1.Location = New System.Drawing.Point(12, 97)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(461, 121)
+        Me.GroupBox1.Size = New System.Drawing.Size(513, 121)
         Me.GroupBox1.TabIndex = 31
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Disponibilidad"
@@ -98,7 +100,7 @@ Partial Class Reservaciones
         Me.TxtHabitacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtHabitacion.Enabled = False
         Me.TxtHabitacion.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtHabitacion.Location = New System.Drawing.Point(202, 78)
+        Me.TxtHabitacion.Location = New System.Drawing.Point(202, 73)
         Me.TxtHabitacion.Name = "TxtHabitacion"
         Me.TxtHabitacion.ReadOnly = True
         Me.TxtHabitacion.Size = New System.Drawing.Size(52, 25)
@@ -153,16 +155,28 @@ Partial Class Reservaciones
         Me.GBDisp.Controls.Add(Me.MCEntrada)
         Me.GBDisp.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GBDisp.ForeColor = System.Drawing.Color.White
-        Me.GBDisp.Location = New System.Drawing.Point(12, 237)
+        Me.GBDisp.Location = New System.Drawing.Point(12, 227)
         Me.GBDisp.Name = "GBDisp"
-        Me.GBDisp.Size = New System.Drawing.Size(461, 410)
+        Me.GBDisp.Size = New System.Drawing.Size(513, 427)
         Me.GBDisp.TabIndex = 80
         Me.GBDisp.TabStop = False
+        '
+        'Lblhorafecha
+        '
+        Me.Lblhorafecha.AutoSize = True
+        Me.Lblhorafecha.Font = New System.Drawing.Font("Segoe Print", 18.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lblhorafecha.ForeColor = System.Drawing.Color.White
+        Me.Lblhorafecha.Location = New System.Drawing.Point(7, 367)
+        Me.Lblhorafecha.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
+        Me.Lblhorafecha.Name = "Lblhorafecha"
+        Me.Lblhorafecha.Size = New System.Drawing.Size(190, 44)
+        Me.Lblhorafecha.TabIndex = 97
+        Me.Lblhorafecha.Text = "Bienvenido(a)"
         '
         'MCSalida
         '
         Me.MCSalida.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MCSalida.Location = New System.Drawing.Point(261, 98)
+        Me.MCSalida.Location = New System.Drawing.Point(259, 98)
         Me.MCSalida.MinDate = New Date(2015, 6, 21, 0, 0, 0, 0)
         Me.MCSalida.Name = "MCSalida"
         Me.MCSalida.TabIndex = 12
@@ -208,7 +222,7 @@ Partial Class Reservaciones
         Me.TxtSalida.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtSalida.Enabled = False
         Me.TxtSalida.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtSalida.Location = New System.Drawing.Point(261, 270)
+        Me.TxtSalida.Location = New System.Drawing.Point(259, 270)
         Me.TxtSalida.Multiline = True
         Me.TxtSalida.Name = "TxtSalida"
         Me.TxtSalida.ReadOnly = True
@@ -220,7 +234,7 @@ Partial Class Reservaciones
         Me.TxtEntrada.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtEntrada.Enabled = False
         Me.TxtEntrada.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtEntrada.Location = New System.Drawing.Point(29, 270)
+        Me.TxtEntrada.Location = New System.Drawing.Point(7, 270)
         Me.TxtEntrada.Multiline = True
         Me.TxtEntrada.Name = "TxtEntrada"
         Me.TxtEntrada.ReadOnly = True
@@ -233,7 +247,7 @@ Partial Class Reservaciones
         Me.BtnConsultarDispon.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnConsultarDispon.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnConsultarDispon.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.BtnConsultarDispon.Location = New System.Drawing.Point(332, 361)
+        Me.BtnConsultarDispon.Location = New System.Drawing.Point(375, 374)
         Me.BtnConsultarDispon.Name = "BtnConsultarDispon"
         Me.BtnConsultarDispon.Size = New System.Drawing.Size(121, 37)
         Me.BtnConsultarDispon.TabIndex = 87
@@ -265,7 +279,7 @@ Partial Class Reservaciones
         'MCEntrada
         '
         Me.MCEntrada.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MCEntrada.Location = New System.Drawing.Point(27, 98)
+        Me.MCEntrada.Location = New System.Drawing.Point(7, 98)
         Me.MCEntrada.MinDate = New Date(2015, 6, 25, 0, 0, 0, 0)
         Me.MCEntrada.Name = "MCEntrada"
         Me.MCEntrada.TabIndex = 9
@@ -275,7 +289,7 @@ Partial Class Reservaciones
         Me.BtnReservar.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(167, Byte), Integer))
         Me.BtnReservar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnReservar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnReservar.Location = New System.Drawing.Point(130, 699)
+        Me.BtnReservar.Location = New System.Drawing.Point(130, 660)
         Me.BtnReservar.Name = "BtnReservar"
         Me.BtnReservar.Size = New System.Drawing.Size(118, 37)
         Me.BtnReservar.TabIndex = 88
@@ -288,7 +302,7 @@ Partial Class Reservaciones
         Me.BtnRestaurar.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(167, Byte), Integer))
         Me.BtnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnRestaurar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnRestaurar.Location = New System.Drawing.Point(12, 699)
+        Me.BtnRestaurar.Location = New System.Drawing.Point(12, 660)
         Me.BtnRestaurar.Name = "BtnRestaurar"
         Me.BtnRestaurar.Size = New System.Drawing.Size(112, 37)
         Me.BtnRestaurar.TabIndex = 87
@@ -305,9 +319,9 @@ Partial Class Reservaciones
         Me.GroupBox3.Controls.Add(Me.Label7)
         Me.GroupBox3.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox3.ForeColor = System.Drawing.Color.White
-        Me.GroupBox3.Location = New System.Drawing.Point(487, 97)
+        Me.GroupBox3.Location = New System.Drawing.Point(531, 97)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(662, 587)
+        Me.GroupBox3.Size = New System.Drawing.Size(618, 557)
         Me.GroupBox3.TabIndex = 101
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Infomación del Cliente"
@@ -318,7 +332,7 @@ Partial Class Reservaciones
         Me.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnLimpiar.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnLimpiar.ForeColor = System.Drawing.Color.Black
-        Me.BtnLimpiar.Location = New System.Drawing.Point(451, 544)
+        Me.BtnLimpiar.Location = New System.Drawing.Point(489, 504)
         Me.BtnLimpiar.Name = "BtnLimpiar"
         Me.BtnLimpiar.Size = New System.Drawing.Size(118, 37)
         Me.BtnLimpiar.TabIndex = 107
@@ -338,19 +352,35 @@ Partial Class Reservaciones
         '
         Me.DGVClientes.AllowUserToAddRows = False
         Me.DGVClientes.AllowUserToDeleteRows = False
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.RoyalBlue
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White
-        Me.DGVClientes.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.RoyalBlue
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
+        Me.DGVClientes.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DGVClientes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DGVClientes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DGVClientes.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(82, Byte), Integer))
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVClientes.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DGVClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVClientes.Location = New System.Drawing.Point(6, 140)
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Dubai", 11.25!)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVClientes.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DGVClientes.Location = New System.Drawing.Point(10, 114)
         Me.DGVClientes.Name = "DGVClientes"
         Me.DGVClientes.ReadOnly = True
         Me.DGVClientes.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
-        Me.DGVClientes.Size = New System.Drawing.Size(650, 398)
+        Me.DGVClientes.Size = New System.Drawing.Size(597, 384)
         Me.DGVClientes.TabIndex = 102
         '
         'Label6
@@ -383,18 +413,6 @@ Partial Class Reservaciones
         Me.Label7.Size = New System.Drawing.Size(85, 20)
         Me.Label7.TabIndex = 104
         Me.Label7.Text = "Identidad"
-        '
-        'Lblhorafecha
-        '
-        Me.Lblhorafecha.AutoSize = True
-        Me.Lblhorafecha.Font = New System.Drawing.Font("Segoe Print", 18.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lblhorafecha.ForeColor = System.Drawing.Color.White
-        Me.Lblhorafecha.Location = New System.Drawing.Point(123, 314)
-        Me.Lblhorafecha.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
-        Me.Lblhorafecha.Name = "Lblhorafecha"
-        Me.Lblhorafecha.Size = New System.Drawing.Size(190, 44)
-        Me.Lblhorafecha.TabIndex = 97
-        Me.Lblhorafecha.Text = "Bienvenido(a)"
         '
         'Reservaciones
         '

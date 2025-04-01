@@ -119,12 +119,12 @@ Partial Class Login
         'Lblhorafecha
         '
         Me.Lblhorafecha.AutoSize = True
-        Me.Lblhorafecha.Font = New System.Drawing.Font("Segoe Print", 18.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lblhorafecha.Font = New System.Drawing.Font("Segoe Print", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lblhorafecha.ForeColor = System.Drawing.Color.White
-        Me.Lblhorafecha.Location = New System.Drawing.Point(1, 123)
+        Me.Lblhorafecha.Location = New System.Drawing.Point(203, 360)
         Me.Lblhorafecha.Margin = New System.Windows.Forms.Padding(7, 0, 7, 0)
         Me.Lblhorafecha.Name = "Lblhorafecha"
-        Me.Lblhorafecha.Size = New System.Drawing.Size(190, 44)
+        Me.Lblhorafecha.Size = New System.Drawing.Size(82, 19)
         Me.Lblhorafecha.TabIndex = 14
         Me.Lblhorafecha.Text = "Bienvenido(a)"
         '

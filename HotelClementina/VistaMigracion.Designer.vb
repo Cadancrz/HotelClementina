@@ -32,13 +32,13 @@ Partial Class VistaMigracion
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.BtnAceptar = New System.Windows.Forms.Button()
-        Me.LblFecha = New System.Windows.Forms.Label()
         Me.BtnQuitar = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TxtIdentidad = New System.Windows.Forms.TextBox()
         Me.TxtNombre = New System.Windows.Forms.TextBox()
         Me.DgvHuespedes = New System.Windows.Forms.DataGridView()
+        Me.LblFecha = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -88,9 +88,9 @@ Partial Class VistaMigracion
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.LblFecha)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.BtnAceptar)
-        Me.GroupBox1.Controls.Add(Me.LblFecha)
         Me.GroupBox1.Controls.Add(Me.BtnQuitar)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.Label3)
@@ -105,11 +105,11 @@ Partial Class VistaMigracion
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Dubai", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Font = New System.Drawing.Font("Dubai", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.White
-        Me.Label6.Location = New System.Drawing.Point(796, 43)
+        Me.Label6.Location = New System.Drawing.Point(789, 43)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(70, 36)
+        Me.Label6.Size = New System.Drawing.Size(93, 45)
         Me.Label6.TabIndex = 140
         Me.Label6.Text = "Fecha:"
         '
@@ -124,17 +124,6 @@ Partial Class VistaMigracion
         Me.BtnAceptar.TabIndex = 95
         Me.BtnAceptar.Text = "Aceptar"
         Me.BtnAceptar.UseVisualStyleBackColor = False
-        '
-        'LblFecha
-        '
-        Me.LblFecha.AutoSize = True
-        Me.LblFecha.BackColor = System.Drawing.Color.Transparent
-        Me.LblFecha.Font = New System.Drawing.Font("Dubai", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblFecha.Location = New System.Drawing.Point(886, 43)
-        Me.LblFecha.Name = "LblFecha"
-        Me.LblFecha.Size = New System.Drawing.Size(0, 36)
-        Me.LblFecha.TabIndex = 136
-        Me.LblFecha.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'BtnQuitar
         '
@@ -199,7 +188,7 @@ Partial Class VistaMigracion
         'DgvHuespedes
         '
         Me.DgvHuespedes.AllowUserToAddRows = False
-        Me.DgvHuespedes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCellsExceptHeader
+        Me.DgvHuespedes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DgvHuespedes.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(82, Byte), Integer))
         Me.DgvHuespedes.BorderStyle = System.Windows.Forms.BorderStyle.None
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -223,8 +212,19 @@ Partial Class VistaMigracion
         Me.DgvHuespedes.GridColor = System.Drawing.SystemColors.AppWorkspace
         Me.DgvHuespedes.Location = New System.Drawing.Point(12, 230)
         Me.DgvHuespedes.Name = "DgvHuespedes"
+        Me.DgvHuespedes.ReadOnly = True
         Me.DgvHuespedes.Size = New System.Drawing.Size(1136, 490)
         Me.DgvHuespedes.TabIndex = 92
+        '
+        'LblFecha
+        '
+        Me.LblFecha.AutoSize = True
+        Me.LblFecha.Font = New System.Drawing.Font("Dubai", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblFecha.ForeColor = System.Drawing.Color.White
+        Me.LblFecha.Location = New System.Drawing.Point(888, 43)
+        Me.LblFecha.Name = "LblFecha"
+        Me.LblFecha.Size = New System.Drawing.Size(0, 45)
+        Me.LblFecha.TabIndex = 141
         '
         'VistaMigracion
         '
@@ -259,7 +259,7 @@ Partial Class VistaMigracion
     Friend WithEvents BtnQuitar As Button
     Friend WithEvents DgvHuespedes As DataGridView
     Friend WithEvents LblNumFila As Label
-    Friend WithEvents LblFecha As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents LblFecha As Label
 End Class

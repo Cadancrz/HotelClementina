@@ -322,6 +322,14 @@ Public Class Empleados
 
             MsgBox("Empleado eliminado permanentemente.", MsgBoxStyle.Information, "Información")
 
+            ' Registrar en la Bitácora
+            Dim fecha As String = DateTime.Now.ToString("yyyy-MM-dd")
+            Dim hora As String = DateTime.Now.ToString("HH:mm:ss")
+            Dim descripcion As String = Login.NombreEmpleado & " Eliminó un empleado con Identidad: " & txtCodEmp.Text & " con nombre: " & txtNomEmp.Text
+
+            query = "INSERT INTO Bitacora (Cod_Usu, Fch_Bita, Hrs_Bita, Obs_Bita) VALUES (" & Login.codUsu & ", '" & fecha & "', '" & hora & "', '" & descripcion & "')"
+            con.insertar(query)
+
             limpiar()
             Carga()
         End If

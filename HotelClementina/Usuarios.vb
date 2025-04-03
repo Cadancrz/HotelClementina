@@ -108,6 +108,15 @@ Public Class Usuarios
                             End If
                             StrInsert = "exec ProInsertUsuarios '" & LblCodigo.Text & "', '" & TxtIdentidad.Text & "', '" & TxtNombre.Text & "', '" & TxtId.Text & "', '" & TxtContraseña.Text & "', '" & tipo & "' , '" & codusuario & "'" 'variable que cuarda la consulta para ejecuatrse en la BD
                             con.insertar(StrInsert) 'funcion para ejecutar la consulta en la BD
+
+                            ' Registrar en la Bitácora
+                            Dim fecha As String = DateTime.Now.ToString("yyyy-MM-dd")
+                            Dim hora As String = DateTime.Now.ToString("HH:mm:ss")
+                            Dim descripcion As String = Login.NombreEmpleado & " registró un nuevo usuario del empleado: " & TxtNombre.Text & " con ID Usuario: " & TxtId.Text
+
+                            query = "INSERT INTO Bitacora (Cod_Usu, Fch_Bita, Hrs_Bita, Obs_Bita) VALUES (" & Login.codUsu & ", '" & fecha & "', '" & hora & "', '" & descripcion & "')"
+                            con.insertar(query)
+
                             MsgBox("Usuario Ingresado", MsgBoxStyle.Information, "Informacion") 'despliega el mensaje
                             limpiar() 'llama la funcion para limpiar los campos
                             LblCodigo.Text = con.autonum("exec ProSelecCodUsu", "exec ProSelectMaxCodUsu") 'llama la fucnion del autonumerado

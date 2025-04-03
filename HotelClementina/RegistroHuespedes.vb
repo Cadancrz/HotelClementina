@@ -12,6 +12,7 @@ Public Class RegistroHuespedes
     Dim resultado As Integer 'variable para mensajes de confirmacion
     Dim conthuesped As Integer 'variable contador de huespedes
     Dim tipocliente As Integer 'variable que guarda el tipo del cliente, contado/credito
+    Public Property NombreHuespedSeleccionado As String
 
     ' Variables globales para la paginación
     Private totalPaginas As Integer = 1 ' Variable para almacenar el total de páginas
@@ -344,6 +345,13 @@ Public Class RegistroHuespedes
         End If
     End Sub
 
+    Private Sub DgvHuespedes_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgvHuespedes.CellClick
+        If e.RowIndex >= 0 Then
+            NombreHuespedSeleccionado = DgvHuespedes.Rows(e.RowIndex).Cells("Nombre").Value.ToString() ' Reemplaza "Nombre" con el nombre real de la columna
+            Me.Close() ' Cierra el formulario después de seleccionar la fila
+        End If
+    End Sub
+
     Private Sub TxtTel1_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TxtTel1.KeyPress
         ' Verifica si la tecla presionada es un número, espacio, "+", "-" o una tecla de control (como retroceso).
         If Not Char.IsDigit(e.KeyChar) AndAlso e.KeyChar <> " " AndAlso e.KeyChar <> "+" AndAlso e.KeyChar <> "-" AndAlso e.KeyChar <> ControlChars.Back Then
@@ -375,6 +383,7 @@ Public Class RegistroHuespedes
     End Sub
 
     Private Sub DgvHuespedes_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DgvHuespedes.CellMouseClick
+
         Try
             If entrar = "si" Then
                 TxtNombres.Text = DgvHuespedes.CurrentRow.Cells(1).Value

@@ -22,10 +22,10 @@ Partial Class Salon
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.BtnAgregar = New System.Windows.Forms.Button()
@@ -38,14 +38,14 @@ Partial Class Salon
         Me.TxtNombre = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GbCancelaciones = New System.Windows.Forms.GroupBox()
         Me.BtnCancelar = New System.Windows.Forms.Button()
         Me.TxtFechaCancel = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.CbCancelar = New System.Windows.Forms.CheckBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.TxtNomCancel = New System.Windows.Forms.TextBox()
-        Me.MonthCalendar1 = New System.Windows.Forms.MonthCalendar()
+        Me.CbCancelar = New System.Windows.Forms.CheckBox()
+        Me.MtFecha = New System.Windows.Forms.MonthCalendar()
         Me.DtpFin = New System.Windows.Forms.DateTimePicker()
         Me.DtpInicio = New System.Windows.Forms.DateTimePicker()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -55,12 +55,12 @@ Partial Class Salon
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TxtBusqueda = New System.Windows.Forms.TextBox()
         Me.DgvSalon = New System.Windows.Forms.DataGridView()
         Me.BtnLimpiar = New System.Windows.Forms.Button()
         Me.BtnModificar = New System.Windows.Forms.Button()
         Me.BtnFacturar = New System.Windows.Forms.Button()
-        Me.BtnActualizar = New System.Windows.Forms.Button()
+        Me.BtnCalcular = New System.Windows.Forms.Button()
         Me.TxtTotal = New System.Windows.Forms.TextBox()
         Me.TxtSubTotal = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -68,8 +68,10 @@ Partial Class Salon
         Me.TxtDescuento = New System.Windows.Forms.TextBox()
         Me.CbDescuento = New System.Windows.Forms.CheckBox()
         Me.BtnReservar = New System.Windows.Forms.Button()
+        Me.lblHora = New System.Windows.Forms.Label()
+        Me.LblCodigoRes = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
+        Me.GbCancelaciones.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DgvSalon, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -212,100 +214,94 @@ Partial Class Salon
         Me.Label2.TabIndex = 140
         Me.Label2.Text = "Nombre"
         '
-        'GroupBox1
+        'GbCancelaciones
         '
-        Me.GroupBox1.Controls.Add(Me.BtnCancelar)
-        Me.GroupBox1.Controls.Add(Me.TxtFechaCancel)
-        Me.GroupBox1.Controls.Add(Me.Label9)
-        Me.GroupBox1.Controls.Add(Me.CbCancelar)
-        Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Controls.Add(Me.TxtNomCancel)
-        Me.GroupBox1.Location = New System.Drawing.Point(668, 101)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(479, 222)
-        Me.GroupBox1.TabIndex = 150
-        Me.GroupBox1.TabStop = False
+        Me.GbCancelaciones.Controls.Add(Me.BtnCancelar)
+        Me.GbCancelaciones.Controls.Add(Me.TxtNomCancel)
+        Me.GbCancelaciones.Controls.Add(Me.Label8)
+        Me.GbCancelaciones.Controls.Add(Me.TxtFechaCancel)
+        Me.GbCancelaciones.Controls.Add(Me.Label9)
+        Me.GbCancelaciones.Location = New System.Drawing.Point(668, 140)
+        Me.GbCancelaciones.Name = "GbCancelaciones"
+        Me.GbCancelaciones.Size = New System.Drawing.Size(479, 183)
+        Me.GbCancelaciones.TabIndex = 150
+        Me.GbCancelaciones.TabStop = False
         '
         'BtnCancelar
         '
         Me.BtnCancelar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(49, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.BtnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnCancelar.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnCancelar.Location = New System.Drawing.Point(357, 152)
+        Me.BtnCancelar.Location = New System.Drawing.Point(353, 115)
         Me.BtnCancelar.Name = "BtnCancelar"
         Me.BtnCancelar.Size = New System.Drawing.Size(110, 38)
         Me.BtnCancelar.TabIndex = 154
         Me.BtnCancelar.Text = "Cancelar"
         Me.BtnCancelar.UseVisualStyleBackColor = False
-        Me.BtnCancelar.Visible = False
         '
         'TxtFechaCancel
         '
         Me.TxtFechaCancel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtFechaCancel.Enabled = False
         Me.TxtFechaCancel.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TxtFechaCancel.Location = New System.Drawing.Point(17, 163)
+        Me.TxtFechaCancel.Location = New System.Drawing.Point(13, 126)
         Me.TxtFechaCancel.Multiline = True
         Me.TxtFechaCancel.Name = "TxtFechaCancel"
         Me.TxtFechaCancel.ShortcutsEnabled = False
         Me.TxtFechaCancel.Size = New System.Drawing.Size(330, 27)
         Me.TxtFechaCancel.TabIndex = 156
-        Me.TxtFechaCancel.Visible = False
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label9.ForeColor = System.Drawing.Color.White
-        Me.Label9.Location = New System.Drawing.Point(12, 133)
+        Me.Label9.Location = New System.Drawing.Point(8, 96)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(91, 27)
         Me.Label9.TabIndex = 155
         Me.Label9.Text = "De la fecha:"
-        Me.Label9.Visible = False
-        '
-        'CbCancelar
-        '
-        Me.CbCancelar.AutoSize = True
-        Me.CbCancelar.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.CbCancelar.ForeColor = System.Drawing.Color.White
-        Me.CbCancelar.Location = New System.Drawing.Point(17, 19)
-        Me.CbCancelar.Name = "CbCancelar"
-        Me.CbCancelar.Size = New System.Drawing.Size(128, 31)
-        Me.CbCancelar.TabIndex = 151
-        Me.CbCancelar.Text = "Cancelaciones"
-        Me.CbCancelar.UseVisualStyleBackColor = True
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label8.ForeColor = System.Drawing.Color.White
-        Me.Label8.Location = New System.Drawing.Point(12, 58)
+        Me.Label8.Location = New System.Drawing.Point(8, 21)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(154, 27)
         Me.Label8.TabIndex = 153
         Me.Label8.Text = "Cancelar Reserva de:"
-        Me.Label8.Visible = False
         '
         'TxtNomCancel
         '
         Me.TxtNomCancel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtNomCancel.Enabled = False
         Me.TxtNomCancel.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TxtNomCancel.Location = New System.Drawing.Point(17, 88)
+        Me.TxtNomCancel.Location = New System.Drawing.Point(13, 51)
         Me.TxtNomCancel.Multiline = True
         Me.TxtNomCancel.Name = "TxtNomCancel"
         Me.TxtNomCancel.ShortcutsEnabled = False
         Me.TxtNomCancel.Size = New System.Drawing.Size(330, 27)
         Me.TxtNomCancel.TabIndex = 152
-        Me.TxtNomCancel.Visible = False
         '
-        'MonthCalendar1
+        'CbCancelar
         '
-        Me.MonthCalendar1.Location = New System.Drawing.Point(8, 528)
-        Me.MonthCalendar1.Name = "MonthCalendar1"
-        Me.MonthCalendar1.TabIndex = 151
+        Me.CbCancelar.AutoSize = True
+        Me.CbCancelar.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.CbCancelar.ForeColor = System.Drawing.Color.White
+        Me.CbCancelar.Location = New System.Drawing.Point(668, 109)
+        Me.CbCancelar.Name = "CbCancelar"
+        Me.CbCancelar.Size = New System.Drawing.Size(128, 31)
+        Me.CbCancelar.TabIndex = 151
+        Me.CbCancelar.Text = "Cancelaciones"
+        Me.CbCancelar.UseVisualStyleBackColor = True
+        '
+        'MtFecha
+        '
+        Me.MtFecha.Location = New System.Drawing.Point(8, 528)
+        Me.MtFecha.Name = "MtFecha"
+        Me.MtFecha.TabIndex = 151
         '
         'DtpFin
         '
@@ -388,12 +384,12 @@ Partial Class Salon
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.Label6)
-        Me.GroupBox3.Controls.Add(Me.TextBox1)
+        Me.GroupBox3.Controls.Add(Me.TxtBusqueda)
         Me.GroupBox3.Font = New System.Drawing.Font("Dubai", 11.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.GroupBox3.ForeColor = System.Drawing.Color.White
         Me.GroupBox3.Location = New System.Drawing.Point(268, 339)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(605, 67)
+        Me.GroupBox3.Size = New System.Drawing.Size(640, 67)
         Me.GroupBox3.TabIndex = 159
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Búsqueda"
@@ -409,55 +405,55 @@ Partial Class Salon
         Me.Label6.TabIndex = 160
         Me.Label6.Text = "Por Nombre"
         '
-        'TextBox1
+        'TxtBusqueda
         '
-        Me.TextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.TextBox1.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TextBox1.Location = New System.Drawing.Point(182, 26)
-        Me.TextBox1.Multiline = True
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ShortcutsEnabled = False
-        Me.TextBox1.Size = New System.Drawing.Size(403, 28)
-        Me.TextBox1.TabIndex = 160
+        Me.TxtBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.TxtBusqueda.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
+        Me.TxtBusqueda.Location = New System.Drawing.Point(182, 26)
+        Me.TxtBusqueda.Multiline = True
+        Me.TxtBusqueda.Name = "TxtBusqueda"
+        Me.TxtBusqueda.ShortcutsEnabled = False
+        Me.TxtBusqueda.Size = New System.Drawing.Size(439, 28)
+        Me.TxtBusqueda.TabIndex = 160
         '
         'DgvSalon
         '
         Me.DgvSalon.AllowUserToAddRows = False
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkKhaki
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White
-        Me.DgvSalon.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.DarkKhaki
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White
+        Me.DgvSalon.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle9
         Me.DgvSalon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.DgvSalon.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DgvSalon.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(82, Byte), Integer))
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvSalon.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle10.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvSalon.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
         Me.DgvSalon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Dubai", 11.25!)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgvSalon.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Dubai", 11.25!)
+        DataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgvSalon.DefaultCellStyle = DataGridViewCellStyle11
         Me.DgvSalon.Location = New System.Drawing.Point(266, 418)
         Me.DgvSalon.Name = "DgvSalon"
         Me.DgvSalon.ReadOnly = True
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkKhaki
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Comic Sans MS", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.DarkKhaki
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgvSalon.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
-        Me.DgvSalon.Size = New System.Drawing.Size(607, 272)
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.DarkKhaki
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Comic Sans MS", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.DarkKhaki
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgvSalon.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
+        Me.DgvSalon.Size = New System.Drawing.Size(642, 272)
         Me.DgvSalon.TabIndex = 160
         '
         'BtnLimpiar
@@ -465,9 +461,9 @@ Partial Class Salon
         Me.BtnLimpiar.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(214, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.BtnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnLimpiar.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnLimpiar.Location = New System.Drawing.Point(1015, 589)
+        Me.BtnLimpiar.Location = New System.Drawing.Point(1031, 588)
         Me.BtnLimpiar.Name = "BtnLimpiar"
-        Me.BtnLimpiar.Size = New System.Drawing.Size(127, 45)
+        Me.BtnLimpiar.Size = New System.Drawing.Size(111, 45)
         Me.BtnLimpiar.TabIndex = 171
         Me.BtnLimpiar.Text = "Limpiar"
         Me.BtnLimpiar.UseVisualStyleBackColor = False
@@ -477,9 +473,9 @@ Partial Class Salon
         Me.BtnModificar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(205, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnModificar.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnModificar.Location = New System.Drawing.Point(881, 589)
+        Me.BtnModificar.Location = New System.Drawing.Point(914, 588)
         Me.BtnModificar.Name = "BtnModificar"
-        Me.BtnModificar.Size = New System.Drawing.Size(130, 45)
+        Me.BtnModificar.Size = New System.Drawing.Size(111, 45)
         Me.BtnModificar.TabIndex = 170
         Me.BtnModificar.Text = "Modificar"
         Me.BtnModificar.UseVisualStyleBackColor = False
@@ -489,36 +485,36 @@ Partial Class Salon
         Me.BtnFacturar.BackColor = System.Drawing.Color.FromArgb(CType(CType(247, Byte), Integer), CType(CType(231, Byte), Integer), CType(CType(167, Byte), Integer))
         Me.BtnFacturar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnFacturar.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnFacturar.Location = New System.Drawing.Point(881, 639)
+        Me.BtnFacturar.Location = New System.Drawing.Point(914, 639)
         Me.BtnFacturar.Name = "BtnFacturar"
-        Me.BtnFacturar.Size = New System.Drawing.Size(261, 51)
+        Me.BtnFacturar.Size = New System.Drawing.Size(228, 51)
         Me.BtnFacturar.TabIndex = 169
         Me.BtnFacturar.Text = "FACTURAR"
         Me.BtnFacturar.UseVisualStyleBackColor = False
         '
-        'BtnActualizar
+        'BtnCalcular
         '
-        Me.BtnActualizar.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(82, Byte), Integer))
-        Me.BtnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnActualizar.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnActualizar.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.BtnActualizar.Location = New System.Drawing.Point(881, 539)
-        Me.BtnActualizar.Name = "BtnActualizar"
-        Me.BtnActualizar.Size = New System.Drawing.Size(130, 45)
-        Me.BtnActualizar.TabIndex = 168
-        Me.BtnActualizar.Text = "Actualizar"
-        Me.BtnActualizar.UseVisualStyleBackColor = False
+        Me.BtnCalcular.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(221, Byte), Integer), CType(CType(82, Byte), Integer))
+        Me.BtnCalcular.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnCalcular.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnCalcular.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.BtnCalcular.Location = New System.Drawing.Point(914, 486)
+        Me.BtnCalcular.Name = "BtnCalcular"
+        Me.BtnCalcular.Size = New System.Drawing.Size(228, 45)
+        Me.BtnCalcular.TabIndex = 168
+        Me.BtnCalcular.Text = "Calcular"
+        Me.BtnCalcular.UseVisualStyleBackColor = False
         '
         'TxtTotal
         '
         Me.TxtTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtTotal.Enabled = False
         Me.TxtTotal.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TxtTotal.Location = New System.Drawing.Point(1015, 498)
+        Me.TxtTotal.Location = New System.Drawing.Point(1031, 445)
         Me.TxtTotal.Multiline = True
         Me.TxtTotal.Name = "TxtTotal"
         Me.TxtTotal.ShortcutsEnabled = False
-        Me.TxtTotal.Size = New System.Drawing.Size(127, 29)
+        Me.TxtTotal.Size = New System.Drawing.Size(111, 29)
         Me.TxtTotal.TabIndex = 167
         '
         'TxtSubTotal
@@ -526,11 +522,11 @@ Partial Class Salon
         Me.TxtSubTotal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtSubTotal.Enabled = False
         Me.TxtSubTotal.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TxtSubTotal.Location = New System.Drawing.Point(1015, 415)
+        Me.TxtSubTotal.Location = New System.Drawing.Point(1031, 365)
         Me.TxtSubTotal.Multiline = True
         Me.TxtSubTotal.Name = "TxtSubTotal"
         Me.TxtSubTotal.ShortcutsEnabled = False
-        Me.TxtSubTotal.Size = New System.Drawing.Size(127, 28)
+        Me.TxtSubTotal.Size = New System.Drawing.Size(111, 28)
         Me.TxtSubTotal.TabIndex = 166
         '
         'Label7
@@ -538,7 +534,7 @@ Partial Class Salon
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label7.ForeColor = System.Drawing.Color.White
-        Me.Label7.Location = New System.Drawing.Point(936, 500)
+        Me.Label7.Location = New System.Drawing.Point(944, 447)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(61, 27)
         Me.Label7.TabIndex = 165
@@ -549,7 +545,7 @@ Partial Class Salon
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
         Me.Label12.ForeColor = System.Drawing.Color.White
-        Me.Label12.Location = New System.Drawing.Point(918, 415)
+        Me.Label12.Location = New System.Drawing.Point(926, 365)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(79, 27)
         Me.Label12.TabIndex = 164
@@ -559,11 +555,11 @@ Partial Class Salon
         '
         Me.TxtDescuento.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.TxtDescuento.Font = New System.Drawing.Font("Microsoft YaHei", 9.75!)
-        Me.TxtDescuento.Location = New System.Drawing.Point(1015, 454)
+        Me.TxtDescuento.Location = New System.Drawing.Point(1031, 405)
         Me.TxtDescuento.Multiline = True
         Me.TxtDescuento.Name = "TxtDescuento"
         Me.TxtDescuento.ShortcutsEnabled = False
-        Me.TxtDescuento.Size = New System.Drawing.Size(127, 29)
+        Me.TxtDescuento.Size = New System.Drawing.Size(111, 29)
         Me.TxtDescuento.TabIndex = 163
         Me.TxtDescuento.Visible = False
         '
@@ -572,7 +568,7 @@ Partial Class Salon
         Me.CbDescuento.AutoSize = True
         Me.CbDescuento.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
         Me.CbDescuento.ForeColor = System.Drawing.Color.White
-        Me.CbDescuento.Location = New System.Drawing.Point(900, 454)
+        Me.CbDescuento.Location = New System.Drawing.Point(914, 405)
         Me.CbDescuento.Name = "CbDescuento"
         Me.CbDescuento.Size = New System.Drawing.Size(105, 31)
         Me.CbDescuento.TabIndex = 162
@@ -584,12 +580,31 @@ Partial Class Salon
         Me.BtnReservar.BackColor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(222, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.BtnReservar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BtnReservar.Font = New System.Drawing.Font("Dubai", 12.0!, System.Drawing.FontStyle.Bold)
-        Me.BtnReservar.Location = New System.Drawing.Point(1015, 539)
+        Me.BtnReservar.Location = New System.Drawing.Point(914, 537)
         Me.BtnReservar.Name = "BtnReservar"
-        Me.BtnReservar.Size = New System.Drawing.Size(127, 45)
+        Me.BtnReservar.Size = New System.Drawing.Size(228, 45)
         Me.BtnReservar.TabIndex = 161
         Me.BtnReservar.Text = "Reservar"
         Me.BtnReservar.UseVisualStyleBackColor = False
+        '
+        'lblHora
+        '
+        Me.lblHora.AutoSize = True
+        Me.lblHora.Location = New System.Drawing.Point(23, 266)
+        Me.lblHora.Name = "lblHora"
+        Me.lblHora.Size = New System.Drawing.Size(44, 13)
+        Me.lblHora.TabIndex = 158
+        Me.lblHora.Text = "LblHora"
+        Me.lblHora.Visible = False
+        '
+        'LblCodigoRes
+        '
+        Me.LblCodigoRes.AutoSize = True
+        Me.LblCodigoRes.Location = New System.Drawing.Point(48, 279)
+        Me.LblCodigoRes.Name = "LblCodigoRes"
+        Me.LblCodigoRes.Size = New System.Drawing.Size(0, 13)
+        Me.LblCodigoRes.TabIndex = 172
+        Me.LblCodigoRes.Visible = False
         '
         'Salon
         '
@@ -597,10 +612,13 @@ Partial Class Salon
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(1160, 748)
+        Me.Controls.Add(Me.LblCodigoRes)
+        Me.Controls.Add(Me.lblHora)
         Me.Controls.Add(Me.BtnLimpiar)
+        Me.Controls.Add(Me.CbCancelar)
         Me.Controls.Add(Me.BtnModificar)
         Me.Controls.Add(Me.BtnFacturar)
-        Me.Controls.Add(Me.BtnActualizar)
+        Me.Controls.Add(Me.BtnCalcular)
         Me.Controls.Add(Me.TxtTotal)
         Me.Controls.Add(Me.TxtSubTotal)
         Me.Controls.Add(Me.Label7)
@@ -613,8 +631,8 @@ Partial Class Salon
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.TxtFecha)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.MonthCalendar1)
-        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.MtFecha)
+        Me.Controls.Add(Me.GbCancelaciones)
         Me.Controls.Add(Me.BtnAgregar)
         Me.Controls.Add(Me.CbAire)
         Me.Controls.Add(Me.CbData)
@@ -631,8 +649,8 @@ Partial Class Salon
         Me.Text = "Salon"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
+        Me.GbCancelaciones.ResumeLayout(False)
+        Me.GbCancelaciones.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
@@ -655,14 +673,14 @@ Partial Class Salon
     Friend WithEvents TxtNombre As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GbCancelaciones As GroupBox
     Friend WithEvents BtnCancelar As Button
     Friend WithEvents TxtFechaCancel As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents CbCancelar As CheckBox
     Friend WithEvents Label8 As Label
     Friend WithEvents TxtNomCancel As TextBox
-    Friend WithEvents MonthCalendar1 As MonthCalendar
+    Friend WithEvents MtFecha As MonthCalendar
     Friend WithEvents DtpFin As DateTimePicker
     Friend WithEvents DtpInicio As DateTimePicker
     Friend WithEvents Label11 As Label
@@ -672,12 +690,12 @@ Partial Class Salon
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Label6 As Label
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents TxtBusqueda As TextBox
     Public WithEvents DgvSalon As DataGridView
     Friend WithEvents BtnLimpiar As Button
     Friend WithEvents BtnModificar As Button
     Friend WithEvents BtnFacturar As Button
-    Friend WithEvents BtnActualizar As Button
+    Friend WithEvents BtnCalcular As Button
     Friend WithEvents TxtTotal As TextBox
     Friend WithEvents TxtSubTotal As TextBox
     Friend WithEvents Label7 As Label
@@ -685,4 +703,6 @@ Partial Class Salon
     Friend WithEvents TxtDescuento As TextBox
     Friend WithEvents CbDescuento As CheckBox
     Friend WithEvents BtnReservar As Button
+    Friend WithEvents lblHora As Label
+    Friend WithEvents LblCodigoRes As Label
 End Class

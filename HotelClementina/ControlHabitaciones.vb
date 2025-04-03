@@ -157,6 +157,15 @@ Public Class ControlHabitaciones
             If con.val(query) = True Then
                 Dim deleteQuery As String = "DELETE FROM Reserva WHERE Cod_Hab = " & codHab & " AND '" & DateTime.Now & "' BETWEEN Fec_Ini_Res AND Fec_Fin_Res"
                 con.insertar(deleteQuery)
+
+                ' Registrar en la Bitácora
+                Dim fecha As String = DateTime.Now.ToString("yyyy-MM-dd")
+                Dim hora As String = DateTime.Now.ToString("HH:mm:ss")
+                Dim descripcion As String = Login.NombreEmpleado & " canceló una reserva de la habitación: " & codHab
+
+                query = "INSERT INTO Bitacora (Cod_Usu, Fch_Bita, Hrs_Bita, Obs_Bita) VALUES (" & Login.codUsu & ", '" & fecha & "', '" & hora & "', '" & descripcion & "')"
+                con.insertar(query)
+
                 ' Informar al usuario
                 MessageBox.Show("La reserva ha sido cancelada correctamente.", "Cancelación Exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 If btnCancelar IsNot Nothing Then btnCancelar.Visible = False

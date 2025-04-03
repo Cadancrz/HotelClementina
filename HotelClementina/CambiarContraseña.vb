@@ -24,7 +24,17 @@ Public Class CambiarContraseña
                 Else
                     MsgBox("usuario o contraseña incorrectos", MsgBoxStyle.Information, "Informacion") 'despliega el mensaje 
                 End If
+                ' Registrar en la Bitácora
+                Dim fecha As String = DateTime.Now.ToString("yyyy-MM-dd")
+                Dim hora As String = DateTime.Now.ToString("HH:mm:ss")
+                Dim descripcion As String = Login.NombreEmpleado & " cambió la contraseña del usuario: " & TxtUsuario.Text
+
+                query = "INSERT INTO Bitacora (Cod_Usu, Fch_Bita, Hrs_Bita, Obs_Bita) VALUES (" & Login.codUsu & ", '" & fecha & "', '" & hora & "', '" & descripcion & "')"
+                con.insertar(query)
             End If
+            TxtAntigua.Text = ""
+            TxtNueva.Text = ""
+            TxtRenueva.Text = ""
         Catch ex As Exception 'si captura algun error despliega el mensaje
             MsgBox(ex.Message) 'MENSAJE SI HAY UN ERROR 
         End Try

@@ -44,6 +44,15 @@ Public Class TipoHabitaciones
                 End If
                 query = "exec ProModifPreTipoHab  '" & TxtPrecio.Text & "' , '" & CmbHabitacion.SelectedValue & "' , '" & codusuario & "'" 'variable que cuarda la consulta para ejecuatrse en la BD
                 con.insertar(query) 'funcion para ejecutar la consulta en la BD
+
+                ' Registrar en la Bitácora
+                Dim fecha As String = DateTime.Now.ToString("yyyy-MM-dd")
+                Dim hora As String = DateTime.Now.ToString("HH:mm:ss")
+                Dim descripcion As String = Login.NombreEmpleado & " modificó la habitación: " & CmbHabitacion.Text & " con precio: " & TxtPrecio.Text
+
+                query = "INSERT INTO Bitacora (Cod_Usu, Fch_Bita, Hrs_Bita, Obs_Bita) VALUES (" & Login.codUsu & ", '" & fecha & "', '" & hora & "', '" & descripcion & "')"
+                con.insertar(query)
+
                 MsgBox("Datos Modificados", MsgBoxStyle.Information, "Informacion") 'despliega el mensaje
             End If
         Catch ex As Exception 'si captura algun error despliega el mensaje

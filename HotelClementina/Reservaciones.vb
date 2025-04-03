@@ -53,6 +53,15 @@ Public Class Reservaciones
         Else
             query = " INSERT INTO Reserva (Cod_Res, Fec_Ini_Res, Fec_Fin_Res, Cod_Hab, Cod_Cli, Nom_Usu, Precio_Unitario, Descuento, Recargo, Pagado_NoPagado, Cod_Est, TipoPago)  VALUES(" & numreserva & ",'" & entradacompleto.ToString("yyyy/dd/MM HH:mm:ss") & "','" & salidacompleto.ToString("yyyy/dd/MM HH:mm:ss") & "','" & TxtHabitacion.Text & "','" & TxtIdentidad.Text & "','" & Usuario & "'," & preciohab & "," & 0 & "," & 0 & "," & 0 & "," & 0 & ", NULL)"
             con.insertar(query)
+
+            ' Registrar en la Bitácora
+            Dim fecha As String = DateTime.Now.ToString("yyyy-MM-dd")
+            Dim hora As String = DateTime.Now.ToString("HH:mm:ss")
+            Dim descripcion As String = Login.NombreEmpleado & " hizo una reserva de la habitación: " & TxtHabitacion.Text & " del huésped: " & TxtNombre.Text
+
+            query = "INSERT INTO Bitacora (Cod_Usu, Fch_Bita, Hrs_Bita, Obs_Bita) VALUES (" & Login.codUsu & ", '" & fecha & "', '" & hora & "', '" & descripcion & "')"
+            con.insertar(query)
+
             MsgBox("Reserva elaborada exitosamente.", MsgBoxStyle.Information, "Aviso")
             ' Llamar al formulario de reservaciones dentro del panel
             Dim frmHabitaciones As New ControlHabitaciones()

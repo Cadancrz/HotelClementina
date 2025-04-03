@@ -123,6 +123,15 @@ Public Class RegistroEmpresas
                 StrInsert = "INSERT INTO Empresa(Cod_Empresa, Nom_Empresa) values('" & TxtCodigo.Text & "','" & TxtNombre.Text & "')" 'ejecuta el procedimiento para incertar la consulta
                 con.insertar(StrInsert) 'hace la conexion con el procedimiento
                 MsgBox("Empresa ingresada exitosamente", MsgBoxStyle.Information, "Información") 'despliega el mensaje de confirmacion
+
+                ' Registrar en la Bitácora
+                Dim fecha As String = DateTime.Now.ToString("yyyy-MM-dd")
+                Dim hora As String = DateTime.Now.ToString("HH:mm:ss")
+                Dim descripcion As String = Login.NombreEmpleado & " registró una nueva empresa con RTN: " & TxtCodigo.Text & " con nombre: " & TxtNombre.Text
+
+                query = "INSERT INTO Bitacora (Cod_Usu, Fch_Bita, Hrs_Bita, Obs_Bita) VALUES (" & Login.codUsu & ", '" & fecha & "', '" & hora & "', '" & descripcion & "')"
+                con.insertar(query)
+
                 limpiar() 'funcion para limpiar los texbox
                 Carga() 'ejecuta la funcion para cargar los huespedes
             End If
@@ -170,7 +179,15 @@ Public Class RegistroEmpresas
 
             MsgBox("Datos Modificados", MsgBoxStyle.Information, "Informacion") 'despliega el mensaje
 
-            Carga() 'ejecuta la funcion
+            ' Registrar en la Bitácora
+            Dim fecha As String = DateTime.Now.ToString("yyyy-MM-dd")
+            Dim hora As String = DateTime.Now.ToString("HH:mm:ss")
+            Dim descripcion As String = Login.NombreEmpleado & " modificó una empresa con RTN: " & TxtCodigo.Text & " con nombre: " & TxtNombre.Text
+
+            query = "INSERT INTO Bitacora (Cod_Usu, Fch_Bita, Hrs_Bita, Obs_Bita) VALUES (" & Login.codUsu & ", '" & fecha & "', '" & hora & "', '" & descripcion & "')"
+            con.insertar(query)
+
+            Carga() 'ejecuta la funcion
             limpiar()
         End If
     End Sub
@@ -183,6 +200,15 @@ Public Class RegistroEmpresas
             If resultado = vbOK Then ' si presiono OK entra al ciclo
                 query = "DELETE from Empresa where Cod_Empresa = '" & TxtCodigo.Text & "'" 'guarda la consulta en la variable query
                 con.insertar(query) 'hace la conexion con lo que tiene la variable query
+
+                ' Registrar en la Bitácora
+                Dim fecha As String = DateTime.Now.ToString("yyyy-MM-dd")
+                Dim hora As String = DateTime.Now.ToString("HH:mm:ss")
+                Dim descripcion As String = Login.NombreEmpleado & " eliminó una empresa con RTN: " & TxtCodigo.Text & " con nombre: " & TxtNombre.Text
+
+                query = "INSERT INTO Bitacora (Cod_Usu, Fch_Bita, Hrs_Bita, Obs_Bita) VALUES (" & Login.codUsu & ", '" & fecha & "', '" & hora & "', '" & descripcion & "')"
+                con.insertar(query)
+
                 limpiar() 'funcion para limpiar los texbox
                 Carga() 'ejecuta la funcion para cargar los huespedes
                 MsgBox("Empresa Eliminada", MsgBoxStyle.Information, "Informacion") 'despliega el mensaje de confirmacion
